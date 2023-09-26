@@ -1,0 +1,6 @@
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Modelo\bin\Debug\Modelo.dll
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Modelo\bin\Debug\Modelo.pdb
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Modelo\obj\Debug\Modelo.csproj.AssemblyReference.cache
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Modelo\obj\Debug\Modelo.dll
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Modelo\obj\Debug\Modelo.pdb

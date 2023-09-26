@@ -1,0 +1,27 @@
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\bin\Debug\Sistema ACA.exe.config
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\bin\Debug\Sistema ACA.exe
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\bin\Debug\Sistema ACA.pdb
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\obj\Debug\Sistema ACA.csproj.AssemblyReference.cache
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\obj\Debug\Sistema ACA.csproj.SuggestedBindingRedirects.cache
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.Properties.Resources.resources
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\obj\Debug\Sistema ACA.csproj.GenerateResource.cache
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\obj\Debug\Sistema ACA.csproj.CoreCompileInputs.cache
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\obj\Debug\Sistema ACA.exe
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\obj\Debug\Sistema ACA.pdb
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.ABMProveedores.resources
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\bin\Debug\System.Data.SqlClient.dll
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\bin\Debug\System.Data.SqlClient.xml
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\obj\Debug\Sistema ACA.csproj.CopyComplete
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\bin\Debug\Controladora.dll
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\bin\Debug\Controladora.pdb
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.PantallaPrincipal.resources
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.SolicitarPedido.resources
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.VerPedidos.resources
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.AgregarPedidos.resources
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\bin\Debug\Modelo.dll
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\bin\Debug\Modelo.pdb
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.InicioSesion.resources
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\bin\Debug\COMUN.dll
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\bin\Debug\COMUN.pdb
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\bin\Debug\COMUN.dll.config
+C:\Users\Agustin\Desktop\ACA\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.CambiarContra.resources
