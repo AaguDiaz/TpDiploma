@@ -7,3 +7,15 @@ C:\Users\Agustin\Desktop\ACA\Sistema ACA\Controladora\obj\Debug\Controladora.csp
 C:\Users\Agustin\Desktop\ACA\Sistema ACA\Controladora\obj\Debug\Controladora.csproj.CopyComplete
 C:\Users\Agustin\Desktop\ACA\Sistema ACA\Controladora\obj\Debug\Controladora.dll
 C:\Users\Agustin\Desktop\ACA\Sistema ACA\Controladora\obj\Debug\Controladora.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\Controladora\bin\Debug\Controladora.dll
+C:\Users\Agustin\Desktop\Sistema ACA\Controladora\bin\Debug\Controladora.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\Controladora\bin\Debug\Modelo.dll
+C:\Users\Agustin\Desktop\Sistema ACA\Controladora\bin\Debug\Modelo.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\Controladora\obj\Debug\Controladora.csproj.AssemblyReference.cache
+C:\Users\Agustin\Desktop\Sistema ACA\Controladora\obj\Debug\Controladora.csproj.CoreCompileInputs.cache
+C:\Users\Agustin\Desktop\Sistema ACA\Controladora\obj\Debug\Controladora.csproj.CopyComplete
+C:\Users\Agustin\Desktop\Sistema ACA\Controladora\obj\Debug\Controladora.dll
+C:\Users\Agustin\Desktop\Sistema ACA\Controladora\obj\Debug\Controladora.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\Controladora\bin\Debug\COMUN.dll
+C:\Users\Agustin\Desktop\Sistema ACA\Controladora\bin\Debug\COMUN.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\Controladora\bin\Debug\COMUN.dll.config

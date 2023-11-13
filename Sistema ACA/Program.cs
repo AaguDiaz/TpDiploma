@@ -16,7 +16,7 @@ namespace Sistema_ACA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InicioSesion());
+            Application.Run(new PantallaPrincipal());
         }
     }
 }

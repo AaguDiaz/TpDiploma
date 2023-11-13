@@ -49,46 +49,64 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CambiarContra.cs">
+    <Compile Include="Forms\Admin\ABMUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CambiarContra.Designer.cs">
+    <Compile Include="Forms\Admin\ABMUsuarios.Designer.cs">
+      <DependentUpon>ABMUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Socio\CambiarContra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Socio\CambiarContra.Designer.cs">
       <DependentUpon>CambiarContra.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ABMProveedores.cs">
+    <Compile Include="Forms\Admin\ABMProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ABMProveedores.Designer.cs">
+    <Compile Include="Forms\Admin\ABMProveedores.Designer.cs">
       <DependentUpon>ABMProveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\InicioSesion.cs">
+    <Compile Include="Forms\Admin\CargaDatosUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\InicioSesion.Designer.cs">
+    <Compile Include="Forms\Admin\CargaDatosUsuarios.Designer.cs">
+      <DependentUpon>CargaDatosUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Socio\InicioSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Socio\InicioSesion.Designer.cs">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PantallaPrincipal.cs">
+    <Compile Include="Forms\Socio\PantallaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PantallaPrincipal.Designer.cs">
+    <Compile Include="Forms\Socio\PantallaPrincipal.Designer.cs">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SolicitarPedido.cs">
+    <Compile Include="Forms\Socio\Prestaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SolicitarPedido.Designer.cs">
+    <Compile Include="Forms\Socio\Prestaciones.Designer.cs">
+      <DependentUpon>Prestaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Socio\SolicitarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Socio\SolicitarPedido.Designer.cs">
       <DependentUpon>SolicitarPedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\VerPedidos.cs">
+    <Compile Include="Forms\Socio\VerPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\VerPedidos.Designer.cs">
+    <Compile Include="Forms\Socio\VerPedidos.Designer.cs">
       <DependentUpon>VerPedidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AgregarPedidos.cs">
+    <Compile Include="Forms\Admin\AgregarPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AgregarPedidos.Designer.cs">
+    <Compile Include="Forms\Admin\AgregarPedidos.Designer.cs">
       <DependentUpon>AgregarPedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -98,25 +116,34 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>pruebaACADataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CambiarContra.resx">
+    <EmbeddedResource Include="Forms\Admin\ABMUsuarios.resx">
+      <DependentUpon>ABMUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\CargaDatosUsuarios.resx">
+      <DependentUpon>CargaDatosUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Socio\CambiarContra.resx">
       <DependentUpon>CambiarContra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ABMProveedores.resx">
+    <EmbeddedResource Include="Forms\Admin\ABMProveedores.resx">
       <DependentUpon>ABMProveedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InicioSesion.resx">
+    <EmbeddedResource Include="Forms\Socio\InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PantallaPrincipal.resx">
+    <EmbeddedResource Include="Forms\Socio\PantallaPrincipal.resx">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SolicitarPedido.resx">
+    <EmbeddedResource Include="Forms\Socio\Prestaciones.resx">
+      <DependentUpon>Prestaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Socio\SolicitarPedido.resx">
       <DependentUpon>SolicitarPedido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\VerPedidos.resx">
+    <EmbeddedResource Include="Forms\Socio\VerPedidos.resx">
       <DependentUpon>VerPedidos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AgregarPedidos.resx">
+    <EmbeddedResource Include="Forms\Admin\AgregarPedidos.resx">
       <DependentUpon>AgregarPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

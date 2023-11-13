@@ -299,7 +299,7 @@ namespace COMUN
             return resultado;
         }
 
-        static public KeyPressEventArgs KeyPressSoloLetras(KeyPressEventArgs e, string TEXTO)
+        static public KeyPressEventArgs KeyPressSoloLetras(KeyPressEventArgs e)
         {
 
             if (Char.IsLetter(e.KeyChar))//solo letras
