@@ -15,94 +15,28 @@ namespace Sistema_ACA
 {
     public partial class CambiarContra : Form
     {
+        Random random = new Random();
         public CambiarContra()
         {
             InitializeComponent();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void CambiarContra_Load(object sender, EventArgs e)
         {
 
         }
-        private void txtCOD_Enter(object sender, EventArgs e)
+         private void msgError(string msg)
         {
-            if (txtCOD.Text == "CÓDIGO")
-            {
-                txtCOD.Text = "";
-                txtCOD.ForeColor = Color.Black;
-            }
+            lblError.Text = "    " + msg;
+            lblError.Visible = true;
         }
 
-        private void txtCOD_Leave(object sender, EventArgs e)
+        //botones
+        private void button4_Click(object sender, EventArgs e)
         {
-            if (txtCOD.Text == "")
-            {
-                txtCOD.Text = "CÓDIGO";
-                txtCOD.ForeColor = Color.DimGray;
-            }
-        }
-        private void txtMail_Enter(object sender, EventArgs e)
-        {
-            if (txtMail.Text == "MAIL")
-            {
-                txtMail.Text = "";
-                txtMail.ForeColor = Color.Black;
-            }
+            this.Close();
         }
 
-        private void txtMail_Leave(object sender, EventArgs e)
-        {
-            if (txtMail.Text == "")
-            {
-                txtMail.Text = "MAIL";
-                txtMail.ForeColor = Color.DimGray;
-            }
-        }
-        private void txtContra_Enter(object sender, EventArgs e)
-        {
-            if (txtContra.Text == "CONTRASEÑA")
-            {
-                txtContra.Text = "";
-                txtContra.ForeColor = Color.Black;
-                txtContra.UseSystemPasswordChar = true;
-            }
-        }
-
-        private void txtContra_Leave(object sender, EventArgs e)
-        {
-            if (txtContra.Text == "")
-            {
-                txtContra.Text = "CONTRASEÑA";
-                txtContra.ForeColor = Color.DimGray;
-                txtContra.UseSystemPasswordChar = false;
-            }
-        }
-        private void txtConfirmar_Enter(object sender, EventArgs e)
-        {
-            if (txtConfirmar.Text == "CONFIRMAR CONTRASEÑA")
-            {
-                txtConfirmar.Text = "";
-                txtConfirmar.ForeColor = Color.Black;
-                txtConfirmar.UseSystemPasswordChar = true;
-            }
-        }
-
-        private void txtConfirmar_Leave(object sender, EventArgs e)
-        {
-            if (txtConfirmar.Text == "")
-            {
-                txtConfirmar.Text = "CONFIRMAR CONTRASEÑA";
-                txtConfirmar.ForeColor = Color.DimGray;
-                txtConfirmar.UseSystemPasswordChar = false;
-            }
-        }
-        Random random = new Random();
-        
         private void btnEnviar_Click(object sender, EventArgs e)
         {
             if(txtMail.Text != "MAIL")
@@ -143,16 +77,6 @@ namespace Sistema_ACA
                 }
             }
         }
-        private void msgError(string msg)
-        {
-            lblError.Text = "    " + msg;
-            lblError.Visible = true;
-        }
-
-        private void txtCOD_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            MetodosComunes.KeyPressSoloNumeros(e);
-        }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
@@ -173,6 +97,82 @@ namespace Sistema_ACA
             else
             {
                 MessageBox.Show("Ingrese una contraseña.");
+            }
+        }
+       
+
+
+        //validaciones
+        private void txtCOD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MetodosComunes.KeyPressSoloNumeros(e);
+        }
+        private void txtCOD_Enter(object sender, EventArgs e)
+        {
+            if (txtCOD.Text == "CÓDIGO")
+            {
+                txtCOD.Text = "";
+                txtCOD.ForeColor = Color.Black;
+            }
+        }
+        private void txtCOD_Leave(object sender, EventArgs e)
+        {
+            if (txtCOD.Text == "")
+            {
+                txtCOD.Text = "CÓDIGO";
+                txtCOD.ForeColor = Color.DimGray;
+            }
+        }
+        private void txtMail_Enter(object sender, EventArgs e)
+        {
+            if (txtMail.Text == "MAIL")
+            {
+                txtMail.Text = "";
+                txtMail.ForeColor = Color.Black;
+            }
+        }
+        private void txtMail_Leave(object sender, EventArgs e)
+        {
+            if (txtMail.Text == "")
+            {
+                txtMail.Text = "MAIL";
+                txtMail.ForeColor = Color.DimGray;
+            }
+        }
+        private void txtContra_Enter(object sender, EventArgs e)
+        {
+            if (txtContra.Text == "CONTRASEÑA")
+            {
+                txtContra.Text = "";
+                txtContra.ForeColor = Color.Black;
+                txtContra.UseSystemPasswordChar = true;
+            }
+        }
+        private void txtContra_Leave(object sender, EventArgs e)
+        {
+            if (txtContra.Text == "")
+            {
+                txtContra.Text = "CONTRASEÑA";
+                txtContra.ForeColor = Color.DimGray;
+                txtContra.UseSystemPasswordChar = false;
+            }
+        }
+        private void txtConfirmar_Enter(object sender, EventArgs e)
+        {
+            if (txtConfirmar.Text == "CONFIRMAR CONTRASEÑA")
+            {
+                txtConfirmar.Text = "";
+                txtConfirmar.ForeColor = Color.Black;
+                txtConfirmar.UseSystemPasswordChar = true;
+            }
+        }
+        private void txtConfirmar_Leave(object sender, EventArgs e)
+        {
+            if (txtConfirmar.Text == "")
+            {
+                txtConfirmar.Text = "CONFIRMAR CONTRASEÑA";
+                txtConfirmar.ForeColor = Color.DimGray;
+                txtConfirmar.UseSystemPasswordChar = false;
             }
         }
     }

@@ -33,11 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlClient, Version=4.6.1.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SqlClient.4.8.5\lib\net461\System.Data.SqlClient.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,13 +53,50 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Admin\ABMProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\ABMProductos.Designer.cs">
+      <DependentUpon>ABMProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Admin\ABMUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Admin\ABMUsuarios.Designer.cs">
       <DependentUpon>ABMUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\ListaPedidos\BuscarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\ListaPedidos\BuscarProductos.Designer.cs">
+      <DependentUpon>BuscarProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\ListaPedidos\CargarCat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\ListaPedidos\CargarCat.Designer.cs">
+      <DependentUpon>CargarCat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\ListaPedidos\DetallesLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\ListaPedidos\DetallesLista.Designer.cs">
+      <DependentUpon>DetallesLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\ListaPedidos\NuevaLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\ListaPedidos\NuevaLista.Designer.cs">
+      <DependentUpon>NuevaLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Socio\AgregarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Socio\AgregarProductos.Designer.cs">
+      <DependentUpon>AgregarProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Socio\CambiarContra.cs">
       <SubType>Form</SubType>
@@ -72,6 +115,18 @@
     </Compile>
     <Compile Include="Forms\Admin\CargaDatosUsuarios.Designer.cs">
       <DependentUpon>CargaDatosUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Socio\DetallesPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Socio\DetallesPedido.Designer.cs">
+      <DependentUpon>DetallesPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Socio\EstadoCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Socio\EstadoCuenta.Designer.cs">
+      <DependentUpon>EstadoCuenta.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Socio\InicioSesion.cs">
       <SubType>Form</SubType>
@@ -97,16 +152,10 @@
     <Compile Include="Forms\Socio\SolicitarPedido.Designer.cs">
       <DependentUpon>SolicitarPedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Socio\VerPedidos.cs">
+    <Compile Include="Forms\Admin\ListaPedidos\AgregarPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Socio\VerPedidos.Designer.cs">
-      <DependentUpon>VerPedidos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\AgregarPedidos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Admin\AgregarPedidos.Designer.cs">
+    <Compile Include="Forms\Admin\ListaPedidos\AgregarPedidos.Designer.cs">
       <DependentUpon>AgregarPedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -116,17 +165,41 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>pruebaACADataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\Admin\ABMProductos.resx">
+      <DependentUpon>ABMProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\ABMUsuarios.resx">
       <DependentUpon>ABMUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\CargaDatosUsuarios.resx">
       <DependentUpon>CargaDatosUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\ListaPedidos\BuscarProductos.resx">
+      <DependentUpon>BuscarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\ListaPedidos\CargarCat.resx">
+      <DependentUpon>CargarCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\ListaPedidos\DetallesLista.resx">
+      <DependentUpon>DetallesLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\ListaPedidos\NuevaLista.resx">
+      <DependentUpon>NuevaLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Socio\AgregarProductos.resx">
+      <DependentUpon>AgregarProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Socio\CambiarContra.resx">
       <DependentUpon>CambiarContra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\ABMProveedores.resx">
       <DependentUpon>ABMProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Socio\DetallesPedido.resx">
+      <DependentUpon>DetallesPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Socio\EstadoCuenta.resx">
+      <DependentUpon>EstadoCuenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Socio\InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>
@@ -140,10 +213,7 @@
     <EmbeddedResource Include="Forms\Socio\SolicitarPedido.resx">
       <DependentUpon>SolicitarPedido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Socio\VerPedidos.resx">
-      <DependentUpon>VerPedidos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\AgregarPedidos.resx">
+    <EmbeddedResource Include="Forms\Admin\ListaPedidos\AgregarPedidos.resx">
       <DependentUpon>AgregarPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -154,6 +224,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -189,10 +260,12 @@
       <Project>{030027cb-d587-4770-95f9-467056613d8f}</Project>
       <Name>Controladora</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Modelo\Modelo.csproj">
-      <Project>{3d466870-a6d3-40b9-9a31-ff5797468466}</Project>
-      <Name>Modelo</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngwing.com %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\precision.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

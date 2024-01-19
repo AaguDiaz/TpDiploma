@@ -41,15 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MoDeuda.cs" />
-    <Compile Include="MoListaProd.cs" />
-    <Compile Include="MoPedido.cs" />
+    <Compile Include="Prestaciones\MoDeuda.cs" />
+    <Compile Include="Pedidos\MoListaProd.cs" />
+    <Compile Include="Pedidos\MoPedido.cs" />
     <Compile Include="MoPermisosYGrupos.cs" />
-    <Compile Include="MoProducto.cs" />
-    <Compile Include="MoListaPedido.cs" />
-    <Compile Include="MoProveedor.cs" />
+    <Compile Include="Prestaciones\MoPrestacion.cs" />
+    <Compile Include="Pedidos\MoProducto.cs" />
+    <Compile Include="Pedidos\MoListaPedido.cs" />
+    <Compile Include="Pedidos\MoProveedor.cs" />
     <Compile Include="MoConexionSQL.cs" />
-    <Compile Include="MoPedidoLista.cs" />
+    <Compile Include="Pedidos\MoPedidoLista.cs" />
+    <Compile Include="Prestaciones\MoSolicitud.cs" />
     <Compile Include="MoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,6 +60,9 @@
       <Project>{21f742ee-e636-4200-848e-92c2cb85af3d}</Project>
       <Name>COMUN</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

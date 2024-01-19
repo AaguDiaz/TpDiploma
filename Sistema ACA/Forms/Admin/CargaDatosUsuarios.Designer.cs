@@ -48,7 +48,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnNueGru = new System.Windows.Forms.Button();
-            this.btnNuePer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermisos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrupos)).BeginInit();
             this.SuspendLayout();
@@ -311,27 +310,12 @@
             this.btnNueGru.Text = "Nuevo Grupo";
             this.btnNueGru.UseVisualStyleBackColor = true;
             // 
-            // btnNuePer
-            // 
-            this.btnNuePer.FlatAppearance.BorderSize = 0;
-            this.btnNuePer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
-            this.btnNuePer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btnNuePer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuePer.Font = new System.Drawing.Font("Arial", 9F);
-            this.btnNuePer.Location = new System.Drawing.Point(381, 293);
-            this.btnNuePer.Name = "btnNuePer";
-            this.btnNuePer.Size = new System.Drawing.Size(93, 41);
-            this.btnNuePer.TabIndex = 21;
-            this.btnNuePer.Text = "Nuevo Permiso";
-            this.btnNuePer.UseVisualStyleBackColor = true;
-            // 
             // CargaDatosUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 645);
             this.ControlBox = false;
-            this.Controls.Add(this.btnNuePer);
             this.Controls.Add(this.btnNueGru);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnCancelar);
@@ -386,6 +370,5 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnNueGru;
-        private System.Windows.Forms.Button btnNuePer;
     }
 }

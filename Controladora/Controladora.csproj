@@ -41,16 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CnListaProd.cs" />
-    <Compile Include="CnPedido.cs" />
+    <Compile Include="CnCaches.cs" />
+    <Compile Include="Prestaciones\CnDeudas.cs" />
+    <Compile Include="Pedidos\CnListaProd.cs" />
+    <Compile Include="Pedidos\CnPedido.cs" />
+    <Compile Include="Pedidos\CnPedidoLista.cs" />
     <Compile Include="CnPermisosYGrupos.cs" />
-    <Compile Include="CnProducto.cs" />
-    <Compile Include="CnListaPedido.cs" />
-    <Compile Include="CnProveedor.cs" />
-    <Compile Include="SolicitudController.cs" />
+    <Compile Include="Prestaciones\CnPrestacion.cs" />
+    <Compile Include="Pedidos\CnProducto.cs" />
+    <Compile Include="Pedidos\CnListaPedido.cs" />
+    <Compile Include="Pedidos\CnProveedor.cs" />
+    <Compile Include="Prestaciones\SolicitudController.cs" />
     <Compile Include="CnUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ProveedorController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\COMUN\COMUN.csproj">
@@ -61,6 +64,9 @@
       <Project>{3d466870-a6d3-40b9-9a31-ff5797468466}</Project>
       <Name>Modelo</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

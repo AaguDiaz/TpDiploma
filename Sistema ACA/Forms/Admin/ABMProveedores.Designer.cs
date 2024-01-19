@@ -29,163 +29,90 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtNombrePro = new System.Windows.Forms.TextBox();
             this.txtDirePro = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtCuilPro = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtTelPro = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idproveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreproveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccionproDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuilDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvProv = new System.Windows.Forms.DataGridView();
             this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pruebaACADataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pruebaACADataSet = new Sistema_ACA.pruebaACADataSet();
             this.proveedoresTableAdapter = new Sistema_ACA.pruebaACADataSetTableAdapters.proveedoresTableAdapter();
-            this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnMarco = new System.Windows.Forms.Button();
+            this.btnAgr = new FontAwesome.Sharp.IconButton();
+            this.btnMod = new FontAwesome.Sharp.IconButton();
+            this.btnAlta = new FontAwesome.Sharp.IconButton();
+            this.btnBaja = new FontAwesome.Sharp.IconButton();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.lblABM = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pruebaACADataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pruebaACADataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(111, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre:";
-            // 
             // txtNombrePro
             // 
-            this.txtNombrePro.Location = new System.Drawing.Point(178, 40);
+            this.txtNombrePro.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombrePro.ForeColor = System.Drawing.Color.DimGray;
+            this.txtNombrePro.Location = new System.Drawing.Point(9, 51);
             this.txtNombrePro.Name = "txtNombrePro";
-            this.txtNombrePro.Size = new System.Drawing.Size(140, 20);
+            this.txtNombrePro.Size = new System.Drawing.Size(140, 22);
             this.txtNombrePro.TabIndex = 1;
+            this.txtNombrePro.Text = "Nombre:";
+            this.txtNombrePro.Enter += new System.EventHandler(this.txtNombrePro_Enter);
             this.txtNombrePro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombrePro_KeyPress);
+            this.txtNombrePro.Leave += new System.EventHandler(this.txtNombrePro_Leave);
             // 
             // txtDirePro
             // 
-            this.txtDirePro.Location = new System.Drawing.Point(443, 40);
+            this.txtDirePro.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDirePro.ForeColor = System.Drawing.Color.DimGray;
+            this.txtDirePro.Location = new System.Drawing.Point(155, 51);
             this.txtDirePro.Name = "txtDirePro";
-            this.txtDirePro.Size = new System.Drawing.Size(140, 20);
+            this.txtDirePro.Size = new System.Drawing.Size(140, 22);
             this.txtDirePro.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(376, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Direccion:";
+            this.txtDirePro.Text = "Direccion:";
+            this.txtDirePro.Enter += new System.EventHandler(this.txtDirePro_Enter);
+            this.txtDirePro.Leave += new System.EventHandler(this.txtDirePro_Leave);
             // 
             // txtCuilPro
             // 
-            this.txtCuilPro.Location = new System.Drawing.Point(178, 79);
+            this.txtCuilPro.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCuilPro.ForeColor = System.Drawing.Color.DimGray;
+            this.txtCuilPro.Location = new System.Drawing.Point(9, 86);
             this.txtCuilPro.Name = "txtCuilPro";
-            this.txtCuilPro.Size = new System.Drawing.Size(140, 20);
+            this.txtCuilPro.Size = new System.Drawing.Size(140, 22);
             this.txtCuilPro.TabIndex = 5;
+            this.txtCuilPro.Text = "Cuil:";
+            this.txtCuilPro.Enter += new System.EventHandler(this.txtCuilPro_Enter);
             this.txtCuilPro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuilPro_KeyPress);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(111, 82);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Cuil:";
+            this.txtCuilPro.Leave += new System.EventHandler(this.txtCuilPro_Leave);
             // 
             // txtTelPro
             // 
-            this.txtTelPro.Location = new System.Drawing.Point(443, 79);
+            this.txtTelPro.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelPro.ForeColor = System.Drawing.Color.DimGray;
+            this.txtTelPro.Location = new System.Drawing.Point(155, 86);
             this.txtTelPro.Name = "txtTelPro";
-            this.txtTelPro.Size = new System.Drawing.Size(140, 20);
+            this.txtTelPro.Size = new System.Drawing.Size(140, 22);
             this.txtTelPro.TabIndex = 7;
+            this.txtTelPro.Text = "Telefono:";
+            this.txtTelPro.Enter += new System.EventHandler(this.txtTelPro_Enter);
             this.txtTelPro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelPro_KeyPress);
+            this.txtTelPro.Leave += new System.EventHandler(this.txtTelPro_Leave);
             // 
-            // label4
+            // dgvProv
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(376, 82);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Telefono:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(621, 40);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 59);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idproveedorDataGridViewTextBoxColumn,
-            this.nombreproveedorDataGridViewTextBoxColumn,
-            this.direccionproDataGridViewTextBoxColumn,
-            this.cuilDataGridViewTextBoxColumn,
-            this.telefonoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.proveedoresBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(98, 150);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(592, 258);
-            this.dataGridView1.TabIndex = 9;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // idproveedorDataGridViewTextBoxColumn
-            // 
-            this.idproveedorDataGridViewTextBoxColumn.DataPropertyName = "id_proveedor";
-            this.idproveedorDataGridViewTextBoxColumn.HeaderText = "id_proveedor";
-            this.idproveedorDataGridViewTextBoxColumn.Name = "idproveedorDataGridViewTextBoxColumn";
-            this.idproveedorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreproveedorDataGridViewTextBoxColumn
-            // 
-            this.nombreproveedorDataGridViewTextBoxColumn.DataPropertyName = "nombre_proveedor";
-            this.nombreproveedorDataGridViewTextBoxColumn.HeaderText = "nombre_proveedor";
-            this.nombreproveedorDataGridViewTextBoxColumn.Name = "nombreproveedorDataGridViewTextBoxColumn";
-            this.nombreproveedorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // direccionproDataGridViewTextBoxColumn
-            // 
-            this.direccionproDataGridViewTextBoxColumn.DataPropertyName = "direccion_pro";
-            this.direccionproDataGridViewTextBoxColumn.HeaderText = "direccion_pro";
-            this.direccionproDataGridViewTextBoxColumn.Name = "direccionproDataGridViewTextBoxColumn";
-            this.direccionproDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cuilDataGridViewTextBoxColumn
-            // 
-            this.cuilDataGridViewTextBoxColumn.DataPropertyName = "cuil";
-            this.cuilDataGridViewTextBoxColumn.HeaderText = "cuil";
-            this.cuilDataGridViewTextBoxColumn.Name = "cuilDataGridViewTextBoxColumn";
-            this.cuilDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono";
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "telefono";
-            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dgvProv.AllowUserToAddRows = false;
+            this.dgvProv.AllowUserToDeleteRows = false;
+            this.dgvProv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProv.Location = new System.Drawing.Point(9, 125);
+            this.dgvProv.Name = "dgvProv";
+            this.dgvProv.ReadOnly = true;
+            this.dgvProv.Size = new System.Drawing.Size(592, 258);
+            this.dgvProv.TabIndex = 9;
+            this.dgvProv.SelectionChanged += new System.EventHandler(this.dgvProv_SelectionChanged);
             // 
             // proveedoresBindingSource
             // 
@@ -206,40 +133,131 @@
             // 
             this.proveedoresTableAdapter.ClearBeforeFill = true;
             // 
-            // button2
+            // btnMarco
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(733, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(39, 27);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "X";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnMarco.BackColor = System.Drawing.SystemColors.Control;
+            this.btnMarco.Enabled = false;
+            this.btnMarco.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnMarco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMarco.Location = new System.Drawing.Point(0, 29);
+            this.btnMarco.Name = "btnMarco";
+            this.btnMarco.Size = new System.Drawing.Size(613, 369);
+            this.btnMarco.TabIndex = 10;
+            this.btnMarco.UseVisualStyleBackColor = false;
+            // 
+            // btnAgr
+            // 
+            this.btnAgr.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btnAgr.IconColor = System.Drawing.Color.Black;
+            this.btnAgr.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgr.IconSize = 40;
+            this.btnAgr.Location = new System.Drawing.Point(301, 51);
+            this.btnAgr.Name = "btnAgr";
+            this.btnAgr.Size = new System.Drawing.Size(65, 57);
+            this.btnAgr.TabIndex = 11;
+            this.btnAgr.Text = "Agregar";
+            this.btnAgr.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAgr.UseVisualStyleBackColor = true;
+            this.btnAgr.Click += new System.EventHandler(this.btnAgr_Click);
+            // 
+            // btnMod
+            // 
+            this.btnMod.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
+            this.btnMod.IconColor = System.Drawing.Color.Black;
+            this.btnMod.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMod.IconSize = 40;
+            this.btnMod.Location = new System.Drawing.Point(372, 51);
+            this.btnMod.Name = "btnMod";
+            this.btnMod.Size = new System.Drawing.Size(65, 57);
+            this.btnMod.TabIndex = 12;
+            this.btnMod.Text = "Modificar";
+            this.btnMod.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnMod.UseVisualStyleBackColor = true;
+            this.btnMod.Click += new System.EventHandler(this.btnMod_Click);
+            // 
+            // btnAlta
+            // 
+            this.btnAlta.IconChar = FontAwesome.Sharp.IconChar.ArrowUp;
+            this.btnAlta.IconColor = System.Drawing.Color.Black;
+            this.btnAlta.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAlta.IconSize = 40;
+            this.btnAlta.Location = new System.Drawing.Point(465, 51);
+            this.btnAlta.Name = "btnAlta";
+            this.btnAlta.Size = new System.Drawing.Size(65, 57);
+            this.btnAlta.TabIndex = 13;
+            this.btnAlta.Text = "Alta";
+            this.btnAlta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAlta.UseVisualStyleBackColor = true;
+            this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
+            // 
+            // btnBaja
+            // 
+            this.btnBaja.IconChar = FontAwesome.Sharp.IconChar.ArrowDown;
+            this.btnBaja.IconColor = System.Drawing.Color.Black;
+            this.btnBaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBaja.IconSize = 40;
+            this.btnBaja.Location = new System.Drawing.Point(536, 51);
+            this.btnBaja.Name = "btnBaja";
+            this.btnBaja.Size = new System.Drawing.Size(65, 57);
+            this.btnBaja.TabIndex = 14;
+            this.btnBaja.Text = "Baja";
+            this.btnBaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.White;
+            this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Location = new System.Drawing.Point(584, 0);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(29, 29);
+            this.btnSalir.TabIndex = 31;
+            this.btnSalir.Text = "X";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.MouseEnter += new System.EventHandler(this.btnSalir_MouseEnter);
+            this.btnSalir.MouseLeave += new System.EventHandler(this.btnSalir_MouseLeave);
+            // 
+            // lblABM
+            // 
+            this.lblABM.AutoSize = true;
+            this.lblABM.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblABM.Location = new System.Drawing.Point(6, 6);
+            this.lblABM.Name = "lblABM";
+            this.lblABM.Size = new System.Drawing.Size(107, 16);
+            this.lblABM.TabIndex = 32;
+            this.lblABM.Text = "ABMProveedores";
             // 
             // ABMProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 461);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(613, 397);
+            this.Controls.Add(this.lblABM);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnBaja);
+            this.Controls.Add(this.btnAlta);
+            this.Controls.Add(this.btnMod);
+            this.Controls.Add(this.btnAgr);
+            this.Controls.Add(this.dgvProv);
             this.Controls.Add(this.txtTelPro);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCuilPro);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtDirePro);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNombrePro);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnMarco);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ABMProveedores";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ABMProveedores";
+            this.Text = "ABM Proveedores";
             this.Load += new System.EventHandler(this.ABMProveedores_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pruebaACADataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pruebaACADataSet)).EndInit();
@@ -249,26 +267,21 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNombrePro;
         private System.Windows.Forms.TextBox txtDirePro;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCuilPro;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTelPro;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProv;
         private System.Windows.Forms.BindingSource pruebaACADataSetBindingSource;
         private pruebaACADataSet pruebaACADataSet;
         private System.Windows.Forms.BindingSource proveedoresBindingSource;
         private pruebaACADataSetTableAdapters.proveedoresTableAdapter proveedoresTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idproveedorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreproveedorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccionproDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cuilDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnMarco;
+        private FontAwesome.Sharp.IconButton btnAgr;
+        private FontAwesome.Sharp.IconButton btnMod;
+        private FontAwesome.Sharp.IconButton btnAlta;
+        private FontAwesome.Sharp.IconButton btnBaja;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Label lblABM;
     }
 }

@@ -8,14 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using COMUN;
 
 namespace Sistema_ACA.Forms
 {
     public partial class ABMUsuarios:Form
     {
-        int resultado;
-        CargaDatosUsuarios Formcarga= new CargaDatosUsuarios();
+        CargaDatosUsuarios Formcarga = new CargaDatosUsuarios();
         public ABMUsuarios()
         {
             InitializeComponent();

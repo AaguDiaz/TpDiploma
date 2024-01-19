@@ -56,5 +56,20 @@ namespace Controladora
             long Telefono = long.Parse(telefono);
             return moUsuario.EditarUsuario(id, nombre, apellido, mail, Dni, Cvu, Telefono, direccion);
         }
+
+        public void ModificarInfoEmpleado(string nombre, string apellido, string dni, string cvu, string telefono, string direccion)
+        {
+            int Dni = int.Parse(dni);
+            long Cvu = long.Parse(cvu);
+            long Telefono = long.Parse(telefono);
+            int id = COMUN.UserLoginCache.id_usuario;
+            moUsuario.ModificarInfoEmpleado(id, nombre, apellido, Dni, Cvu, Telefono, direccion);
+            COMUN.UserLoginCache.nombre = nombre;
+            COMUN.UserLoginCache.apellido = apellido;
+            COMUN.UserLoginCache.dni = Dni;
+            COMUN.UserLoginCache.cvu = Cvu;
+            COMUN.UserLoginCache.telefono = Telefono;
+            COMUN.UserLoginCache.direccion = direccion;
+        }
     }
 }

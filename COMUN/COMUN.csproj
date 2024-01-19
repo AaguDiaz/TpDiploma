@@ -154,6 +154,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cache\CacheEditarUsuario.cs" />
+    <Compile Include="Cache\CacheLista.cs" />
+    <Compile Include="Cache\CachePedido.cs" />
+    <Compile Include="Cache\CacheProductos.cs" />
+    <Compile Include="Cache\CacheProveedor.cs" />
     <Compile Include="Interfaces\IPrestacion.cs" />
     <Compile Include="Cache\MailCache.cs" />
     <Compile Include="Mail\MasterMailServices.cs" />
@@ -166,7 +170,6 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

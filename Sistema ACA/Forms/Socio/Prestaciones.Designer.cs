@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.cbEcoOR = new System.Windows.Forms.CheckBox();
             this.cbEcoSal = new System.Windows.Forms.CheckBox();
             this.cbOdon = new System.Windows.Forms.CheckBox();
@@ -42,15 +42,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblAEO = new System.Windows.Forms.Label();
+            this.lblAES = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblOd = new System.Windows.Forms.Label();
+            this.lblOp = new System.Windows.Forms.Label();
+            this.lblFar = new System.Windows.Forms.Label();
+            this.lblSxC = new System.Windows.Forms.Label();
+            this.lblSxE = new System.Windows.Forms.Label();
+            this.lblSxN = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -71,6 +71,8 @@
             this.nCuoOpt = new System.Windows.Forms.NumericUpDown();
             this.nMonSubNac = new System.Windows.Forms.NumericUpDown();
             this.nCuoFar = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nMonEcoOr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nCuoEcoOr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nMonEcoSal)).BeginInit();
@@ -89,71 +91,78 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(242, 36);
+            this.label1.Location = new System.Drawing.Point(277, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(276, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Solicitar Prestaciones";
             // 
-            // label2
+            // lblInfo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(259, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(243, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Limite total de prestaciones para socios: $130.000";
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblInfo.Location = new System.Drawing.Point(291, 67);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(10, 13);
+            this.lblInfo.TabIndex = 1;
+            this.lblInfo.Text = ".";
             // 
             // cbEcoOR
             // 
             this.cbEcoOR.AutoSize = true;
+            this.cbEcoOR.BackColor = System.Drawing.Color.CadetBlue;
             this.cbEcoOR.Location = new System.Drawing.Point(37, 144);
             this.cbEcoOR.Name = "cbEcoOR";
             this.cbEcoOR.Size = new System.Drawing.Size(165, 17);
             this.cbEcoOR.TabIndex = 2;
             this.cbEcoOR.Text = "Ayudas Economicas ordinaria";
-            this.cbEcoOR.UseVisualStyleBackColor = true;
+            this.cbEcoOR.UseVisualStyleBackColor = false;
             this.cbEcoOR.CheckedChanged += new System.EventHandler(this.cbEcoOR_CheckedChanged);
             // 
             // cbEcoSal
             // 
             this.cbEcoSal.AutoSize = true;
+            this.cbEcoSal.BackColor = System.Drawing.Color.CadetBlue;
             this.cbEcoSal.Location = new System.Drawing.Point(37, 168);
             this.cbEcoSal.Name = "cbEcoSal";
             this.cbEcoSal.Size = new System.Drawing.Size(152, 17);
             this.cbEcoSal.TabIndex = 3;
             this.cbEcoSal.Text = "Ayudas Economicas Salud";
-            this.cbEcoSal.UseVisualStyleBackColor = true;
+            this.cbEcoSal.UseVisualStyleBackColor = false;
             this.cbEcoSal.CheckedChanged += new System.EventHandler(this.cbEcoSal_CheckedChanged);
             // 
             // cbOdon
             // 
             this.cbOdon.AutoSize = true;
+            this.cbOdon.BackColor = System.Drawing.Color.CadetBlue;
             this.cbOdon.Location = new System.Drawing.Point(37, 194);
             this.cbOdon.Name = "cbOdon";
             this.cbOdon.Size = new System.Drawing.Size(85, 17);
             this.cbOdon.TabIndex = 4;
             this.cbOdon.Text = "Odontología";
-            this.cbOdon.UseVisualStyleBackColor = true;
+            this.cbOdon.UseVisualStyleBackColor = false;
             this.cbOdon.CheckedChanged += new System.EventHandler(this.cbOdon_CheckedChanged);
             // 
             // cbOpt
             // 
             this.cbOpt.AutoSize = true;
+            this.cbOpt.BackColor = System.Drawing.Color.CadetBlue;
             this.cbOpt.Location = new System.Drawing.Point(37, 220);
             this.cbOpt.Name = "cbOpt";
             this.cbOpt.Size = new System.Drawing.Size(57, 17);
             this.cbOpt.TabIndex = 5;
             this.cbOpt.Text = "Óptica";
-            this.cbOpt.UseVisualStyleBackColor = true;
+            this.cbOpt.UseVisualStyleBackColor = false;
             this.cbOpt.CheckedChanged += new System.EventHandler(this.cbOpt_CheckedChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.CadetBlue;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(63, 106);
+            this.label3.Location = new System.Drawing.Point(77, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 20);
             this.label3.TabIndex = 6;
@@ -162,50 +171,55 @@
             // cbSubNac
             // 
             this.cbSubNac.AutoSize = true;
+            this.cbSubNac.BackColor = System.Drawing.Color.CadetBlue;
             this.cbSubNac.Location = new System.Drawing.Point(37, 320);
             this.cbSubNac.Name = "cbSubNac";
             this.cbSubNac.Size = new System.Drawing.Size(196, 17);
             this.cbSubNac.TabIndex = 10;
             this.cbSubNac.Text = "Subsidio por nacimiento o adopcíon";
-            this.cbSubNac.UseVisualStyleBackColor = true;
+            this.cbSubNac.UseVisualStyleBackColor = false;
             this.cbSubNac.CheckedChanged += new System.EventHandler(this.cbSubNac_CheckedChanged);
             // 
             // cbSubCas
             // 
             this.cbSubCas.AutoSize = true;
+            this.cbSubCas.BackColor = System.Drawing.Color.CadetBlue;
             this.cbSubCas.Location = new System.Drawing.Point(37, 271);
             this.cbSubCas.Name = "cbSubCas";
             this.cbSubCas.Size = new System.Drawing.Size(141, 17);
             this.cbSubCas.TabIndex = 8;
             this.cbSubCas.Text = "Subsidio por casamiento";
-            this.cbSubCas.UseVisualStyleBackColor = true;
+            this.cbSubCas.UseVisualStyleBackColor = false;
             this.cbSubCas.CheckedChanged += new System.EventHandler(this.cbSubCas_CheckedChanged);
             // 
             // cbFar
             // 
             this.cbFar.AutoSize = true;
+            this.cbFar.BackColor = System.Drawing.Color.CadetBlue;
             this.cbFar.Location = new System.Drawing.Point(37, 246);
             this.cbFar.Name = "cbFar";
             this.cbFar.Size = new System.Drawing.Size(69, 17);
             this.cbFar.TabIndex = 7;
             this.cbFar.Text = "Farmacia";
-            this.cbFar.UseVisualStyleBackColor = true;
+            this.cbFar.UseVisualStyleBackColor = false;
             this.cbFar.CheckedChanged += new System.EventHandler(this.cbFar_CheckedChanged);
             // 
             // cbSubEsc
             // 
             this.cbSubEsc.AutoSize = true;
+            this.cbSubEsc.BackColor = System.Drawing.Color.CadetBlue;
             this.cbSubEsc.Location = new System.Drawing.Point(37, 294);
             this.cbSubEsc.Name = "cbSubEsc";
             this.cbSubEsc.Size = new System.Drawing.Size(141, 17);
             this.cbSubEsc.TabIndex = 11;
             this.cbSubEsc.Text = "Subsidio por escolaridad";
-            this.cbSubEsc.UseVisualStyleBackColor = true;
+            this.cbSubEsc.UseVisualStyleBackColor = false;
             this.cbSubEsc.CheckedChanged += new System.EventHandler(this.cbSubEsc_CheckedChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.CadetBlue;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(258, 106);
             this.label4.Name = "label4";
@@ -216,6 +230,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.CadetBlue;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(378, 106);
             this.label5.Name = "label5";
@@ -226,6 +241,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.CadetBlue;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(503, 106);
             this.label6.Name = "label6";
@@ -233,90 +249,100 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Tu monto a solicitar";
             // 
-            // label7
+            // lblAEO
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(280, 143);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "$120.000";
+            this.lblAEO.AutoSize = true;
+            this.lblAEO.BackColor = System.Drawing.Color.CadetBlue;
+            this.lblAEO.Location = new System.Drawing.Point(280, 143);
+            this.lblAEO.Name = "lblAEO";
+            this.lblAEO.Size = new System.Drawing.Size(52, 13);
+            this.lblAEO.TabIndex = 15;
+            this.lblAEO.Text = "$120.000";
             // 
-            // label8
+            // lblAES
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(280, 169);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 13);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "$100.000";
+            this.lblAES.AutoSize = true;
+            this.lblAES.BackColor = System.Drawing.Color.CadetBlue;
+            this.lblAES.Location = new System.Drawing.Point(280, 169);
+            this.lblAES.Name = "lblAES";
+            this.lblAES.Size = new System.Drawing.Size(52, 13);
+            this.lblAES.TabIndex = 16;
+            this.lblAES.Text = "$100.000";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.CadetBlue;
             this.label9.Location = new System.Drawing.Point(418, 143);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(19, 13);
             this.label9.TabIndex = 25;
             this.label9.Text = "18";
             // 
-            // label10
+            // lblOd
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(280, 195);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 13);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "$100.000";
+            this.lblOd.AutoSize = true;
+            this.lblOd.BackColor = System.Drawing.Color.CadetBlue;
+            this.lblOd.Location = new System.Drawing.Point(280, 195);
+            this.lblOd.Name = "lblOd";
+            this.lblOd.Size = new System.Drawing.Size(52, 13);
+            this.lblOd.TabIndex = 26;
+            this.lblOd.Text = "$100.000";
             // 
-            // label11
+            // lblOp
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(280, 221);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(52, 13);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "$100.000";
+            this.lblOp.AutoSize = true;
+            this.lblOp.BackColor = System.Drawing.Color.CadetBlue;
+            this.lblOp.Location = new System.Drawing.Point(280, 221);
+            this.lblOp.Name = "lblOp";
+            this.lblOp.Size = new System.Drawing.Size(52, 13);
+            this.lblOp.TabIndex = 27;
+            this.lblOp.Text = "$100.000";
             // 
-            // label12
+            // lblFar
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(280, 247);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(46, 13);
-            this.label12.TabIndex = 28;
-            this.label12.Text = "$75.000";
+            this.lblFar.AutoSize = true;
+            this.lblFar.BackColor = System.Drawing.Color.CadetBlue;
+            this.lblFar.Location = new System.Drawing.Point(280, 247);
+            this.lblFar.Name = "lblFar";
+            this.lblFar.Size = new System.Drawing.Size(52, 13);
+            this.lblFar.TabIndex = 28;
+            this.lblFar.Text = "$  75.000";
             // 
-            // label13
+            // lblSxC
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(280, 272);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(40, 13);
-            this.label13.TabIndex = 29;
-            this.label13.Text = "$7.000";
+            this.lblSxC.AutoSize = true;
+            this.lblSxC.BackColor = System.Drawing.Color.CadetBlue;
+            this.lblSxC.Location = new System.Drawing.Point(280, 272);
+            this.lblSxC.Name = "lblSxC";
+            this.lblSxC.Size = new System.Drawing.Size(49, 13);
+            this.lblSxC.TabIndex = 29;
+            this.lblSxC.Text = "$   7.000";
             // 
-            // label14
+            // lblSxE
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(280, 298);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(40, 13);
-            this.label14.TabIndex = 30;
-            this.label14.Text = "$3.200";
+            this.lblSxE.AutoSize = true;
+            this.lblSxE.BackColor = System.Drawing.Color.CadetBlue;
+            this.lblSxE.Location = new System.Drawing.Point(280, 298);
+            this.lblSxE.Name = "lblSxE";
+            this.lblSxE.Size = new System.Drawing.Size(49, 13);
+            this.lblSxE.TabIndex = 30;
+            this.lblSxE.Text = "$   3.200";
             // 
-            // label15
+            // lblSxN
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(280, 324);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(40, 13);
-            this.label15.TabIndex = 31;
-            this.label15.Text = "$7.000";
+            this.lblSxN.AutoSize = true;
+            this.lblSxN.BackColor = System.Drawing.Color.CadetBlue;
+            this.lblSxN.Location = new System.Drawing.Point(280, 324);
+            this.lblSxN.Name = "lblSxN";
+            this.lblSxN.Size = new System.Drawing.Size(49, 13);
+            this.lblSxN.TabIndex = 31;
+            this.lblSxN.Text = "$   7.000";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.CadetBlue;
             this.label16.Location = new System.Drawing.Point(418, 169);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(19, 13);
@@ -326,6 +352,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.CadetBlue;
             this.label17.Location = new System.Drawing.Point(418, 195);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(19, 13);
@@ -335,6 +362,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.CadetBlue;
             this.label18.Location = new System.Drawing.Point(418, 221);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(19, 13);
@@ -344,6 +372,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.CadetBlue;
             this.label19.Location = new System.Drawing.Point(424, 247);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(13, 13);
@@ -353,6 +382,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.CadetBlue;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(669, 106);
             this.label20.Name = "label20";
@@ -362,7 +392,7 @@
             // 
             // btnSolicitar
             // 
-            this.btnSolicitar.Location = new System.Drawing.Point(334, 357);
+            this.btnSolicitar.Location = new System.Drawing.Point(356, 393);
             this.btnSolicitar.Name = "btnSolicitar";
             this.btnSolicitar.Size = new System.Drawing.Size(103, 36);
             this.btnSolicitar.TabIndex = 50;
@@ -372,12 +402,13 @@
             // 
             // btnEditarLimite
             // 
-            this.btnEditarLimite.Location = new System.Drawing.Point(262, 83);
+            this.btnEditarLimite.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnEditarLimite.Location = new System.Drawing.Point(621, 40);
             this.btnEditarLimite.Name = "btnEditarLimite";
-            this.btnEditarLimite.Size = new System.Drawing.Size(90, 23);
+            this.btnEditarLimite.Size = new System.Drawing.Size(124, 34);
             this.btnEditarLimite.TabIndex = 58;
             this.btnEditarLimite.Text = "Editar limite";
-            this.btnEditarLimite.UseVisualStyleBackColor = true;
+            this.btnEditarLimite.UseVisualStyleBackColor = false;
             this.btnEditarLimite.Visible = false;
             // 
             // nMonEcoOr
@@ -385,7 +416,7 @@
             this.nMonEcoOr.Enabled = false;
             this.nMonEcoOr.Location = new System.Drawing.Point(517, 141);
             this.nMonEcoOr.Maximum = new decimal(new int[] {
-            100000,
+            120000,
             0,
             0,
             0});
@@ -450,7 +481,7 @@
             this.nMonFar.Enabled = false;
             this.nMonFar.Location = new System.Drawing.Point(517, 245);
             this.nMonFar.Maximum = new decimal(new int[] {
-            100000,
+            750000,
             0,
             0,
             0});
@@ -463,7 +494,7 @@
             this.nMonSubCas.Enabled = false;
             this.nMonSubCas.Location = new System.Drawing.Point(517, 270);
             this.nMonSubCas.Maximum = new decimal(new int[] {
-            100000,
+            7000,
             0,
             0,
             0});
@@ -476,7 +507,7 @@
             this.nMonSubEsc.Enabled = false;
             this.nMonSubEsc.Location = new System.Drawing.Point(517, 296);
             this.nMonSubEsc.Maximum = new decimal(new int[] {
-            100000,
+            3200,
             0,
             0,
             0});
@@ -528,7 +559,7 @@
             this.nMonSubNac.Enabled = false;
             this.nMonSubNac.Location = new System.Drawing.Point(517, 322);
             this.nMonSubNac.Maximum = new decimal(new int[] {
-            100000,
+            7000,
             0,
             0,
             0});
@@ -549,11 +580,35 @@
             this.nCuoFar.Size = new System.Drawing.Size(34, 20);
             this.nCuoFar.TabIndex = 71;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Enabled = false;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(12, 27);
+            this.button1.Name = "button1";
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button1.Size = new System.Drawing.Size(815, 61);
+            this.button1.TabIndex = 72;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.CadetBlue;
+            this.button2.Enabled = false;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(12, 94);
+            this.button2.Name = "button2";
+            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button2.Size = new System.Drawing.Size(815, 280);
+            this.button2.TabIndex = 73;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // Prestaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 445);
+            this.ClientSize = new System.Drawing.Size(845, 447);
             this.ControlBox = false;
             this.Controls.Add(this.nCuoFar);
             this.Controls.Add(this.nMonSubNac);
@@ -575,15 +630,15 @@
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lblSxN);
+            this.Controls.Add(this.lblSxE);
+            this.Controls.Add(this.lblSxC);
+            this.Controls.Add(this.lblFar);
+            this.Controls.Add(this.lblOp);
+            this.Controls.Add(this.lblOd);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblAES);
+            this.Controls.Add(this.lblAEO);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -596,16 +651,18 @@
             this.Controls.Add(this.cbOdon);
             this.Controls.Add(this.cbEcoSal);
             this.Controls.Add(this.cbEcoOR);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Prestaciones";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prestaciones";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Prestaciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nMonEcoOr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nCuoEcoOr)).EndInit();
@@ -628,7 +685,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.CheckBox cbEcoOR;
         private System.Windows.Forms.CheckBox cbEcoSal;
         private System.Windows.Forms.CheckBox cbOdon;
@@ -641,15 +698,15 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblAEO;
+        private System.Windows.Forms.Label lblAES;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblOd;
+        private System.Windows.Forms.Label lblOp;
+        private System.Windows.Forms.Label lblFar;
+        private System.Windows.Forms.Label lblSxC;
+        private System.Windows.Forms.Label lblSxE;
+        private System.Windows.Forms.Label lblSxN;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
@@ -670,5 +727,7 @@
         private System.Windows.Forms.NumericUpDown nCuoOpt;
         private System.Windows.Forms.NumericUpDown nMonSubNac;
         private System.Windows.Forms.NumericUpDown nCuoFar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

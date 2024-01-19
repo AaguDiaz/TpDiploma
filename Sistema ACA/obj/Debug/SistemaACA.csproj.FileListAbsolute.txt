@@ -1,0 +1,18 @@
+C:\Users\Agustin\Desktop\Sistema ACA\Sistema ACA\obj\Debug\SistemaACA.csproj.AssemblyReference.cache
+C:\Users\Agustin\Desktop\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.Forms.ABMUsuarios.resources
+C:\Users\Agustin\Desktop\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.Forms.CargaDatosUsuarios.resources
+C:\Users\Agustin\Desktop\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Admin.ListaPedidos.BuscarProductos.resources
+C:\Users\Agustin\Desktop\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Admin.NuevaLista.resources
+C:\Users\Agustin\Desktop\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.CambiarContra.resources
+C:\Users\Agustin\Desktop\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.ABMProveedores.resources
+C:\Users\Agustin\Desktop\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.InicioSesion.resources
+C:\Users\Agustin\Desktop\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.PantallaPrincipal.resources
+C:\Users\Agustin\Desktop\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Prestaciones.resources
+C:\Users\Agustin\Desktop\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.SolicitarPedido.resources
+C:\Users\Agustin\Desktop\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.VerPedidos.resources
+C:\Users\Agustin\Desktop\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.AgregarPedidos.resources
+C:\Users\Agustin\Desktop\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.Properties.Resources.resources
+C:\Users\Agustin\Desktop\Sistema ACA\Sistema ACA\obj\Debug\SistemaACA.csproj.GenerateResource.cache
+C:\Users\Agustin\Desktop\Sistema ACA\Sistema ACA\obj\Debug\SistemaACA.csproj.CoreCompileInputs.cache
+C:\Users\Agustin\Desktop\Sistema ACA\Sistema ACA\obj\Debug\Sistema ACA.exe
+C:\Users\Agustin\Desktop\Sistema ACA\Sistema ACA\obj\Debug\Sistema ACA.pdb

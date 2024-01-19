@@ -9,116 +9,148 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Controladora;
-using Modelo;
+using Sistema_ACA.Forms.Socio;
 
 namespace Sistema_ACA
 {
     public partial class SolicitarPedido : Form
     {
-        CnListaPedido oListaPed = new CnListaPedido();
-        MoListaPedido moListaPedido = new MoListaPedido();
-        CnListaProd cnListaProd = new CnListaProd();
-        CnProducto cnProducto = new CnProducto();
-        CnPedido cnPedido = new CnPedido();
-
-        private List<MoPedidoLista> productosSeleccionados;
-        int totalPedido;
 
         public SolicitarPedido()
         {
             InitializeComponent();
-            productosSeleccionados = new List<MoPedidoLista>();
-            totalPedido = 0;
+            
         }
 
+        CnPedido pedido = new CnPedido();
+        CnPedidoLista pedlist = new CnPedidoLista();
+        int total = 0;
         private void SolicitarPedido_Load(object sender, EventArgs e)
         {
-            CargarLista();
+          congiDGV();
         }
-        private void CargarLista()
+        
+        public void congiDGV()
         {
-            List<MoListaPedido> listasPedidos = oListaPed.MostrarLista();
-            cmbLista.Items.Clear();
-            cmbLista.DataSource = oListaPed.MostrarLista();
-            cmbLista.DisplayMember = "id_lista";
-            cmbLista.ValueMember = "id_lista";
+            dgvProd.Columns.Add("Producto", "Producto");
+            dgvProd.Columns[0].Width = 200;
+            dgvProd.Columns.Add("Descripcion", "Descripcion");
+            dgvProd.Columns[1].Width = 200;
+            dgvProd.Columns.Add("Categoria", "Categoria");
+            dgvProd.Columns[2].Width = 200;
+            dgvProd.Columns.Add("Cantidad", "Cantidad");    
+            dgvProd.Columns[3].Width = 100;
+            dgvProd.Columns.Add("PrecioInd", "Precio individual");
+            dgvProd.Columns[4].Width = 150;
+            dgvProd.Columns.Add("PrecioTot", "Precio total");
+            dgvProd.Columns[5].Width = 150;
+            dgvProd.Columns.Add("Proveedor", "Proveedor");
+            dgvProd.Columns[6].Width = 200;
+            dgvProd.Columns.Add("IDLista", "ID Lista");
+            dgvProd.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         
-
-        private void cmbLista_SelectedIndexChanged(object sender, EventArgs e)
+        public void ActualizarDGV(DataTable nuevoDataSource)
         {
-            string idLista = cmbLista.SelectedValue as string;
-
-            // Obtener el nombre del proveedor y la fecha de vencimiento
-            string nombreProveedor = oListaPed.ObtenerNombreProveedorPorIdLista(idLista);
-            DateTime fechaVencimiento = oListaPed.ObtenerFechaVencimientoPorIdLista(idLista);
-
-            // Obtener los productos por lista
-            List<MoListaProd> ListaProd = cnListaProd.ObtenerProductosPorLista(idLista);
-            List<MoProducto> prod = cnProducto.MostrarProductosPorLista(idLista);
-            cmbProducto.DataSource = prod;
-            cmbProducto.DisplayMember = "nombre_producto";
-            cmbProducto.ValueMember = "id_producto";
-            // Construir la cadena de texto con la información
-            string informacion = $"Proveedor: {nombreProveedor}\nFecha de Vencimiento: {fechaVencimiento}\n\nProductos:\n";
-            foreach (MoListaProd producto in ListaProd)
+            dgvProd.Rows.Add(nuevoDataSource.Rows[0][0].ToString(), nuevoDataSource.Rows[0][1].ToString(), nuevoDataSource.Rows[0][2].ToString(), nuevoDataSource.Rows[0][3].ToString(), nuevoDataSource.Rows[0][4].ToString(), nuevoDataSource.Rows[0][5].ToString(), nuevoDataSource.Rows[0][6].ToString(), nuevoDataSource.Rows[0][7].ToString());
+            total = 0;
+            foreach (DataGridViewRow row in dgvProd.Rows)
             {
-                int idProducto = producto.id_productos;
-                string nombre_producto = cnProducto.ObtenerNombreProductoPorId(idProducto);
-                string descripcion = cnProducto.ObtenerDescripcionPorId(idProducto);
-                int precio = producto.precio;
-                informacion += $"{nombre_producto} - Descripción: {descripcion}, Precio: {precio}\n";
+                total += Convert.ToInt32(row.Cells[5].Value);
             }
-
-           
-            // Mostrar la información en el Label
-            labelInformacion.Text = informacion;
+            lblTot.Text = total.ToString();
         }
 
-        private void btnAgregarProd_Click(object sender, EventArgs e)
+        public DataGridView GetDataGridView()
         {
-            int idProducto = Convert.ToInt32(cmbProducto.SelectedValue);
-            string nombreProducto = cmbProducto.Text;
-            int cantidad = Convert.ToInt32(txtCantidad.Text);
-            int precio = cnListaProd.ObtenerPrecioProducto(idProducto);
-            int idLista = Convert.ToInt32(cmbLista.SelectedValue);
-
-            int subtotal = precio * cantidad;
-            totalPedido += subtotal;
-
-            MoPedidoLista productoSeleccionado = new MoPedidoLista(idLista, idProducto, cantidad);
-            productosSeleccionados.Add(productoSeleccionado);
-
-            string detallePedido = $"{nombreProducto} (Cantidad: {cantidad}, Subtotal: {subtotal})";
-            lblPedido.Text += detallePedido + Environment.NewLine;
-            lblTot.Text = "Total: " + totalPedido;
+            return dgvProd;
         }
 
-        private void bttnConfirmarPed_Click(object sender, EventArgs e)
+        //botones
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-            int idLista = Convert.ToInt32(cmbLista.SelectedValue);
-            int idPedido = cnPedido.CrearPedido(idLista,productosSeleccionados,totalPedido);
+            AgregarProductos agregar = new AgregarProductos();
+            agregar.SolPedForm = this;
+            agregar.ShowDialog();
+        }
 
-            if (idPedido > 0)
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvProd.Rows.Count > 0)
             {
-                MessageBox.Show("Pedido confirmado correctamente. ID del pedido: " + idPedido.ToString());
-                LimpiarFormulario();
+                if(dgvProd.CurrentRow != null)
+                {
+                    if (MessageBox.Show("¿Está seguro que desea eliminar el producto de la lista?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        dgvProd.Rows.Remove(dgvProd.CurrentRow);
+                        total = 0;
+                        foreach (DataGridViewRow row in dgvProd.Rows)
+                        {
+                            
+                            total += Convert.ToInt32(row.Cells[5].Value);
+                        }
+                        lblTot.Text = total.ToString();
+                    }
+                }else
+                {
+                    MessageBox.Show("Seleccione un producto de la lista para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Error al confirmar el pedido. Inténtelo de nuevo.");
+                MessageBox.Show("No hay productos en la lista para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void LimpiarFormulario()
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            cmbLista.SelectedIndex = -1;
-            cmbProducto.DataSource = null;
-            txtCantidad.Clear();
-            lblPedido.Text = string.Empty;
-            productosSeleccionados.Clear();
-            totalPedido = 0;
+            if (dgvProd.Rows.Count > 0)
+            {
+                if(MessageBox.Show("¿Está seguro que desea limpiar toda la lista?","Confirmar",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    dgvProd.Rows.Clear();
+                    total = 0;
+                    lblTot.Text = total.ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay productos en la lista para limpiar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Está seguro que desea cancelar el pedido?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if(dgvProd.Rows != null)
+            {
+                //cargar pedido y obtener el id del nuevo pedido
+                if(MessageBox.Show("¿Está seguro que desea confirmar el pedido?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int id_pedido = pedido.CargarPedido(lblTot.Text);
+                    if(id_pedido != 0)
+                    {
+                        foreach (DataGridViewRow row in dgvProd.Rows)
+                        {
+                            pedlist.CargarPedidoLista(id_pedido, row.Cells[7].Value.ToString(), row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString(), row.Cells[5].Value.ToString());
+                        }
+                        MessageBox.Show("Pedido confirmado con éxito", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+
+                    }
+                }
+            }else
+            {
+                MessageBox.Show("Debe ingresar minimo un producto para confirmar el pedido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

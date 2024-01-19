@@ -9,25 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sistema_ACA.Forms;
+using Sistema_ACA.Forms.Admin;
+using Sistema_ACA.Forms.Socio;
 
 namespace Sistema_ACA
 {
     public partial class PantallaPrincipal : Form
     {
-        private VerPedidos formver;
-        private SolicitarPedido formped;
-        private AgregarPedidos formagr;
-        private ABMUsuarios formusu;
-        private Prestaciones formpre;
-
-
-        public PantallaPrincipal()
-        {
-            InitializeComponent();
-        }
-        private void PantallaPrincipal_Load(object sender, EventArgs e)
-        {
-        }
         [DllImport("User32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("User32.DLL", EntryPoint = "SendMessage")]
@@ -38,59 +26,71 @@ namespace Sistema_ACA
             SendMessage(this.Handle, 0x112, 0xf012, 0);
 
         }
+
+
+        private Form formActivo = null;
+        private InicioSesion forminicio;
+        private int close = 0;
+
+        public PantallaPrincipal(InicioSesion forminicio)
+        {
+            InitializeComponent();
+            this.forminicio = forminicio;
+        }
+        private void PantallaPrincipal_Load(object sender, EventArgs e)
+        {
+        }
+        
+        
+        private void abrirForm(Form formHijo)
+        {
+            // Si hay un formulario abierto, lo cerramos
+            if (formActivo != null)
+            {
+                formActivo.Close();
+            }
+            // Abrimos el formulario hijo
+            formActivo = formHijo;
+            formHijo.FormBorderStyle = FormBorderStyle.None;
+            formHijo.MdiParent = this;
+            // Ponemos al frente el formulario hijo
+            formHijo.BringToFront();
+
+            // Abrimos el formulario
+            formHijo.Show();
+        }
+
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro que deseas cerrar la sesión?", "Precaución",
+                               MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                close = 1;
+                this.Close();
+                forminicio.Show();
+            }
+        }
+
+
+        private void PantallaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(close != 1)
+            {
+              Application.Exit();
+            }
+                
+        }
+
+
         private void solicitarPedidosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-            if(formped == null)
-            {
-                formped = new SolicitarPedido();
-                formped.MdiParent = this;
-                formped.FormClosed += new FormClosedEventHandler(cerrarforms);
-                formped.Show();
-                formped.BringToFront();
-            }
-            else
-            {
-                formped.Activate();
-            }
+            abrirForm(new SolicitarPedido());
         }
-        void cerrarforms(object sender, FormClosedEventArgs e)
-        {
-            formped = null;
-            formagr = null;
-            formver = null;
-            formusu = null;
-        }
-        private void tusPedidosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            if (formver == null)
-            {
-                formver = new VerPedidos();
-                formver.MdiParent = this;
-                formver.FormClosed += new FormClosedEventHandler(cerrarforms);
-                formver.Show();
-                formver.BringToFront();
-            }
-            else
-            {
-                formver.Activate();
-            }
-        }
+        
         private void agregarListaDePedidosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (formagr == null)
-            {
-                formagr = new AgregarPedidos();
-                formagr.MdiParent = this;
-                formagr.FormClosed += new FormClosedEventHandler(cerrarforms);
-                formagr.Show();
-                formagr.BringToFront();
-            }
-            else
-            {
-                formagr.Activate();
-            }
+           abrirForm(new AgregarPedidos());
         }
 
         private void gestionDeSociosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -98,55 +98,30 @@ namespace Sistema_ACA
 
         }
 
-        private void xToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if(MessageBox.Show("Estas seguro que deseas salir de la aplicación?", "Precaución",
-                               MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
         private void gestionSociosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (formusu== null)
-            {
-                formusu = new ABMUsuarios();
-                formusu.MdiParent = this;
-                formusu.FormClosed += new FormClosedEventHandler(cerrarforms);
-                formusu.Show();
-                formusu.BringToFront();
-            }
-            else
-            {
-                formusu.Activate();
-            }
+            abrirForm(new ABMUsuarios());
         }
 
         private void solicitarPrestacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (formpre == null)
-            {
-                formpre = new Prestaciones();
-                formpre.MdiParent = this;
-                formpre.FormClosed += new FormClosedEventHandler(cerrarforms);
-                formpre.Show();
-                formpre.BringToFront();
-            }
-            else
-            {
-                formpre.Activate();
-            }
+            abrirForm(new Prestaciones());
         }
 
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que deseas cerrar la sesión?", "Precaución",
-                               MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                this.Close();
-            }
+            abrirForm(new ABMProveedores());
         }
 
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           abrirForm(new ABMProductos());
+        }
+
+        private void estadoDeCuentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirForm(new EstadoCuenta());
+        }
     }
     }
 

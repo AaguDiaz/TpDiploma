@@ -10,8 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controladora;
-using COMUN.Cache;
-using Modelo;
 
 namespace Sistema_ACA.Forms
 {
@@ -25,6 +23,7 @@ namespace Sistema_ACA.Forms
         public int id_usuario { get; set; }
         CnUsuario usuario = new CnUsuario();
         CnPermisosYGrupos cn = new CnPermisosYGrupos();
+        CnCaches caches = new CnCaches();
         DataGridViewCell celdaActual;
         int indiceColumna;
         bool Repetido;
@@ -65,7 +64,7 @@ namespace Sistema_ACA.Forms
             dgvGrupos.Columns.Add("Actuales", "Actuales");
             dgvGrupos.Columns.Add("Todos", "Todos");
 
-            List<string> gruposActuales = CacheEditarUsuario.gruposUsuario;
+            List<string> gruposActuales = caches.CacheGruposActuales();
             DataTable dt2 = cn.MostrarGrupos();
             if (gruposActuales==null) {
                 foreach (DataRow row in dt2.Rows)
@@ -102,7 +101,7 @@ namespace Sistema_ACA.Forms
             dgvPermisos.Columns.Clear();
             dgvPermisos.Columns.Add("Actuales", "Actuales");
             dgvPermisos.Columns.Add("Todos", "Todos");
-            List<string> permisosActuales = CacheEditarUsuario.permisosUsuario;
+            List<string> permisosActuales = caches.CachePermisosActuales();
             DataTable dt = cn.MostrarPermisos();
             if (permisosActuales == null)
             {
@@ -140,20 +139,20 @@ namespace Sistema_ACA.Forms
         private void CargarTXT()
         {
             usuario.CagarUsuario(id_usuario);
-            txtNombre.Text = CacheEditarUsuario.nombre;
+            txtNombre.Text = caches.CacheNombre();
             txtNombre.ForeColor = Color.Black;
-            txtApellido.Text = CacheEditarUsuario.apellido;
+            txtApellido.Text = caches.CacheApellido();
             txtApellido.ForeColor = Color.Black;
-            txtEmail.Text = CacheEditarUsuario.mail;
+            txtEmail.Text = caches.CacheMail();
             txtEmail.ForeColor = Color.Black;
             txtContra.Enabled = false;
-            txtDni.Text = CacheEditarUsuario.dni.ToString();
+            txtDni.Text = caches.CacheDni();
             txtDni.ForeColor = Color.Black;
-            txtCvu.Text = CacheEditarUsuario.cvu.ToString();
+            txtCvu.Text = caches.CacheCVU();
             txtCvu.ForeColor = Color.Black;
-            txtTelefono.Text = CacheEditarUsuario.telefono.ToString();
+            txtTelefono.Text = caches.CacheTelefono();
             txtTelefono.ForeColor = Color.Black;
-            txtDireccion.Text = CacheEditarUsuario.direccion;
+            txtDireccion.Text = caches.CacheDireccion();
             txtDireccion.ForeColor = Color.Black;
         }
         private void RestablecerTXT()
@@ -203,7 +202,7 @@ namespace Sistema_ACA.Forms
                                 // Eliminar el permiso de la lista
                                 List<string> permisosEliminar = new List<string>();
                                 permisosEliminar.Add(valorCelda.ToString());
-                                CacheEditarUsuario.PermisosQuitar = permisosEliminar;
+                                caches.CachePermisosQuitar(permisosEliminar);
 
                                 // Eliminar el permiso de la celda
                                 dgvPermisos.Rows[celdaActual.RowIndex].Cells[indiceColumna].Value = null;
@@ -252,7 +251,7 @@ namespace Sistema_ACA.Forms
                                 // Eliminar el grupo de la lista
                                 List<string> gruposEliminar = new List<string>();
                                 gruposEliminar.Add(valorCelda.ToString());
-                                CacheEditarUsuario.GruposQuitar = gruposEliminar;
+                                caches.CacheGruposQuitar(gruposEliminar);
 
                                 // Eliminar el grupo de la celda
                                 dgvGrupos.Rows[celdaActual.RowIndex].Cells[indiceColumna].Value = null;
@@ -315,7 +314,7 @@ namespace Sistema_ACA.Forms
                                     // Agregar el permiso al constructor PermisoAgregar
                                     List<string> permisosAgregar = new List<string>();
                                     permisosAgregar.Add(valorCelda.ToString());
-                                    CacheEditarUsuario.PermisosAgregar = permisosAgregar;
+                                    caches.CachePermisosAgregar(permisosAgregar);
                                     dgvPermisos.Refresh();
                                     MessageBox.Show("Se agrego correctamente el permiso", "Permiso agregado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     break;
@@ -377,7 +376,7 @@ namespace Sistema_ACA.Forms
                                     // Agregar el permiso al constructor PermisoAgregar
                                     List<string> gruposAgregar = new List<string>();
                                     gruposAgregar.Add(valorCelda.ToString());
-                                    CacheEditarUsuario.GruposAgregar = gruposAgregar;
+                                    caches.CacheGruposAgregar(gruposAgregar);
                                     dgvGrupos.Refresh();
                                     MessageBox.Show("Se agrego correctamente el grupo", "Grupo agregado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     break;
@@ -400,7 +399,7 @@ namespace Sistema_ACA.Forms
                 MessageBox.Show("Seleccione un grupo de la columna 'Todos' para agregar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void btnSalir_Click(object sender, EventArgs e)
+     private void btnSalir_Click(object sender, EventArgs e)
         {
 
             if (MessageBox.Show("Estas seguro que deseas salir? se perdera todo progreso", "Precausion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
@@ -408,7 +407,6 @@ namespace Sistema_ACA.Forms
                 this.Close();
             }
         }
-
         private void brnConfirmar_Click(object sender, EventArgs e)
         {
             DataGridViewRow fila = dgvGrupos.Rows[0];

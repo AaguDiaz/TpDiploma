@@ -29,7 +29,7 @@ namespace Modelo
                 "            LEFT JOIN permisos p ON up.id_permiso = p.id_permiso" +
                 "            WHERE u.mail = @mail AND u.contra = @contra";
             command.Parameters.AddWithValue("@mail", mail);
-            command.Parameters.AddWithValue("@contra", MetodosComunes.Encrypt.GetSHA256(contrasena));
+            command.Parameters.AddWithValue("@contra", MetodosComunes.EncriptarPassBD(contrasena));
 
             using (SqlDataReader reader = command.ExecuteReader())
             {
@@ -135,6 +135,24 @@ namespace Modelo
             }
 
         }
+
+        public void ModificarInfoEmpleado(int id, string nombre, string apellido, int dni, long cvu, long telefono, string direccion)
+        {
+            command.Connection = Conexion.AbirConexion();
+            command.CommandText = "UPDATE empleados SET nombre_empleado = @nombre, apellido_empleado = @apellido, dni = @dni, cvu = @cvu, direccion = @direccion, telefono = @telefono WHERE id_usuario = @id";
+            command.Parameters.AddWithValue("@id", id);
+            command.Parameters.AddWithValue("@nombre", nombre);
+            command.Parameters.AddWithValue("@apellido", apellido);
+            command.Parameters.AddWithValue("@dni", dni);
+            command.Parameters.AddWithValue("@cvu", cvu);
+            command.Parameters.AddWithValue("@direccion", direccion);
+            command.Parameters.AddWithValue("@telefono", telefono);
+            command.ExecuteNonQuery();
+            command.Parameters.Clear();
+            command.Connection = Conexion.CerrarConexion();
+        }
+
+
         public string enviarCodigo(string userRequesting, int cod)
         {
             command.Connection = Conexion.AbirConexion();
@@ -163,7 +181,7 @@ namespace Modelo
         }
         public bool cambiarContra(string mail, string contra)
         {
-            string contraEncriptada = MetodosComunes.Encrypt.GetSHA256(contra);
+            string contraEncriptada = MetodosComunes.EncriptarPassBD(contra);
             command.Connection = Conexion.AbirConexion();
             command.CommandText = "UPDATE usuarios SET contra = @contra WHERE mail = @mail";
             command.Parameters.AddWithValue("@mail", mail);
@@ -207,9 +225,19 @@ namespace Modelo
                 command.CommandType = CommandType.Text;
                 int rows = command.ExecuteNonQuery();
                 if (rows > 0)
+                {
+                    command.Parameters.Clear();
+                    command.Connection = Conexion.CerrarConexion();
                     return true;
+                }
+
                 else
+                {
+                    command.Parameters.Clear();
+                    command.Connection = Conexion.CerrarConexion();
                     return false;
+                }
+                    
             }
             else return false;
 
@@ -228,9 +256,18 @@ namespace Modelo
                 command.CommandType = CommandType.Text;
                 int rows = command.ExecuteNonQuery();
                 if (rows > 0)
+                {
+                    command.Parameters.Clear();
+                    command.Connection = Conexion.CerrarConexion();
                     return true;
+                }
+
                 else
+                {
+                    command.Parameters.Clear();
+                    command.Connection = Conexion.CerrarConexion();
                     return false;
+                }
             }
             else return false;
 
