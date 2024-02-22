@@ -15,13 +15,7 @@ namespace COMUN.Cache
         public static long cvu { get; set; }
         public static long telefono { get; set; }
         public static string direccion { get; set; }
-        public static List<string> grupos { get; set; }
-        public static List<string> permisos { get; set; }
-        public static List<string> permisosUsuario { get; set; }
-        public static List<string> gruposUsuario { get; set; }
-        public static List<string> PermisosAgregar { get; set; }
-        public static List<string> PermisosQuitar { get; set; }
-        public static List<string> GruposAgregar { get; set; }
-        public static List<string> GruposQuitar { get; set; }
+        
+
     }
 }

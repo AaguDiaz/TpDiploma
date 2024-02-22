@@ -158,6 +158,7 @@
     <Compile Include="Cache\CachePedido.cs" />
     <Compile Include="Cache\CacheProductos.cs" />
     <Compile Include="Cache\CacheProveedor.cs" />
+    <Compile Include="Cache\CacheReportes.cs" />
     <Compile Include="Interfaces\IPrestacion.cs" />
     <Compile Include="Cache\MailCache.cs" />
     <Compile Include="Mail\MasterMailServices.cs" />
@@ -165,6 +166,13 @@
     <Compile Include="MetodosComunes1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Cache\UserLoginCache.cs" />
+    <Compile Include="Seguridad\Composite\Component.cs" />
+    <Compile Include="Seguridad\Composite\Composite.cs" />
+    <Compile Include="Seguridad\Composite\Leaf.cs" />
+    <Compile Include="Seguridad\Formularios.cs" />
+    <Compile Include="Seguridad\Grupo.cs" />
+    <Compile Include="Seguridad\Modulos.cs" />
+    <Compile Include="Seguridad\Permisos.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

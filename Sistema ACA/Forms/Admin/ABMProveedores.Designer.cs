@@ -38,17 +38,19 @@
             this.pruebaACADataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pruebaACADataSet = new Sistema_ACA.pruebaACADataSet();
             this.proveedoresTableAdapter = new Sistema_ACA.pruebaACADataSetTableAdapters.proveedoresTableAdapter();
-            this.btnMarco = new System.Windows.Forms.Button();
             this.btnAgr = new FontAwesome.Sharp.IconButton();
             this.btnMod = new FontAwesome.Sharp.IconButton();
             this.btnAlta = new FontAwesome.Sharp.IconButton();
             this.btnBaja = new FontAwesome.Sharp.IconButton();
             this.btnSalir = new System.Windows.Forms.Button();
             this.lblABM = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pruebaACADataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pruebaACADataSet)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtNombrePro
@@ -70,7 +72,7 @@
             this.txtDirePro.ForeColor = System.Drawing.Color.DimGray;
             this.txtDirePro.Location = new System.Drawing.Point(155, 51);
             this.txtDirePro.Name = "txtDirePro";
-            this.txtDirePro.Size = new System.Drawing.Size(140, 22);
+            this.txtDirePro.Size = new System.Drawing.Size(155, 22);
             this.txtDirePro.TabIndex = 3;
             this.txtDirePro.Text = "Direccion:";
             this.txtDirePro.Enter += new System.EventHandler(this.txtDirePro_Enter);
@@ -95,7 +97,7 @@
             this.txtTelPro.ForeColor = System.Drawing.Color.DimGray;
             this.txtTelPro.Location = new System.Drawing.Point(155, 86);
             this.txtTelPro.Name = "txtTelPro";
-            this.txtTelPro.Size = new System.Drawing.Size(140, 22);
+            this.txtTelPro.Size = new System.Drawing.Size(155, 22);
             this.txtTelPro.TabIndex = 7;
             this.txtTelPro.Text = "Telefono:";
             this.txtTelPro.Enter += new System.EventHandler(this.txtTelPro_Enter);
@@ -133,31 +135,21 @@
             // 
             this.proveedoresTableAdapter.ClearBeforeFill = true;
             // 
-            // btnMarco
-            // 
-            this.btnMarco.BackColor = System.Drawing.SystemColors.Control;
-            this.btnMarco.Enabled = false;
-            this.btnMarco.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnMarco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMarco.Location = new System.Drawing.Point(0, 29);
-            this.btnMarco.Name = "btnMarco";
-            this.btnMarco.Size = new System.Drawing.Size(613, 369);
-            this.btnMarco.TabIndex = 10;
-            this.btnMarco.UseVisualStyleBackColor = false;
-            // 
             // btnAgr
             // 
             this.btnAgr.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
             this.btnAgr.IconColor = System.Drawing.Color.Black;
             this.btnAgr.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgr.IconSize = 40;
-            this.btnAgr.Location = new System.Drawing.Point(301, 51);
+            this.btnAgr.Location = new System.Drawing.Point(3, 3);
             this.btnAgr.Name = "btnAgr";
             this.btnAgr.Size = new System.Drawing.Size(65, 57);
             this.btnAgr.TabIndex = 11;
+            this.btnAgr.Tag = "Boton Registrar";
             this.btnAgr.Text = "Agregar";
             this.btnAgr.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAgr.UseVisualStyleBackColor = true;
+            this.btnAgr.Visible = false;
             this.btnAgr.Click += new System.EventHandler(this.btnAgr_Click);
             // 
             // btnMod
@@ -166,13 +158,15 @@
             this.btnMod.IconColor = System.Drawing.Color.Black;
             this.btnMod.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMod.IconSize = 40;
-            this.btnMod.Location = new System.Drawing.Point(372, 51);
+            this.btnMod.Location = new System.Drawing.Point(74, 3);
             this.btnMod.Name = "btnMod";
             this.btnMod.Size = new System.Drawing.Size(65, 57);
             this.btnMod.TabIndex = 12;
+            this.btnMod.Tag = "Boton Editar";
             this.btnMod.Text = "Modificar";
             this.btnMod.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnMod.UseVisualStyleBackColor = true;
+            this.btnMod.Visible = false;
             this.btnMod.Click += new System.EventHandler(this.btnMod_Click);
             // 
             // btnAlta
@@ -181,13 +175,15 @@
             this.btnAlta.IconColor = System.Drawing.Color.Black;
             this.btnAlta.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAlta.IconSize = 40;
-            this.btnAlta.Location = new System.Drawing.Point(465, 51);
+            this.btnAlta.Location = new System.Drawing.Point(145, 3);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(65, 57);
             this.btnAlta.TabIndex = 13;
+            this.btnAlta.Tag = "Boton Alta";
             this.btnAlta.Text = "Alta";
             this.btnAlta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAlta.UseVisualStyleBackColor = true;
+            this.btnAlta.Visible = false;
             this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
             // 
             // btnBaja
@@ -196,13 +192,15 @@
             this.btnBaja.IconColor = System.Drawing.Color.Black;
             this.btnBaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBaja.IconSize = 40;
-            this.btnBaja.Location = new System.Drawing.Point(536, 51);
+            this.btnBaja.Location = new System.Drawing.Point(216, 3);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(65, 57);
             this.btnBaja.TabIndex = 14;
+            this.btnBaja.Tag = "Boton Baja";
             this.btnBaja.Text = "Baja";
             this.btnBaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.Visible = false;
             this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // btnSalir
@@ -231,24 +229,41 @@
             this.lblABM.TabIndex = 32;
             this.lblABM.Text = "ABMProveedores";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Location = new System.Drawing.Point(-4, 31);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(617, 367);
+            this.panel1.TabIndex = 33;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
+            this.flowLayoutPanel1.Controls.Add(this.btnAgr);
+            this.flowLayoutPanel1.Controls.Add(this.btnMod);
+            this.flowLayoutPanel1.Controls.Add(this.btnAlta);
+            this.flowLayoutPanel1.Controls.Add(this.btnBaja);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(316, 46);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(285, 68);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
             // ABMProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(613, 397);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.lblABM);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnBaja);
-            this.Controls.Add(this.btnAlta);
-            this.Controls.Add(this.btnMod);
-            this.Controls.Add(this.btnAgr);
             this.Controls.Add(this.dgvProv);
             this.Controls.Add(this.txtTelPro);
             this.Controls.Add(this.txtCuilPro);
             this.Controls.Add(this.txtDirePro);
             this.Controls.Add(this.txtNombrePro);
-            this.Controls.Add(this.btnMarco);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -261,6 +276,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pruebaACADataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pruebaACADataSet)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,12 +292,13 @@
         private pruebaACADataSet pruebaACADataSet;
         private System.Windows.Forms.BindingSource proveedoresBindingSource;
         private pruebaACADataSetTableAdapters.proveedoresTableAdapter proveedoresTableAdapter;
-        private System.Windows.Forms.Button btnMarco;
         private FontAwesome.Sharp.IconButton btnAgr;
         private FontAwesome.Sharp.IconButton btnMod;
         private FontAwesome.Sharp.IconButton btnAlta;
         private FontAwesome.Sharp.IconButton btnBaja;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label lblABM;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

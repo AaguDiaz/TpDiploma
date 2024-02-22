@@ -80,17 +80,20 @@ C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\System.Data
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\Modelo.pdb
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\Modelo.dll.config
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema ACA.csproj.AssemblyReference.cache
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Admin.ABMGrupos.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Admin.ABMPedidosYPrestaciones.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Admin.ABMProductos.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.ABMUsuarios.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.CargaDatosUsuarios.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Admin.Grupos.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Admin.ListaPedidos.BuscarProductos.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Admin.ListaPedidos.CargarCat.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Admin.Reportes.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Admin.ListaPedidos.DetallesLista.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Admin.NuevaLista.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Socio.AgregarProductos.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.CambiarContra.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.ABMProveedores.resources
-C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Socio.DetallesPedido.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Socio.EstadoCuenta.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.InicioSesion.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.PantallaPrincipal.resources

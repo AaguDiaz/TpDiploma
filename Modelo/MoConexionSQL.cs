@@ -10,26 +10,27 @@ namespace Modelo
 {
     public class MoConexionSQL
     {
-        private SqlConnection Conexion = new SqlConnection("Data Source=W10NTBX-SLOTI;Initial Catalog=pruebaACA;Integrated Security=True");
+        private static MoConexionSQL _instance;
+        private static readonly object _lock = new object();
+        public string Conexion { get; private set; }
+        
+        private MoConexionSQL() {
+            Conexion = "Data Source=W10NTBX-SLOTI;Initial Catalog=pruebaACA;Integrated Security=True";
+        }
 
-          public SqlConnection AbirConexion()
-          {
-            if(Conexion.State== ConnectionState.Closed) { 
-                Conexion.Open();
-            }
-            return Conexion;
-          }
-
-            public SqlConnection CerrarConexion()
+        public static MoConexionSQL Instance
+        {
+            get
             {
-                if(Conexion.State == ConnectionState.Open)
+                lock (_lock)
                 {
-                    Conexion.Close();
+                    if (_instance == null)
+                    {
+                        _instance = new MoConexionSQL();
+                    }
+                    return _instance;
                 }
-                return Conexion;
             }
-        
-        
-
+        }
     }
 }

@@ -10,21 +10,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controladora;
+using Sistema_ACA.Forms.Admin;
+using COMUN.Seguridad;
 
 namespace Sistema_ACA.Forms
 {
     public partial class CargaDatosUsuarios : Form
     {
-        [DllImport("User32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("User32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+        public ABMUsuarios fomABMUsuario { get; set; } 
         public string Modo { get; set; }
         public int id_usuario { get; set; }
+
+        
         CnUsuario usuario = new CnUsuario();
-        CnPermisosYGrupos cn = new CnPermisosYGrupos();
+        CnGrupos cnGrupo = new CnGrupos();
+        CnPermisos cnPermiso = new CnPermisos();
         CnCaches caches = new CnCaches();
         DataGridViewCell celdaActual;
+        DataTable dt = new DataTable();
         int indiceColumna;
         bool Repetido;
         object valorCelda;
@@ -34,11 +37,6 @@ namespace Sistema_ACA.Forms
         {
             InitializeComponent();
         }
-        private void CargaDatosUsuarios_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
 
         //Carga de datos
         private void CargaDatosUsuarios_Load(object sender, EventArgs e)
@@ -47,34 +45,44 @@ namespace Sistema_ACA.Forms
             if (Modo == "Editar")
             {
                 CargarTXT();
-                CargarDgvPer();
-                CargarDgvGrup();
             }
             else if (Modo == "Agregar")
             {
+                id_usuario = 0;
                 RestablecerTXT();
-                CargarDgvPer();
-                CargarDgvGrup();
             }
+            CargarDgvPer();
+            MetodosComunes.CargarModulosFormularios("CargaDatosUsuarios", flowLayoutPanel1);
+            CargarDgvGrup();
+            MetodosComunes.CargarModulosFormularios("CargaDatosUsuarios", flowLayoutPanel2);
         }
-        private void CargarDgvGrup()
+
+        public void actualizarGrupos()
+        {
+            CargarDgvGrup();
+        }
+
+        public void CargarDgvGrup()
         {
 
             dgvGrupos.Columns.Clear();
-            dgvGrupos.Columns.Add("Actuales", "Actuales");
             dgvGrupos.Columns.Add("Todos", "Todos");
+            dgvGrupos.Columns.Add("Actuales", "Actuales");
+            dgvGrupos.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvGrupos.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-            List<string> gruposActuales = caches.CacheGruposActuales();
-            DataTable dt2 = cn.MostrarGrupos();
-            if (gruposActuales==null) {
-                foreach (DataRow row in dt2.Rows)
+            List<Grupo> GruposActuales = usuario.grupoUsuario(id_usuario);
+            dt.Clear();
+            dt = cnGrupo.MostrarGrupos();
+            if (GruposActuales==null) {
+                foreach (DataRow row in dt.Rows)
                 {
-                    dgvGrupos.Rows.Add("",row["Grupos"]);
+                    dgvGrupos.Rows.Add(row["Grupos"],"");
                 }
             }
             else { 
                  // Determinar la cantidad de filas que necesitarás en total
-                int totalfilasGrupos = Math.Max(gruposActuales.Count, dt2.Rows.Count);
+                int totalfilasGrupos = Math.Max(GruposActuales.Count, dt.Rows.Count);
                
                 for (int i = 0; i < totalfilasGrupos; i++)
                 {
@@ -84,35 +92,43 @@ namespace Sistema_ACA.Forms
                         dgvGrupos.Rows.Add();
                     }
                     // Agregar permiso actual, si está disponible
-                    if (i < gruposActuales.Count)
+                    if (i < GruposActuales.Count)
                     {
-                        dgvGrupos.Rows[i].Cells["Actuales"].Value = gruposActuales[i];
+                        dgvGrupos.Rows[i].Cells["Actuales"].Value = GruposActuales[i].nombre_grupo;
                     }
                     // Agregar permiso de la DataTable, si está disponible
-                    if (i < dt2.Rows.Count)
+                    if (i < dt.Rows.Count)
                     {
-                        dgvGrupos.Rows[i].Cells["Todos"].Value = dt2.Rows[i]["Grupos"];
+                        dgvGrupos.Rows[i].Cells["Todos"].Value = dt.Rows[i]["Grupos"];
                     }
                 }
             }
+
+            dgvGrupos.ClearSelection();
         }
+
         private void CargarDgvPer()
         {
+            dgvPermisos.DataSource = null;
             dgvPermisos.Columns.Clear();
-            dgvPermisos.Columns.Add("Actuales", "Actuales");
             dgvPermisos.Columns.Add("Todos", "Todos");
-            List<string> permisosActuales = caches.CachePermisosActuales();
-            DataTable dt = cn.MostrarPermisos();
-            if (permisosActuales == null)
+            dgvPermisos.Columns.Add("Actuales", "Actuales");
+            dgvPermisos.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvPermisos.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            List<Permisos> PermisosActuales = usuario.permisosUsuario(id_usuario);
+            dt.Clear();
+            dt = cnPermiso.MostrarPermisos();
+            if (PermisosActuales == null)
             {
                 foreach (DataRow row in dt.Rows)
                 {
-                    dgvPermisos.Rows.Add("",row["Permisos"]);
+                    dgvPermisos.Rows.Add(row["Permisos"],"");
                 }
             }
             else
             {
-                int totalFilas = Math.Max(permisosActuales.Count, dt.Rows.Count);
+                int totalFilas = Math.Max(PermisosActuales.Count, dt.Rows.Count);
                 for (int i = 0; i < totalFilas; i++)
                 {
                     // Asegúrate de que haya suficientes columnas
@@ -122,9 +138,9 @@ namespace Sistema_ACA.Forms
                     }
 
                     // Agregar permiso actual, si está disponible
-                    if (i < permisosActuales.Count)
+                    if (i < PermisosActuales.Count)
                     {
-                        dgvPermisos.Rows[i].Cells["Actuales"].Value = permisosActuales[i];
+                        dgvPermisos.Rows[i].Cells["Actuales"].Value = PermisosActuales[i].nombre_permiso;
                     }
 
                     // Agregar permiso de la DataTable, si está disponible
@@ -134,8 +150,9 @@ namespace Sistema_ACA.Forms
                     }
                 }
             }
-
+            dgvPermisos.ClearSelection();
         }
+
         private void CargarTXT()
         {
             usuario.CagarUsuario(id_usuario);
@@ -155,6 +172,7 @@ namespace Sistema_ACA.Forms
             txtDireccion.Text = caches.CacheDireccion();
             txtDireccion.ForeColor = Color.Black;
         }
+
         private void RestablecerTXT()
         {
             txtNombre.Text = "Nombre:";
@@ -166,6 +184,7 @@ namespace Sistema_ACA.Forms
             txtContra.Text = "Contraseña:";
             txtContra.ForeColor = Color.DimGray;
             txtContra.UseSystemPasswordChar = false;
+            txtContra.Enabled = false;
             txtDni.Text = "DNI:";
             txtDni.ForeColor = Color.DimGray;
             txtCvu.Text = "CVU:";
@@ -174,114 +193,19 @@ namespace Sistema_ACA.Forms
             txtTelefono.ForeColor = Color.DimGray;
             txtDireccion.Text = "Direccion:";
             txtDireccion.ForeColor = Color.DimGray;
+            
         }
+
+
 
         //Botones
-        private void btnEliPer_Click(object sender,EventArgs e)
-        {
-            celdaActual = dgvPermisos.CurrentCell;
-
-            if (celdaActual != null)
-            {
-                indiceColumna = celdaActual.ColumnIndex;
-
-                if (indiceColumna == 0)
-                {
-                    valorCelda = dgvPermisos.Rows[celdaActual.RowIndex].Cells[indiceColumna].Value;
-
-                    if (valorCelda != null && !string.IsNullOrEmpty(valorCelda.ToString()))
-                    {
-                        // Verificar si el valor existe en la lista de permisos
-                        
-                        foreach (DataGridViewRow fila in dgvPermisos.Rows)
-                        {
-                            // Obtén el valor de la celda en la primera columna
-                            valorActual = fila.Cells[0].Value;
-                            if (valorActual==valorCelda)
-                            {
-                                // Eliminar el permiso de la lista
-                                List<string> permisosEliminar = new List<string>();
-                                permisosEliminar.Add(valorCelda.ToString());
-                                caches.CachePermisosQuitar(permisosEliminar);
-
-                                // Eliminar el permiso de la celda
-                                dgvPermisos.Rows[celdaActual.RowIndex].Cells[indiceColumna].Value = null;
-                                MessageBox.Show("Se eliminó correctamente el permiso", "Permiso eliminado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                break;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Seleccione un permiso de la columna 'Actuales' existente para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Seleccione un permiso de la columna 'Actuales' para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione un permiso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private void btnEliPGru_Click(object sender, EventArgs e)
-        {
-            celdaActual = dgvGrupos.CurrentCell;
-
-            if (celdaActual != null)
-            {
-                indiceColumna = celdaActual.ColumnIndex;
-
-                if (indiceColumna == 0)
-                {
-                    valorCelda = dgvGrupos.Rows[celdaActual.RowIndex].Cells[indiceColumna].Value;
-
-                    if (valorCelda != null && !string.IsNullOrEmpty(valorCelda.ToString()))
-                    {
-                        // Verificar si el valor existe en la tabla de grupos
-
-                        foreach (DataGridViewRow fila in dgvGrupos.Rows)
-                        {
-                            // Obtén el valor de la celda en la primera columna
-                            valorActual = fila.Cells[0].Value;
-                            if (valorActual == valorCelda)
-                            {
-                                // Eliminar el grupo de la lista
-                                List<string> gruposEliminar = new List<string>();
-                                gruposEliminar.Add(valorCelda.ToString());
-                                caches.CacheGruposQuitar(gruposEliminar);
-
-                                // Eliminar el grupo de la celda
-                                dgvGrupos.Rows[celdaActual.RowIndex].Cells[indiceColumna].Value = null;
-                                MessageBox.Show("Se eliminó correctamente el grupo", "Grupo eliminado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                break;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Seleccione un grupo de la columna 'Actuales' existente para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Seleccione un grupo de la columna 'Actuales' para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione un grupo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
         private void btnAgrPer_Click(object sender, EventArgs e)
         {
             celdaActual = dgvPermisos.CurrentCell;
             if (celdaActual != null) //verificar si se selecciono una celda
             {
                 indiceColumna = celdaActual.ColumnIndex;
-                if(indiceColumna==1)  // verifica si la celda seleccionada es la columna "Todos"
+                if(indiceColumna == 0)  // verifica si la celda seleccionada es la columna "Todos"
                 {
                     //verifica que no sea nula la casilla
                     if (dgvPermisos.Rows[celdaActual.RowIndex].Cells["Todos"].Value.ToString() != null)
@@ -291,8 +215,8 @@ namespace Sistema_ACA.Forms
 
                         foreach (DataGridViewRow fila in dgvPermisos.Rows)
                         {
-                            // Obtén el valor de la celda en la primera columna
-                            valorActual = fila.Cells[0].Value;
+                            // Obtén el valor de la celda de la columna "Actuales"
+                            valorActual = fila.Cells[1].Value;
 
                             if (valorActual != null && valorActual.ToString() == valorCelda.ToString()) 
                             {
@@ -305,16 +229,12 @@ namespace Sistema_ACA.Forms
                         {
                             foreach (DataGridViewRow fila in dgvPermisos.Rows)
                             {
-                                valorActual = fila.Cells[0].Value;
+                                valorActual = fila.Cells[1].Value;
 
                                 if (valorActual == null || string.IsNullOrEmpty(valorActual.ToString()))
                                 {
                                     // Agregar el valor deseado a la primera columna de la fila encontrada
-                                    fila.Cells[0].Value = valorCelda;
-                                    // Agregar el permiso al constructor PermisoAgregar
-                                    List<string> permisosAgregar = new List<string>();
-                                    permisosAgregar.Add(valorCelda.ToString());
-                                    caches.CachePermisosAgregar(permisosAgregar);
+                                    fila.Cells[1].Value = valorCelda;
                                     dgvPermisos.Refresh();
                                     MessageBox.Show("Se agrego correctamente el permiso", "Permiso agregado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     break;
@@ -337,13 +257,57 @@ namespace Sistema_ACA.Forms
                 MessageBox.Show("Seleccione un permiso de la columna 'Todos' para agregar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }   
         }
+        private void btnEliPer_Click(object sender,EventArgs e)
+        {
+            celdaActual = dgvPermisos.CurrentCell;
+
+            if (celdaActual != null)
+            {
+                indiceColumna = celdaActual.ColumnIndex;
+
+                if (indiceColumna == 1)
+                {
+                    valorCelda = dgvPermisos.Rows[celdaActual.RowIndex].Cells[indiceColumna].Value;
+
+                    if (valorCelda != null && !string.IsNullOrEmpty(valorCelda.ToString()))
+                    {
+                        // Verificar si el valor existe en la lista de permisos
+                        
+                        foreach (DataGridViewRow fila in dgvPermisos.Rows)
+                        {
+                            // Obtén el valor de la celda en la primera columna
+                            valorActual = fila.Cells[1].Value;
+                            if (valorActual==valorCelda)
+                            {
+                                // Eliminar el permiso de la celda
+                                dgvPermisos.Rows[celdaActual.RowIndex].Cells[indiceColumna].Value = null;
+                                MessageBox.Show("Se eliminó correctamente el permiso", "Permiso eliminado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Seleccione un permiso de la columna 'Actuales' existente para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un permiso de la columna 'Actuales' para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un permiso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void btnAgrGru_Click(object sender, EventArgs e)
         {
             celdaActual = dgvGrupos.CurrentCell;
             if (celdaActual != null) //verificar si se selecciono una celda
             {
                 indiceColumna = celdaActual.ColumnIndex;
-                if (indiceColumna == 1)  // verifica si la celda seleccionada es la columna "Todos"
+                if (indiceColumna == 0)  // verifica si la celda seleccionada es la columna "Todos"
                 {
                     //verifica que no sea nula la casilla
                     if (dgvGrupos.Rows[celdaActual.RowIndex].Cells["Todos"].Value.ToString() != null)
@@ -354,7 +318,7 @@ namespace Sistema_ACA.Forms
                         foreach (DataGridViewRow fila in dgvGrupos.Rows)
                         {
                             // Obtén el valor de la celda en la primera columna
-                            valorActual = fila.Cells[0].Value;
+                            valorActual = fila.Cells[1].Value;
 
                             if (valorActual != null && valorActual.ToString() == valorCelda.ToString())
                             {
@@ -367,16 +331,12 @@ namespace Sistema_ACA.Forms
                         {
                             foreach (DataGridViewRow fila in dgvGrupos.Rows)
                             {
-                                valorActual = fila.Cells[0].Value;
+                                valorActual = fila.Cells[1].Value;
 
                                 if (valorActual == null || string.IsNullOrEmpty(valorActual.ToString()))
                                 {
                                     // Agregar el valor deseado a la primera columna de la fila encontrada
-                                    fila.Cells[0].Value = valorCelda;
-                                    // Agregar el permiso al constructor PermisoAgregar
-                                    List<string> gruposAgregar = new List<string>();
-                                    gruposAgregar.Add(valorCelda.ToString());
-                                    caches.CacheGruposAgregar(gruposAgregar);
+                                    fila.Cells[1].Value = valorCelda;
                                     dgvGrupos.Refresh();
                                     MessageBox.Show("Se agrego correctamente el grupo", "Grupo agregado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     break;
@@ -399,7 +359,59 @@ namespace Sistema_ACA.Forms
                 MessageBox.Show("Seleccione un grupo de la columna 'Todos' para agregar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-     private void btnSalir_Click(object sender, EventArgs e)
+        private void btnEliPGru_Click(object sender, EventArgs e)
+        {
+            celdaActual = dgvGrupos.CurrentCell;
+
+            if (celdaActual != null)
+            {
+                indiceColumna = celdaActual.ColumnIndex;
+
+                if (indiceColumna == 1)
+                {
+                    valorCelda = dgvGrupos.Rows[celdaActual.RowIndex].Cells[indiceColumna].Value;
+
+                    if (valorCelda != null && !string.IsNullOrEmpty(valorCelda.ToString()))
+                    {
+                        // Verificar si el valor existe en la tabla de grupos
+
+                        foreach (DataGridViewRow fila in dgvGrupos.Rows)
+                        {
+                            // Obtén el valor de la celda en la primera columna
+                            valorActual = fila.Cells[1].Value;
+                            if (valorActual == valorCelda)
+                            {
+                                // Eliminar el grupo de la celda
+                                dgvGrupos.Rows[celdaActual.RowIndex].Cells[indiceColumna].Value = null;
+                                MessageBox.Show("Se eliminó correctamente el grupo", "Grupo eliminado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Seleccione un grupo de la columna 'Actuales' existente para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un grupo de la columna 'Actuales' para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un grupo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btnNueGru_Click(object sender, EventArgs e)
+        {
+            Grupos FormGrupos = new Grupos();
+            FormGrupos.CargaDatosUsuarios = this;
+            FormGrupos.ShowDialog();
+        }
+
+
+        private void btnSalir_Click(object sender, EventArgs e)
         {
 
             if (MessageBox.Show("Estas seguro que deseas salir? se perdera todo progreso", "Precausion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
@@ -432,15 +444,57 @@ namespace Sistema_ACA.Forms
             }else if(txtDireccion.Text=="Direccion:"||txtDireccion.Text==null)
             {
                 MessageBox.Show("Ingrese una direccion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }else if (fila.Cells[0].Value == null)
+            }else if (fila.Cells[1].Value == null)
             {
                 MessageBox.Show("Ingrese al menos un grupo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }else if (Modo == "Agregar")
             {
+                List<string> permisos = new List<string>();
+                List<string> grupos = new List<string>();
+
+                foreach (DataGridViewRow row in dgvPermisos.Rows)
+                {
+                    if (row.Cells[1].Value != null)
+                    {
+                        permisos.Add(row.Cells[1].Value.ToString());
+                    }
+                }
+                foreach (DataGridViewRow row in dgvGrupos.Rows)
+                {
+                    if (row.Cells[1].Value != null)
+                    {
+                        grupos.Add(row.Cells[1].Value.ToString());
+                    }
+                }
+
+                if (usuario.RegistrarUsuario(txtNombre.Text, txtApellido.Text, txtEmail.Text, txtDni.Text, txtCvu.Text, txtTelefono.Text, txtDireccion.Text, permisos, grupos) == true)
+                {
+                    
+                    MessageBox.Show("El usuario ha sido cargado exitosamanete.", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
 
             }else if(Modo=="Editar")
             {
-                if (usuario.EditarUsuario(id_usuario, txtNombre.Text, txtApellido.Text, txtEmail.Text, txtDni.Text, txtCvu.Text, txtTelefono.Text, txtDireccion.Text) == true)
+                List<string> permisos = new List<string>();
+                List<string> grupos = new List<string>();
+
+                foreach (DataGridViewRow row in dgvPermisos.Rows)
+                {
+                    if (row.Cells[1].Value != null)
+                    {
+                        permisos.Add(row.Cells[1].Value.ToString());
+                    }
+                }
+                foreach (DataGridViewRow row in dgvGrupos.Rows)
+                {
+                    if (row.Cells[1].Value != null)
+                    {
+                        grupos.Add(row.Cells[1].Value.ToString());
+                    }
+                }
+
+                if (usuario.EditarUsuario(id_usuario, txtNombre.Text, txtApellido.Text, txtEmail.Text, txtDni.Text, txtCvu.Text, txtTelefono.Text, txtDireccion.Text, permisos, grupos) == true)
                 {
                     MessageBox.Show("La edicion ha sido cargada exitosamanete.","Edicion exitosa",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
@@ -451,6 +505,65 @@ namespace Sistema_ACA.Forms
 
         }
 
+        private void dgvPermisos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // limpiar el treeview
+            tvPermisos.Nodes.Clear();
+            if(dgvPermisos.CurrentCell.Value!=null)
+            {
+                string permisoSeleccionado = dgvPermisos.CurrentCell.Value.ToString();
+                Permisos permiso = cnPermiso.MostrarPermisosSegunNombre(permisoSeleccionado);
+                if (permiso != null)
+                {
+                    TreeNode existingNode = tvPermisos.Nodes.Cast<TreeNode>().FirstOrDefault(n => n.Text == permiso.nombre_permiso);
+                    if (existingNode == null)
+                    {
+                        TreeNode permisoNode = new TreeNode(permiso.nombre_permiso);
+                        TreeNode formularioNode = new TreeNode(permiso.formulario.nombre_formulario);
+                        permisoNode.Nodes.Add(formularioNode);
+                        foreach (Modulos modulo in permiso.modulos)
+                        {
+                            TreeNode moduloNode = new TreeNode(modulo.nombre_modulo);
+                            formularioNode.Nodes.Add(moduloNode);
+                        }
+                        tvPermisos.Nodes.Add(permisoNode);
+                        tvPermisos.ExpandAll();
+                    }
+                }
+            }
+        }
+        private void dgvGrupos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tvGrupos.Nodes.Clear();
+            if (dgvGrupos.CurrentCell.Value != null)
+            {
+                string grupoSeleccionado = dgvGrupos.CurrentCell.Value.ToString();
+                Grupo grupo = cnGrupo.MostrarGrupoSegunNombre(grupoSeleccionado);
+                if (grupo != null)
+                {
+                    TreeNode existingNode = tvGrupos.Nodes.Cast<TreeNode>().FirstOrDefault(n => n.Text == grupo.nombre_grupo);
+                    txtDescripcion.Text = grupo.descripcion_grupo;
+                    if (existingNode == null)
+                    {
+                        TreeNode grupoNode = new TreeNode(grupo.nombre_grupo);
+                        foreach (Permisos permiso in grupo.permisos)
+                        {
+                            TreeNode permisoNode = new TreeNode(permiso.nombre_permiso);
+                            TreeNode formularioNode = new TreeNode(permiso.formulario.nombre_formulario);
+                            permisoNode.Nodes.Add(formularioNode);
+                            foreach (Modulos modulo in permiso.modulos)
+                            {
+                                TreeNode moduloNode = new TreeNode(modulo.nombre_modulo);
+                                formularioNode.Nodes.Add(moduloNode);
+                            }
+                            grupoNode.Nodes.Add(permisoNode);
+                        }
+                        tvGrupos.Nodes.Add(grupoNode);
+                        tvGrupos.ExpandAll();
+                    }
+                }
+            }
+        }
 
 
         // validaciones

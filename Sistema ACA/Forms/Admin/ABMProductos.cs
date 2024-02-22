@@ -1,4 +1,5 @@
-﻿using Controladora;
+﻿using COMUN;
+using Controladora;
 using Sistema_ACA.Forms.Admin.ListaPedidos;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,7 @@ namespace Sistema_ACA.Forms.Admin
             cargarCategorias();
             cargarDGV();
             dgvProd.ClearSelection();
+            MetodosComunes.CargarModulosFormularios(this.Name, flowLayoutPanel1);
         }
         public void cargarCategorias()
         {
@@ -38,8 +40,8 @@ namespace Sistema_ACA.Forms.Admin
             FormBorderStyle = FormBorderStyle.FixedSingle;
             btnSalir.Visible = false;
             lblABM.Visible = false;
-            btnMarco.Size = new Size(641, 450);
-            btnMarco.Location = new Point(0, 0);
+            panel1.Size = new Size(641, 586);
+            panel1.Location = new Point(0, 0);
         }
         public void cargarDGV()
         {

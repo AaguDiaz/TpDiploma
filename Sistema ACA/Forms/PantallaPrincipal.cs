@@ -4,109 +4,187 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sistema_ACA.Forms;
+using Sistema_ACA.Forms.Admin;
+using Sistema_ACA.Forms.Socio;
+using COMUN;
+using COMUN.Seguridad;
 
 namespace Sistema_ACA
 {
     public partial class PantallaPrincipal : Form
     {
-        private VerPedidos formver;
-        private SolicitarPedido formped;
-        private AgregarPedidos formagr;
+        
+        private Form formActivo = null;
+        private InicioSesion forminicio;
+        private int close = 0;
 
-        public PantallaPrincipal()
+        public PantallaPrincipal(InicioSesion forminicio)
         {
             InitializeComponent();
+            this.forminicio = forminicio;
+        }
+        private void PantallaPrincipal_Load(object sender, EventArgs e)
+        {
+            Cargarpermisos();
+            
+        }
+        
+
+        private void Cargarpermisos()
+        {
+            List<Permisos> permisosActivos = MetodosComunes.ObtenerPermisosActivos();
+            int contador = 0;
+            foreach(ToolStripMenuItem item in menuStrip1.Items)
+            {
+                if(item.HasDropDownItems)
+                {
+                    foreach(ToolStripMenuItem item2 in item.DropDownItems)
+                    {
+                        if(item2.HasDropDownItems)
+                        {
+                            foreach(ToolStripMenuItem item3 in item2.DropDownItems)
+                            {
+                                if(permisosActivos.Exists(x => x.formulario.nombre_formulario == item3.Tag.ToString()))
+                                {
+                                    item3.Visible = true;
+                                }else
+                                {
+                                    contador++;
+                                    item3.Visible = false;
+                                }
+                            }
+                            if(contador == item2.DropDownItems.Count)
+                            {
+                                item2.Visible = false;
+                            }
+                            else
+                            {
+                                item2.Visible = true;
+                            }
+                        }
+                        else
+                        {
+                            if(permisosActivos.Exists(x => x.formulario.nombre_formulario == item2.Tag.ToString()))
+                            {
+                                item2.Visible = true;
+                            }else
+                            {
+                                item2.Visible = false;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    if(permisosActivos.Exists(x => x.formulario.nombre_formulario == item.Tag.ToString()))
+                    {
+                        item.Visible = true;
+                    }else
+                    {
+                        item.Visible = false;
+                    }
+                }
+            }
+            estadoDeCuentaToolStripMenuItem.Visible = true;
+            logoutToolStripMenuItem.Visible = true;
         }
 
-        public PantallaPrincipal(int id_permiso)
+        private void abrirForm(Form formHijo)
         {
-            InitializeComponent();
-            if(id_permiso == 0)
+            // Si hay un formulario abierto, lo cerramos
+            if (formActivo != null)
             {
-                agregarListaDePedidosToolStripMenuItem.Visible = true;
+                formActivo.Close();
             }
-            else
-            {
-                agregarListaDePedidosToolStripMenuItem.Visible = false;
-            }
-           
+            // Abrimos el formulario hijo
+            formActivo = formHijo;
+            formHijo.FormBorderStyle = FormBorderStyle.None;
+            formHijo.MdiParent = this;
+            // Ponemos al frente el formulario hijo
+            formHijo.BringToFront();
+
+            // Abrimos el formulario
+            formHijo.Show();
         }
+
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro que deseas cerrar la sesión?", "Precaución",
+                               MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                close = 1;
+                MetodosComunes.CerrarSesion();
+                this.Close();
+                forminicio.Show();
+            }
+        }
+
+
+
+        private void PantallaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(close != 1)
+            {
+              Application.Exit();
+            }
+                
+        }
+
 
         private void solicitarPedidosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-            if(formped == null)
-            {
-                formped = new SolicitarPedido();
-                formped.MdiParent = this;
-                formped.FormClosed += new FormClosedEventHandler(cerrarforms);
-                formped.Show();
-                formped.BringToFront();
-            }
-            else
-            {
-                formped.Activate();
-            }
+            abrirForm(new SolicitarPedido());
         }
-        void cerrarforms(object sender, FormClosedEventArgs e)
-        {
-            formped = null;
-            formagr = null;
-            formver = null;
-        }
-        private void tusPedidosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            if (formver == null)
-            {
-                formver = new VerPedidos();
-                formver.MdiParent = this;
-                formver.FormClosed += new FormClosedEventHandler(cerrarforms);
-                formver.Show();
-                formver.BringToFront();
-            }
-            else
-            {
-                formver.Activate();
-            }
-        }
-
+        
         private void agregarListaDePedidosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (formagr == null)
-            {
-                formagr = new AgregarPedidos();
-                formagr.MdiParent = this;
-                formagr.FormClosed += new FormClosedEventHandler(cerrarforms);
-                formagr.Show();
-                formagr.BringToFront();
-            }
-            else
-            {
-                formagr.Activate();
-            }
+           abrirForm(new AgregarPedidos());
         }
 
-        private void PantallaPrincipal_Load(object sender, EventArgs e)
+        private void gestionSociosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           //agregarListaDePedidosToolStripMenuItem.Visible = false;
+            abrirForm(new ABMUsuarios());
         }
 
-        private void gestionDeSociosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void solicitarPrestacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            abrirForm(new Prestaciones());
         }
 
-         private void button1_Click(object sender, EventArgs e)
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que deseas salir de la aplicación?", "Precaución",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+            abrirForm(new ABMProveedores());
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           abrirForm(new ABMProductos());
+        }
+
+        private void estadoDeCuentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirForm(new EstadoCuenta());
+        }
+
+        private void repotesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirForm(new Reportes());
+        }
+
+        private void gruposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirForm(new ABMGrupos());
+        }
+
+        private void pedidosPrestacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirForm(new ABMPedidosYPrestaciones());
         }
     }
     }

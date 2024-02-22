@@ -41,10 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MoReportes.cs" />
     <Compile Include="Prestaciones\MoDeuda.cs" />
     <Compile Include="Pedidos\MoListaProd.cs" />
     <Compile Include="Pedidos\MoPedido.cs" />
-    <Compile Include="MoPermisosYGrupos.cs" />
+    <Compile Include="Seguridad\MoPermisos.cs" />
+    <Compile Include="Seguridad\MoGrupos.cs" />
     <Compile Include="Prestaciones\MoPrestacion.cs" />
     <Compile Include="Pedidos\MoProducto.cs" />
     <Compile Include="Pedidos\MoListaPedido.cs" />
@@ -52,7 +54,7 @@
     <Compile Include="MoConexionSQL.cs" />
     <Compile Include="Pedidos\MoPedidoLista.cs" />
     <Compile Include="Prestaciones\MoSolicitud.cs" />
-    <Compile Include="MoUsuario.cs" />
+    <Compile Include="Seguridad\MoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

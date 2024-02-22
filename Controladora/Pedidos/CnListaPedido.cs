@@ -12,10 +12,10 @@ namespace Controladora
     {
         MoListaPedido moListaPedido = new MoListaPedido();
 
-        public DataTable MostrarTodas(int currentPage)
+        public DataTable MostrarTodas(int currentPage, DateTime desde, DateTime hasta)
         {
             DataTable tabla = new DataTable();
-            tabla = moListaPedido.FiltroTodas(currentPage);
+            tabla = moListaPedido.FiltroTodas(currentPage, desde, hasta);
             return tabla;
         }
 
@@ -26,16 +26,16 @@ namespace Controladora
             return tabla;
         }
 
-        public DataTable MostrarVencidas(int currentPage)
+        public DataTable MostrarVencidas(int currentPage, DateTime desde, DateTime hasta)
         {
             DataTable tabla = new DataTable();
-            tabla = moListaPedido.FiltroVencidas(currentPage);
+            tabla = moListaPedido.FiltroVencidas(currentPage, desde, hasta);
             return tabla;
         }
 
-        public int CargarLista(string Proveedor, DateTime fechaVencimiento)
+        public int CargarLista(string Proveedor, string desc,DateTime fechaVencimiento)
         {
-           return moListaPedido.CargarLista(Proveedor,fechaVencimiento);
+           return moListaPedido.CargarLista(Proveedor, desc, fechaVencimiento);
         }
 
         public int CargarListaPxP(int id_lista,string nombreProducto,string descripcionProducto,int precioProducto)

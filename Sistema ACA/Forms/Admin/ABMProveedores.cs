@@ -25,6 +25,7 @@ namespace Sistema_ACA
         private void ABMProveedores_Load(object sender, EventArgs e)
         {
             ActualizarDataGridView();
+            MetodosComunes.CargarModulosFormularios(this.Name, flowLayoutPanel1);
         }
 
         public void ModificacionForm()
@@ -32,8 +33,8 @@ namespace Sistema_ACA
             FormBorderStyle = FormBorderStyle.FixedSingle;
             btnSalir.Visible = false;
             lblABM.Visible = false;
-            btnMarco.Size = new Size(613, 397);
-            btnMarco.Location = new Point(0, 0);
+            panel1.Size = new Size(613, 397);
+            panel1.Location = new Point(0, 0);
         }
         private void ActualizarDataGridView()
         {

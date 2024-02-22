@@ -1,4 +1,5 @@
-﻿using System;
+﻿using COMUN.Seguridad;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,8 +18,11 @@ namespace COMUN
         public static long cvu { get; set; }
         public static string direccion { get; set; }
         public static long telefono { get; set; }
-        public static List<string> nombre_permisos { get; set; }
-        public static List<string> nombre_grupos { get; set; }
+
+
+        public static List<Grupo> grupos { get; set; }
+        public static List<Permisos> permisos_individuales { get; set; }
+
         public static string estado { get; set; }
     }
 }

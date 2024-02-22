@@ -46,31 +46,9 @@ namespace Controladora
             string direccion = CacheEditarUsuario.direccion;
             return direccion;
         }
-        public void CachePermisosQuitar(List<string> permisos)
-        {
-            CacheEditarUsuario.PermisosQuitar = permisos;
-        }
-        public void CachePermisosAgregar(List<string> permisos)
-        {
-            CacheEditarUsuario.PermisosAgregar = permisos;
-        }
-        public void CacheGruposQuitar(List<string> grupos)
-        {
-            CacheEditarUsuario.GruposQuitar = grupos;
-        }
-        public void CacheGruposAgregar(List<string> grupos)
-        {
-            CacheEditarUsuario.GruposAgregar = grupos;
-        }
-        public List<string> CacheGruposActuales()
-        {
-            return CacheEditarUsuario.gruposUsuario;
-        }
-        public List<string> CachePermisosActuales()
-        {
-            return CacheEditarUsuario.permisosUsuario;
-        }
+      
 
+        
         //Cache de Lista de pedidos
 
         public DataTable Productos()

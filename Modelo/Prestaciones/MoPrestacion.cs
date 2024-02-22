@@ -11,53 +11,59 @@ namespace Modelo
 {
     public class MoPrestacion
     {
-        private MoConexionSQL conexion = new MoConexionSQL();
-        SqlCommand command = new SqlCommand();
     
         public void Cargarlimites()
         {
-            command.Connection = conexion.AbirConexion();
-            command.CommandText = "SELECT p.nombre_prestacion, p.limite FROM prestaciones p";
-
-            using (SqlDataReader reader = command.ExecuteReader())
+            using (SqlConnection connection = new SqlConnection(MoConexionSQL.Instance.Conexion))
             {
-                if (reader.HasRows)
+                using (SqlCommand command = new SqlCommand())
                 {
-                    while (reader.Read())
+                    command.Connection = connection;
+                    connection.Open();
+                    command.CommandText = "SELECT p.nombre_prestacion, p.limite FROM prestaciones p";
+
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        if (reader.GetString(0) == "Ayuda Economica Ordinaria ")
+                        if (reader.HasRows)
                         {
-                            AyudaEconomicaOrdinaria.limite = reader.GetInt32(1);
-                        }
-                        else if (reader.GetString(0) == "Ayuda Economica Salud")
-                        {
-                            AyudaEconomicaSalud.limite = reader.GetInt32(1);
-                        }
-                        else if (reader.GetString(0) == "Odontologia")
-                        {
-                            Odontologia.limite = reader.GetInt32(1);
-                        }
-                        else if (reader.GetString(0) == "Optica")
-                        {
-                            Optica.limite = reader.GetInt32(1);
-                        }
-                        else if (reader.GetString(0) == "Farmacia")
-                        {
-                            Farmacia.limite = reader.GetInt32(1);
-                        }
-                        else if (reader.GetString(0) == "Subsidio Escolaridad")
-                        {
-                            SubsidioEscolar.limite = reader.GetInt32(1);
-                        }
-                        else if (reader.GetString(0) == "Subsidio Casamiento")
-                        {
-                            SubsidioCasamiento.limite = reader.GetInt32(1);
-                        }
-                        else if (reader.GetString(0) == "Subsidio Nacimiento")
-                        {
-                            SubsidioNacimiento.limite = reader.GetInt32(1);
+                            while (reader.Read())
+                            {
+                                if (reader.GetString(0) == "Ayuda Economica Ordinaria ")
+                                {
+                                    AyudaEconomicaOrdinaria.limite = reader.GetInt32(1);
+                                }
+                                else if (reader.GetString(0) == "Ayuda Economica Salud")
+                                {
+                                    AyudaEconomicaSalud.limite = reader.GetInt32(1);
+                                }
+                                else if (reader.GetString(0) == "Odontologia")
+                                {
+                                    Odontologia.limite = reader.GetInt32(1);
+                                }
+                                else if (reader.GetString(0) == "Optica")
+                                {
+                                    Optica.limite = reader.GetInt32(1);
+                                }
+                                else if (reader.GetString(0) == "Farmacia")
+                                {
+                                    Farmacia.limite = reader.GetInt32(1);
+                                }
+                                else if (reader.GetString(0) == "Subsidio Escolaridad")
+                                {
+                                    SubsidioEscolar.limite = reader.GetInt32(1);
+                                }
+                                else if (reader.GetString(0) == "Subsidio Casamiento")
+                                {
+                                    SubsidioCasamiento.limite = reader.GetInt32(1);
+                                }
+                                else if (reader.GetString(0) == "Subsidio Nacimiento")
+                                {
+                                    SubsidioNacimiento.limite = reader.GetInt32(1);
+                                }
+                            }
                         }
                     }
+                    connection.Close();
                 }
             }
 
