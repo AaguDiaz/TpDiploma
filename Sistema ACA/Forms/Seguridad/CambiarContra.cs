@@ -32,10 +32,6 @@ namespace Sistema_ACA
         }
 
         //botones
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
@@ -51,6 +47,9 @@ namespace Sistema_ACA
                 }
                   btnVerificar.Enabled = true;
                   msgError("Revisa tu correro electronico para el codigo.");
+            }else
+            {
+                msgError("Ingrese un mail.");
             }
         }
 
@@ -75,6 +74,9 @@ namespace Sistema_ACA
                 {
                     MessageBox.Show("Código erroneo.");
                 }
+            }else
+            {
+                MessageBox.Show("Ingrese el código.");
             }
         }
 
@@ -82,11 +84,16 @@ namespace Sistema_ACA
         {
             if(txtContra.Text!="CONTRASEÑA"||txtContra.Text!="")
             {
+                if(txtContra.Text.Length < 8)
+                {
+                    MessageBox.Show("La contraseña debe tener al menos 8 caracteres.");
+                    return;
+                }
                 if(txtContra.Text == txtConfirmar.Text)
                 {
                     var user = new CnUsuario();
                     user.cambiarContra(txtMail.Text, txtContra.Text);
-                    MessageBox.Show("Contraseña cambiada con exito.");
+                    MessageBox.Show("Contraseña cambiada con éxito.");
                     this.Close();
                 }
                 else

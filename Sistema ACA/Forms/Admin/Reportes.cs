@@ -9,6 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controladora;
 using COMUN.Cache;
+using System.Windows.Forms.DataVisualization.Charting;
+using System.IO;
+using System.Xml.Linq;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
+using COMUN;
+using System.Windows.Controls;
 
 namespace Sistema_ACA.Forms.Admin
 {
@@ -21,6 +29,7 @@ namespace Sistema_ACA.Forms.Admin
             //Por defecto en ultimos 7 dias
             dtpDesde.Value = DateTime.Today.AddDays(-7);
             dtpHasta.Value = DateTime.Now;
+            Personalizado();
             btnSemana.Select();
             LoadDataPed();
 
@@ -119,6 +128,97 @@ namespace Sistema_ACA.Forms.Admin
             dtpDesde.Enabled = true;
             dtpHasta.Enabled = true;
             btnOk.Visible = true;
+        }
+
+
+       
+        private void bttnPDF_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "PDF Files|*.pdf";
+            save.FileName = string.Format("Reporte ",DateTime.Now.ToString("ddMMyyyy") );
+
+            string paginahtml_texto = Properties.Resources.Plantilla.ToString();
+            paginahtml_texto = paginahtml_texto.Replace("@CLIENTE", UserLoginCache.nombre);
+            paginahtml_texto = paginahtml_texto.Replace("@DOCUMENTO", UserLoginCache.dni.ToString());
+            paginahtml_texto = paginahtml_texto.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yyyy"));
+
+            
+
+            if (save.ShowDialog()== DialogResult.OK)
+            {
+                using(FileStream stream = new FileStream(save.FileName, FileMode.Create))
+                {
+                    Document document = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                    PdfWriter writer = PdfWriter.GetInstance(document, stream);
+                    
+                    document.Open();
+                    using (StringReader sr = new StringReader(paginahtml_texto))
+                    {
+                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, document, sr);
+                    }
+                    
+                    
+                    MemoryStream imagenChartPedidos = ConvertirChartAImagen(chPedidos);
+                    iTextSharp.text.Image chartImage1 = iTextSharp.text.Image.GetInstance(imagenChartPedidos.ToArray());
+                    chartImage1.ScaleToFit(PageSize.A4.Width,PageSize.A4.Height);
+                    document.Add(chartImage1);
+
+                    MemoryStream imagenChartProductos = ConvertirChartAImagen(chProductos);
+                    iTextSharp.text.Image chartImage2 = iTextSharp.text.Image.GetInstance(imagenChartProductos.ToArray());
+                    chartImage2.ScaleToFit(PageSize.A4.Width, PageSize.A4.Height);
+                    document.Add(chartImage2);
+
+                    document.NewPage();
+
+                    MemoryStream imagenChartListas = ConvertirChartAImagen(chListas);
+                    iTextSharp.text.Image chartImage3 = iTextSharp.text.Image.GetInstance(imagenChartListas.ToArray());
+                    chartImage3.ScaleToFit(PageSize.A4.Width, PageSize.A4.Height);
+                    document.Add(chartImage3);
+
+                    document.Add(new Paragraph(" "));
+                    document.Add(new Paragraph("                Pedidos:"));
+                    document.Add(new Paragraph("                        -Cantidad de pedidos: " + lblNumPed.Text ));
+                    document.Add(new Paragraph("                        -Pedidos pendientes: " + lblPedPend.Text));
+                    document.Add(new Paragraph("                        -Pedidos aceptados: " + lblPedAcep.Text));
+                    document.Add(new Paragraph("                        -Pedidos rechazados: " + lblPedRech.Text));
+                    document.Add(new Paragraph(" "));
+                    document.Add(new Paragraph("                Productos:"));
+                    document.Add(new Paragraph("                          -Cantidad de productos: " + lblNumProd.Text));
+                    document.Add(new Paragraph(" "));
+                    document.Add(new Paragraph("                Listas:"));
+                    document.Add(new Paragraph("                        -Cantidad de listas: " + lblNumListas.Text));
+                    document.Add(new Paragraph("                        -Listas activas: " + lblLisAct.Text));
+                    document.Add(new Paragraph("                        -Listas vencidas: " + lblListVen.Text));
+                    document.Add(new Paragraph(" "));
+                    document.Add(new Paragraph("                Proveedores:"));
+                    document.Add(new Paragraph("                            -Cantidad de proveedores: " + lblNumProv.Text));
+                    document.Add(new Paragraph("                            -Proveedores activos: " + lblProvAct.Text));
+                    document.Add(new Paragraph("                            -Proveedores baja: " + lblProvBaja.Text));
+                    document.Add(new Paragraph(" "));
+                    document.Add(new Paragraph("                Empleados:"));
+                    document.Add(new Paragraph("                        -Numeros de empleados: " + lblNumSocios.Text));
+                    document.Add(new Paragraph("                        -Empleados activos: " + lblSocAct.Text));
+                    document.Add(new Paragraph("                        -Empleados baja: " + lblSocBaj.Text));
+
+
+                    document.Close();
+                    stream.Close();
+                    MessageBox.Show("Reporte guardado correctamente.", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+        }
+
+        public MemoryStream ConvertirChartAImagen(Chart chart)
+        {
+            Bitmap bmp = new Bitmap(chart.Width, chart.Height);
+            chart.DrawToBitmap(bmp, new System.Drawing.Rectangle(0, 0, chart.Width, chart.Height));
+
+            MemoryStream stream = new MemoryStream();
+            bmp.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+
+            return stream;
         }
     }
 }

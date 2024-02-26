@@ -51,8 +51,11 @@ namespace Modelo
                     command.CommandText = "SELECT p.id_pedido AS ID, p.total AS Precio_total, e.Estado AS Estado, p.fecha_pedido AS Fecha_del_pedido" +
                         "   FROM pedidos p " +
                         "   LEFT JOIN estado e ON p.id_estado = e.id_estado " +
-                        "   WHERE p.fecha_pedido BETWEEN @FechaDesde AND @FechaHasta " +
+                        "   LEFT JOIN empleados em ON p.id_empleado = em.id_empleado " +
+                        "   LEFT JOIN usuarios u ON em.id_usuario = u.id_usuario " +
+                        "   WHERE u.id_usuario = @idusuario AND p.fecha_pedido BETWEEN @FechaDesde AND @FechaHasta " +
                         "   ORDER BY id_pedido OFFSET ((" + CurrentPage + " - 1) * 15) ROWS FETCH NEXT 15 ROWS ONLY";
+                    command.Parameters.AddWithValue("@idusuario", UserLoginCache.id_usuario);
                     command.Parameters.AddWithValue("@FechaDesde", desde);
                     command.Parameters.AddWithValue("@FechaHasta", hasta);
                     tabla.Load(command.ExecuteReader());
@@ -75,8 +78,11 @@ namespace Modelo
                     command.CommandText = "SELECT p.id_pedido AS ID, p.total AS Precio_total, e.Estado AS Estado, p.fecha_pedido AS Fecha_del_pedido" +
                         "   FROM pedidos p " +
                         "   LEFT JOIN estado e ON p.id_estado = e.id_estado " +
-                        "   WHERE p.id_estado = @estado AND p.fecha_pedido BETWEEN @FechaDesde AND @FechaHasta " +
+                        "   LEFT JOIN empleados em ON p.id_empleado = em.id_empleado " +
+                        "   LEFT JOIN usuarios u ON em.id_usuario = u.id_usuario " +
+                        "   WHERE u.id_usuario =@idusuario AND p.id_estado = @estado AND p.fecha_pedido BETWEEN @FechaDesde AND @FechaHasta " +
                         "   ORDER BY id_pedido OFFSET ((" + CurrentPage + " - 1) * 15) ROWS FETCH NEXT 15 ROWS ONLY";
+                    command.Parameters.AddWithValue("@idusuario", UserLoginCache.id_usuario);
                     command.Parameters.AddWithValue("@estado", estado);
                     command.Parameters.AddWithValue("@FechaDesde", desde);
                     command.Parameters.AddWithValue("@FechaHasta", hasta);

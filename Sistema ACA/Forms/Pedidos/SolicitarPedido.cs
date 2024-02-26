@@ -132,7 +132,7 @@ namespace Sistema_ACA
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if(dgvProd.Rows != null)
+            if(dgvProd.Rows.Count > 0)
             {
                 //cargar pedido y obtener el id del nuevo pedido
                 if(MessageBox.Show("¿Está seguro que desea confirmar el pedido?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

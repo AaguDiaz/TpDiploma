@@ -173,9 +173,5 @@ namespace Sistema_ACA.Forms.Admin
             }
         }
 
-        private void botones_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

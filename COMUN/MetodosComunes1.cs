@@ -7,11 +7,13 @@ using System.Diagnostics;
 using System.IO;
 using System.Net.Mail;
 using System.Net;
-using COMUN;
 using System.Text.RegularExpressions;
 using COMUN.Seguridad;
 using System.Collections.Generic;
 using System.Linq;
+using COMUN.Cache;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace COMUN
 {
@@ -89,8 +91,11 @@ namespace COMUN
             UserLoginCache.grupos = null;
             UserLoginCache.permisos_individuales = null;
             UserLoginCache.estado = "";
-
+            CacheLista.Id = 0;
+            CachePedido.Id = 0;
+            CacheProductos.tbProducto = null;
         }
+
 
         static public KeyPressEventArgs KeyPressSoloNumeros(KeyPressEventArgs e)
         {

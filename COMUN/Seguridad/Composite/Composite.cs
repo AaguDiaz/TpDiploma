@@ -21,12 +21,12 @@ namespace COMUN.Seguridad.Composite
             return Nombre;
         }
 
-        public override void Agregar(Component c)
+        public void Agregar(Component c)
         {
             hijos.Add(c);
         }
 
-        public override void Remover(Component c)
+        public void Remover(Component c)
         {
             hijos.Remove(c);
         }

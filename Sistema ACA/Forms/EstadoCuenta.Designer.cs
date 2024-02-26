@@ -37,28 +37,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbEstado = new System.Windows.Forms.TabControl();
             this.tpInfo = new System.Windows.Forms.TabPage();
-            this.pnlMoficar = new System.Windows.Forms.Panel();
-            this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtTel = new System.Windows.Forms.TextBox();
             this.txtCvu = new System.Windows.Forms.TextBox();
             this.txtDni = new System.Windows.Forms.TextBox();
             this.txtDire = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnConfirmar = new FontAwesome.Sharp.IconButton();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlInfo = new System.Windows.Forms.Panel();
             this.label30 = new System.Windows.Forms.Label();
@@ -66,15 +51,7 @@
             this.btnCambiarContra = new FontAwesome.Sharp.IconButton();
             this.btnEditarInfo = new FontAwesome.Sharp.IconButton();
             this.txtContraInfo = new System.Windows.Forms.TextBox();
-            this.lblMail = new System.Windows.Forms.Label();
-            this.lblTelefono = new System.Windows.Forms.Label();
-            this.lblCVU = new System.Windows.Forms.Label();
-            this.lblDNI = new System.Windows.Forms.Label();
-            this.lblDireccion = new System.Windows.Forms.Label();
-            this.lblApellido = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -118,12 +95,13 @@
             this.tbDeuda = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtMail = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tbEstado.SuspendLayout();
             this.tpInfo.SuspendLayout();
-            this.pnlMoficar.SuspendLayout();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlInfo.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -161,7 +139,7 @@
             this.label1.Location = new System.Drawing.Point(469, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(428, 46);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 99;
             this.label1.Text = "ESTADO DE CUENTA";
             // 
             // pictureBox1
@@ -193,11 +171,10 @@
             this.tbEstado.Name = "tbEstado";
             this.tbEstado.SelectedIndex = 0;
             this.tbEstado.Size = new System.Drawing.Size(1332, 500);
-            this.tbEstado.TabIndex = 7;
+            this.tbEstado.TabIndex = 18;
             // 
             // tpInfo
             // 
-            this.tpInfo.Controls.Add(this.pnlMoficar);
             this.tpInfo.Controls.Add(this.pictureBox2);
             this.tpInfo.Controls.Add(this.pnlInfo);
             this.tpInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -209,101 +186,54 @@
             this.tpInfo.Text = "Informacion personal";
             this.tpInfo.UseVisualStyleBackColor = true;
             // 
-            // pnlMoficar
-            // 
-            this.pnlMoficar.Controls.Add(this.txtApellido);
-            this.pnlMoficar.Controls.Add(this.txtTel);
-            this.pnlMoficar.Controls.Add(this.txtCvu);
-            this.pnlMoficar.Controls.Add(this.txtDni);
-            this.pnlMoficar.Controls.Add(this.txtDire);
-            this.pnlMoficar.Controls.Add(this.txtNombre);
-            this.pnlMoficar.Controls.Add(this.panel6);
-            this.pnlMoficar.Controls.Add(this.label8);
-            this.pnlMoficar.Controls.Add(this.label27);
-            this.pnlMoficar.Controls.Add(this.label17);
-            this.pnlMoficar.Controls.Add(this.label26);
-            this.pnlMoficar.Controls.Add(this.label18);
-            this.pnlMoficar.Controls.Add(this.label25);
-            this.pnlMoficar.Controls.Add(this.label19);
-            this.pnlMoficar.Controls.Add(this.label24);
-            this.pnlMoficar.Controls.Add(this.label20);
-            this.pnlMoficar.Controls.Add(this.label23);
-            this.pnlMoficar.Controls.Add(this.label21);
-            this.pnlMoficar.Controls.Add(this.label22);
-            this.pnlMoficar.Location = new System.Drawing.Point(666, 3);
-            this.pnlMoficar.Name = "pnlMoficar";
-            this.pnlMoficar.Size = new System.Drawing.Size(662, 451);
-            this.pnlMoficar.TabIndex = 1;
-            this.pnlMoficar.Visible = false;
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtApellido.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtApellido.Location = new System.Drawing.Point(423, 33);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(222, 16);
-            this.txtApellido.TabIndex = 42;
-            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
-            // 
             // txtTel
             // 
             this.txtTel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTel.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTel.Location = new System.Drawing.Point(423, 123);
+            this.txtTel.Location = new System.Drawing.Point(420, 123);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(222, 16);
-            this.txtTel.TabIndex = 41;
+            this.txtTel.TabIndex = 4;
             this.txtTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
             // 
             // txtCvu
             // 
             this.txtCvu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCvu.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCvu.Location = new System.Drawing.Point(423, 201);
+            this.txtCvu.Location = new System.Drawing.Point(420, 201);
             this.txtCvu.Name = "txtCvu";
             this.txtCvu.Size = new System.Drawing.Size(222, 16);
-            this.txtCvu.TabIndex = 40;
+            this.txtCvu.TabIndex = 5;
             this.txtCvu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
             // 
             // txtDni
             // 
             this.txtDni.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDni.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDni.Location = new System.Drawing.Point(98, 199);
+            this.txtDni.Location = new System.Drawing.Point(95, 199);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(222, 16);
-            this.txtDni.TabIndex = 39;
+            this.txtDni.TabIndex = 5;
             this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
             // 
             // txtDire
             // 
             this.txtDire.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDire.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDire.Location = new System.Drawing.Point(98, 122);
+            this.txtDire.Location = new System.Drawing.Point(95, 122);
             this.txtDire.Name = "txtDire";
             this.txtDire.Size = new System.Drawing.Size(222, 16);
-            this.txtDire.TabIndex = 38;
+            this.txtDire.TabIndex = 3;
             // 
             // txtNombre
             // 
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNombre.Location = new System.Drawing.Point(98, 33);
+            this.txtNombre.Location = new System.Drawing.Point(95, 32);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(222, 16);
-            this.txtNombre.TabIndex = 26;
+            this.txtNombre.TabIndex = 1;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel6.Controls.Add(this.btnCancelar);
-            this.panel6.Controls.Add(this.btnConfirmar);
-            this.panel6.Location = new System.Drawing.Point(11, 342);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(641, 89);
-            this.panel6.TabIndex = 26;
             // 
             // btnCancelar
             // 
@@ -313,13 +243,14 @@
             this.btnCancelar.IconColor = System.Drawing.Color.Black;
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 50;
-            this.btnCancelar.Location = new System.Drawing.Point(16, 0);
+            this.btnCancelar.Location = new System.Drawing.Point(262, 0);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(106, 89);
-            this.btnCancelar.TabIndex = 25;
+            this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Visible = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnConfirmar
@@ -331,122 +262,15 @@
             this.btnConfirmar.IconColor = System.Drawing.Color.Black;
             this.btnConfirmar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConfirmar.IconSize = 50;
-            this.btnConfirmar.Location = new System.Drawing.Point(137, 0);
+            this.btnConfirmar.Location = new System.Drawing.Point(386, 0);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(106, 89);
-            this.btnConfirmar.TabIndex = 24;
+            this.btnConfirmar.TabIndex = 8;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Visible = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(420, 124);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(232, 17);
-            this.label8.TabIndex = 37;
-            this.label8.Text = "____________________________";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(8, 32);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(62, 17);
-            this.label27.TabIndex = 26;
-            this.label27.Text = "Nombre:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(420, 202);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(232, 17);
-            this.label17.TabIndex = 36;
-            this.label17.Text = "____________________________";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(333, 33);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(62, 17);
-            this.label26.TabIndex = 27;
-            this.label26.Text = "Apellido:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(95, 200);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(232, 17);
-            this.label18.TabIndex = 35;
-            this.label18.Text = "____________________________";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(8, 121);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(71, 17);
-            this.label25.TabIndex = 28;
-            this.label25.Text = "Dirección:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(95, 122);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(232, 17);
-            this.label19.TabIndex = 34;
-            this.label19.Text = "____________________________";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(8, 200);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(35, 17);
-            this.label24.TabIndex = 29;
-            this.label24.Text = "DNI:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(420, 34);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(232, 17);
-            this.label20.TabIndex = 33;
-            this.label20.Text = "____________________________";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(333, 201);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(40, 17);
-            this.label23.TabIndex = 30;
-            this.label23.Text = "CVU:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(95, 33);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(232, 17);
-            this.label21.TabIndex = 32;
-            this.label21.Text = "____________________________";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(333, 123);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(68, 17);
-            this.label22.TabIndex = 31;
-            this.label22.Text = "Teléfono:";
             // 
             // pictureBox2
             // 
@@ -460,16 +284,16 @@
             // 
             // pnlInfo
             // 
+            this.pnlInfo.Controls.Add(this.txtMail);
+            this.pnlInfo.Controls.Add(this.txtApellido);
             this.pnlInfo.Controls.Add(this.label30);
+            this.pnlInfo.Controls.Add(this.txtTel);
             this.pnlInfo.Controls.Add(this.panel5);
+            this.pnlInfo.Controls.Add(this.txtCvu);
+            this.pnlInfo.Controls.Add(this.txtDni);
             this.pnlInfo.Controls.Add(this.txtContraInfo);
-            this.pnlInfo.Controls.Add(this.lblMail);
-            this.pnlInfo.Controls.Add(this.lblTelefono);
-            this.pnlInfo.Controls.Add(this.lblCVU);
-            this.pnlInfo.Controls.Add(this.lblDNI);
-            this.pnlInfo.Controls.Add(this.lblDireccion);
-            this.pnlInfo.Controls.Add(this.lblApellido);
-            this.pnlInfo.Controls.Add(this.lblNombre);
+            this.pnlInfo.Controls.Add(this.txtDire);
+            this.pnlInfo.Controls.Add(this.txtNombre);
             this.pnlInfo.Controls.Add(this.label16);
             this.pnlInfo.Controls.Add(this.label15);
             this.pnlInfo.Controls.Add(this.label14);
@@ -502,6 +326,8 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel5.Controls.Add(this.btnConfirmar);
+            this.panel5.Controls.Add(this.btnCancelar);
             this.panel5.Controls.Add(this.btnCambiarContra);
             this.panel5.Controls.Add(this.btnEditarInfo);
             this.panel5.Location = new System.Drawing.Point(8, 342);
@@ -520,7 +346,7 @@
             this.btnCambiarContra.Location = new System.Drawing.Point(138, 0);
             this.btnCambiarContra.Name = "btnCambiarContra";
             this.btnCambiarContra.Size = new System.Drawing.Size(106, 89);
-            this.btnCambiarContra.TabIndex = 25;
+            this.btnCambiarContra.TabIndex = 6;
             this.btnCambiarContra.Text = "Cambiar contraseña";
             this.btnCambiarContra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCambiarContra.UseVisualStyleBackColor = false;
@@ -538,7 +364,7 @@
             this.btnEditarInfo.Location = new System.Drawing.Point(16, 0);
             this.btnEditarInfo.Name = "btnEditarInfo";
             this.btnEditarInfo.Size = new System.Drawing.Size(106, 89);
-            this.btnEditarInfo.TabIndex = 24;
+            this.btnEditarInfo.TabIndex = 6;
             this.btnEditarInfo.Text = "Editar informacion";
             this.btnEditarInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEditarInfo.UseVisualStyleBackColor = false;
@@ -556,69 +382,6 @@
             this.txtContraInfo.Text = "pito";
             this.txtContraInfo.UseSystemPasswordChar = true;
             // 
-            // lblMail
-            // 
-            this.lblMail.AutoSize = true;
-            this.lblMail.Location = new System.Drawing.Point(92, 280);
-            this.lblMail.Name = "lblMail";
-            this.lblMail.Size = new System.Drawing.Size(35, 17);
-            this.lblMail.TabIndex = 22;
-            this.lblMail.Text = "hola";
-            // 
-            // lblTelefono
-            // 
-            this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(417, 122);
-            this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(35, 17);
-            this.lblTelefono.TabIndex = 21;
-            this.lblTelefono.Text = "hola";
-            // 
-            // lblCVU
-            // 
-            this.lblCVU.AutoSize = true;
-            this.lblCVU.Location = new System.Drawing.Point(417, 200);
-            this.lblCVU.Name = "lblCVU";
-            this.lblCVU.Size = new System.Drawing.Size(35, 17);
-            this.lblCVU.TabIndex = 20;
-            this.lblCVU.Text = "hola";
-            // 
-            // lblDNI
-            // 
-            this.lblDNI.AutoSize = true;
-            this.lblDNI.Location = new System.Drawing.Point(92, 198);
-            this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(35, 17);
-            this.lblDNI.TabIndex = 19;
-            this.lblDNI.Text = "hola";
-            // 
-            // lblDireccion
-            // 
-            this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(92, 120);
-            this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(35, 17);
-            this.lblDireccion.TabIndex = 18;
-            this.lblDireccion.Text = "hola";
-            // 
-            // lblApellido
-            // 
-            this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(417, 32);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(35, 17);
-            this.lblApellido.TabIndex = 17;
-            this.lblApellido.Text = "hola";
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(92, 32);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(35, 17);
-            this.lblNombre.TabIndex = 16;
-            this.lblNombre.Text = "hola";
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -627,15 +390,6 @@
             this.label16.Size = new System.Drawing.Size(232, 17);
             this.label16.TabIndex = 15;
             this.label16.Text = "____________________________";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(88, 282);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(232, 17);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "____________________________";
             // 
             // label14
             // 
@@ -1017,6 +771,34 @@
             this.panel2.Size = new System.Drawing.Size(1331, 31);
             this.panel2.TabIndex = 6;
             // 
+            // txtApellido
+            // 
+            this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtApellido.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtApellido.Location = new System.Drawing.Point(420, 33);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(222, 16);
+            this.txtApellido.TabIndex = 2;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(88, 282);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(232, 17);
+            this.label15.TabIndex = 14;
+            this.label15.Text = "____________________________";
+            // 
+            // txtMail
+            // 
+            this.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMail.Location = new System.Drawing.Point(95, 280);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(222, 16);
+            this.txtMail.TabIndex = 43;
+            // 
             // EstadoCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1040,9 +822,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tbEstado.ResumeLayout(false);
             this.tpInfo.ResumeLayout(false);
-            this.pnlMoficar.ResumeLayout(false);
-            this.pnlMoficar.PerformLayout();
-            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
@@ -1071,7 +850,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TabPage tbPrestacion;
         private System.Windows.Forms.TabPage tbDeuda;
-        private System.Windows.Forms.Panel pnlMoficar;
         private System.Windows.Forms.Panel pnlInfo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -1082,15 +860,7 @@
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox txtContraInfo;
-        private System.Windows.Forms.Label lblMail;
-        private System.Windows.Forms.Label lblTelefono;
-        private System.Windows.Forms.Label lblCVU;
-        private System.Windows.Forms.Label lblDNI;
-        private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.Label lblApellido;
-        private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -1101,22 +871,8 @@
         private System.Windows.Forms.Panel panel5;
         private FontAwesome.Sharp.IconButton btnCambiarContra;
         private FontAwesome.Sharp.IconButton btnEditarInfo;
-        private System.Windows.Forms.Panel panel6;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private FontAwesome.Sharp.IconButton btnConfirmar;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.TextBox txtCvu;
         private System.Windows.Forms.TextBox txtDni;
@@ -1148,5 +904,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.TextBox txtMail;
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.Label label15;
     }
 }

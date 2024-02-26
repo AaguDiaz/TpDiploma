@@ -15,16 +15,6 @@ namespace COMUN.Seguridad.Composite
             this.Nombre = Nombre;
         }
 
-        public virtual void Agregar(Component c)
-        {
-            throw new NotImplementedException();
-        }
-
-        public virtual void Remover(Component c)
-        {
-            throw new NotImplementedException();
-        }
-
         public abstract List<Component> ObtenerHijos();
         
     }

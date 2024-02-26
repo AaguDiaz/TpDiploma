@@ -14,7 +14,7 @@ namespace Modelo
         private SqlDataReader reader; 
         DataTable tabla = new DataTable();
 
-        public List<CacheProductos> MostrarCategorias()
+        public DataTable MostrarCategorias()
         {
             using (SqlConnection connection = new SqlConnection(MoConexionSQL.Instance.Conexion))
             {
@@ -22,17 +22,11 @@ namespace Modelo
                 {
                     command.Connection = connection;
                     connection.Open();
-                    command.CommandText = "Select nombre from categorias";
-                    List<CacheProductos> categorias = new List<CacheProductos>();
+                    command.CommandText = "Select id_categoria, nombre from categorias";
+                    DataTable categorias = new DataTable();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        while (reader.Read())
-                        {
-                            categorias.Add(new CacheProductos
-                            {
-                                nombre_cat = reader["nombre"].ToString()
-                            });
-                        }
+                        categorias.Load(reader);
                         reader.Close();
                     }
                     connection.Close();

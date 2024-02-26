@@ -32,7 +32,6 @@ namespace Sistema_ACA.Forms.Socio
         private void AgregarProductos_Load(object sender, EventArgs e)
         {
             cargarCB();
-            ActualizarDGV();
             dt.Columns.Add("Producto");
             dt.Columns.Add("Descripcion");
             dt.Columns.Add("Categoria");
@@ -49,17 +48,26 @@ namespace Sistema_ACA.Forms.Socio
 
             DataTable dt = new DataTable();
 
-            dt =  cnLista.MostrarActivas(currentPage);
+            dt.Columns.Add("Proveedor");
+            dt.Columns.Add("IDLista");
+            dt.Columns.Add("fecha_vencimiento");
+            dt.Rows.Add("Seleccionar", "1"," ");
 
-            if(dt != null && dt.Rows.Count > 0)
+            // Agregar las filas que vienen de cnLista.MostrarActivas
+            DataTable dt2 = cnLista.MostrarActivas(currentPage);
+            if (dt2 != null)
             {
-                foreach (DataRow row in dt.Rows)
+                foreach (DataRow row in dt2.Rows)
                 {
-                    string Lista = row["Proveedor"].ToString();
-                    cbLista.Items.Add(Lista);
-                    cbLista.ValueMember = row["IDLista"].ToString();
+                    dt.ImportRow(row);
                 }
-                cbLista.SelectedIndex = 0;
+            }
+
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                cbLista.DataSource = dt;
+                cbLista.DisplayMember = "Proveedor";
+                cbLista.ValueMember = "IDLista";
             }
         }
 
@@ -67,20 +75,17 @@ namespace Sistema_ACA.Forms.Socio
         {
 
             dgvLista.DataSource = null;
-
             if (cbLista.SelectedIndex != 0)
             {
-                bindingSource1.DataSource = cnListaProd.MostrarDetalleLista(Convert.ToInt32(cbLista.ValueMember), currentPage);
+                int value = Convert.ToInt32(cbLista.SelectedValue);
+                bindingSource1.DataSource = cnListaProd.MostrarDetalleLista(value, currentPage);
                 bindingNavigator1.BindingSource = bindingSource1;
                 dgvLista.DataSource = bindingSource1;
                 dgvLista.Columns[0].Width = 300;
                 dgvLista.Columns[1].Width = 300;
                 dgvLista.Columns[2].Width = 200;
                 dgvLista.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            }
-            else
-            {
-                dgvLista.DataSource = null;
+
             }
 
         }
@@ -155,7 +160,7 @@ namespace Sistema_ACA.Forms.Socio
                             int precioProducto = Convert.ToInt32( dgvLista.CurrentRow.Cells[3].Value);
                             int precioTotal = cantidadProducto * precioProducto;
                             string proveedor = cbLista.Text;
-                            int idLista = Convert.ToInt32(cbLista.ValueMember);
+                            int idLista = Convert.ToInt32(cbLista.SelectedValue);
                             
                             if (SolPedForm.GetDataGridView() == null || SolPedForm.GetDataGridView().Rows.Count == 0)
                             {
@@ -169,7 +174,7 @@ namespace Sistema_ACA.Forms.Socio
                                 int verificador = 0 ;
                                 foreach (DataGridViewRow row in SolPedForm.GetDataGridView().Rows)
                                 {
-                                    if (row.Cells[0].Value.ToString() == nombreProducto)
+                                    if (row.Cells[0].Value.ToString() == nombreProducto && row.Cells[6].Value.ToString() == proveedor)
                                     {
                                         // Actualizar el DGV de los productos agregados
                                         verificador++;

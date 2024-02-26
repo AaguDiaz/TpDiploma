@@ -85,7 +85,7 @@
             // solicitarPedidosToolStripMenuItem
             // 
             this.solicitarPedidosToolStripMenuItem.Name = "solicitarPedidosToolStripMenuItem";
-            this.solicitarPedidosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.solicitarPedidosToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.solicitarPedidosToolStripMenuItem.Tag = "SolicitarPedido";
             this.solicitarPedidosToolStripMenuItem.Text = "Solicitar pedidos";
             this.solicitarPedidosToolStripMenuItem.Click += new System.EventHandler(this.solicitarPedidosToolStripMenuItem_Click);
@@ -93,7 +93,7 @@
             // agregarListaDePedidosToolStripMenuItem
             // 
             this.agregarListaDePedidosToolStripMenuItem.Name = "agregarListaDePedidosToolStripMenuItem";
-            this.agregarListaDePedidosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarListaDePedidosToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.agregarListaDePedidosToolStripMenuItem.Tag = "AgregarPedidos";
             this.agregarListaDePedidosToolStripMenuItem.Text = "Lista de pedidos";
             this.agregarListaDePedidosToolStripMenuItem.Click += new System.EventHandler(this.agregarListaDePedidosToolStripMenuItem_Click);
@@ -110,7 +110,7 @@
             // solicitarPrestacionToolStripMenuItem
             // 
             this.solicitarPrestacionToolStripMenuItem.Name = "solicitarPrestacionToolStripMenuItem";
-            this.solicitarPrestacionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.solicitarPrestacionToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.solicitarPrestacionToolStripMenuItem.Tag = "Prestaciones";
             this.solicitarPrestacionToolStripMenuItem.Text = "Solicitar prestacion";
             this.solicitarPrestacionToolStripMenuItem.Click += new System.EventHandler(this.solicitarPrestacionToolStripMenuItem_Click);
@@ -142,7 +142,7 @@
             this.pedidosPrestacionesToolStripMenuItem,
             this.gruposToolStripMenuItem});
             this.abmTSMT.Name = "abmTSMT";
-            this.abmTSMT.Size = new System.Drawing.Size(180, 22);
+            this.abmTSMT.Size = new System.Drawing.Size(161, 22);
             this.abmTSMT.Tag = "ABMS";
             this.abmTSMT.Text = "ABMS";
             // 
@@ -181,7 +181,7 @@
             // gestUsuTSMI
             // 
             this.gestUsuTSMI.Name = "gestUsuTSMI";
-            this.gestUsuTSMI.Size = new System.Drawing.Size(180, 22);
+            this.gestUsuTSMI.Size = new System.Drawing.Size(161, 22);
             this.gestUsuTSMI.Tag = "ABMUsuarios";
             this.gestUsuTSMI.Text = "Gestion usuarios";
             this.gestUsuTSMI.Click += new System.EventHandler(this.gestionSociosToolStripMenuItem_Click);
@@ -189,7 +189,7 @@
             // audiTMSI
             // 
             this.audiTMSI.Name = "audiTMSI";
-            this.audiTMSI.Size = new System.Drawing.Size(180, 22);
+            this.audiTMSI.Size = new System.Drawing.Size(161, 22);
             this.audiTMSI.Tag = "Auditoria";
             this.audiTMSI.Text = "Auditoria";
             // 
@@ -215,7 +215,6 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "PantallaPrincipal";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

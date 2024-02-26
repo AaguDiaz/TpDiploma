@@ -31,21 +31,29 @@ namespace Sistema_ACA.Forms.Socio
         {
             CargarDatosUsuario();
             cbFiltrosPed.SelectedIndex = 0;
-
+            
             DateTime fechaHaceUnAño = fechaActual.AddYears(-1);
             dtpDesde.Value = fechaHaceUnAño;
         }
 
         private void CargarDatosUsuario()
         {
-            lblNombre.Text = COMUN.UserLoginCache.nombre;
-            lblApellido.Text = COMUN.UserLoginCache.apellido;
-            lblMail.Text = COMUN.UserLoginCache.mail;
-            lblDNI.Text = COMUN.UserLoginCache.dni.ToString();
-            lblCVU.Text = COMUN.UserLoginCache.cvu.ToString();
-            lblDireccion.Text = COMUN.UserLoginCache.direccion;
-            lblTelefono.Text = COMUN.UserLoginCache.telefono.ToString();
+            txtNombre.Text = COMUN.UserLoginCache.nombre;
+            txtNombre.ReadOnly = true;
+            txtApellido.Text = COMUN.UserLoginCache.apellido;
+            txtApellido.ReadOnly = true;
+            txtMail.Text = COMUN.UserLoginCache.mail;
+            txtMail.ReadOnly = true;
+            txtDni.Text = COMUN.UserLoginCache.dni.ToString();
+            txtDni.ReadOnly = true;
+            txtCvu.Text = COMUN.UserLoginCache.cvu.ToString();
+            txtCvu.ReadOnly = true;
+            txtDire.Text = COMUN.UserLoginCache.direccion;
+            txtDire.ReadOnly = true;
+            txtTel.Text = COMUN.UserLoginCache.telefono.ToString();
+            txtTel.ReadOnly = true;
             txtContraInfo.Text = COMUN.MetodosComunes.DesEncriptarPassBD(COMUN.UserLoginCache.contra);
+            txtContraInfo.ReadOnly = true;
            
         }
 
@@ -85,13 +93,15 @@ namespace Sistema_ACA.Forms.Socio
         //Botones
         private void btnEditarInfo_Click(object sender, EventArgs e)
         {
-            pnlMoficar.Visible = true;
-            txtNombre.Text = COMUN.UserLoginCache.nombre;
-            txtApellido.Text = COMUN.UserLoginCache.apellido;
-            txtDni.Text = COMUN.UserLoginCache.dni.ToString();
-            txtDire.Text = COMUN.UserLoginCache.direccion;
-            txtTel.Text = COMUN.UserLoginCache.telefono.ToString();
-            txtCvu.Text = COMUN.UserLoginCache.cvu.ToString();
+            txtNombre.ReadOnly =false;
+            txtApellido.ReadOnly = false;
+            txtDni.ReadOnly = false;
+            txtCvu.ReadOnly = false;
+            txtDire.ReadOnly = false;
+            txtTel.ReadOnly = false;
+            txtMail.Enabled = false;
+            btnCancelar.Visible = true;
+            btnConfirmar.Visible = true;
         }
 
         private void btnCambiarContra_Click(object sender, EventArgs e)
@@ -104,7 +114,9 @@ namespace Sistema_ACA.Forms.Socio
         {
             if (MessageBox.Show("¿Está seguro que desea cancelar?", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                pnlMoficar.Visible = false;
+                btnConfirmar.Visible = false;
+                txtMail.Enabled = true;
+                btnCancelar.Visible = false;
             }
         }
 
@@ -116,7 +128,9 @@ namespace Sistema_ACA.Forms.Socio
                 {
                     cnUsuario.ModificarInfoEmpleado(txtNombre.Text,txtApellido.Text,txtDni.Text,txtCvu.Text,txtTel.Text,txtDire.Text);
                     CargarDatosUsuario();
-                    pnlMoficar.Visible = false;
+                    btnCancelar.Visible = false;
+                    txtMail.Enabled = true;
+                    btnConfirmar.Visible = false;
                 }
             }
             else
@@ -225,6 +239,5 @@ namespace Sistema_ACA.Forms.Socio
                 ActualizarDGVPed();
             }
         }
-
     }
 }

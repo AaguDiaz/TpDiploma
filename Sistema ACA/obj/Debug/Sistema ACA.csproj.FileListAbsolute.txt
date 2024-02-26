@@ -106,3 +106,7 @@ C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema ACA
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema ACA.csproj.CopyComplete
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema ACA.exe
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema ACA.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\itextsharp.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\itextsharp.xmlworker.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\itextsharp.xml

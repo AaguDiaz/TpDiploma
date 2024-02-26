@@ -45,6 +45,7 @@
             // 
             this.btnEnviar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.btnEnviar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEnviar.Font = new System.Drawing.Font("Arial", 9F);
             this.btnEnviar.Location = new System.Drawing.Point(513, 28);
             this.btnEnviar.Name = "btnEnviar";
@@ -59,6 +60,7 @@
             this.btnVerificar.Enabled = false;
             this.btnVerificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.btnVerificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnVerificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVerificar.Font = new System.Drawing.Font("Arial", 9F);
             this.btnVerificar.Location = new System.Drawing.Point(513, 75);
             this.btnVerificar.Name = "btnVerificar";
@@ -72,6 +74,7 @@
             // 
             this.btnConfirmar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.btnConfirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnConfirmar.Font = new System.Drawing.Font("Arial", 9F);
             this.btnConfirmar.Location = new System.Drawing.Point(513, 131);
             this.btnConfirmar.Name = "btnConfirmar";
@@ -133,7 +136,7 @@
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Location = new System.Drawing.Point(226, 75);
+            this.lblError.Location = new System.Drawing.Point(226, 58);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(0, 13);
             this.lblError.TabIndex = 14;
@@ -155,6 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(670, 214);
             this.Controls.Add(this.txtConfirmar);
             this.Controls.Add(this.lblError);

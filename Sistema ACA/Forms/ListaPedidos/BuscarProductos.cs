@@ -34,7 +34,8 @@ namespace Sistema_ACA.Forms.Admin.ListaPedidos
         public void cargarCategorias()
         {
             cbCat.DataSource = cnProducto.MostrarCategorias();
-            cbCat.DisplayMember = "nombre_cat";
+            cbCat.DisplayMember = "nombre";
+            cbCat.ValueMember = "id_categoria";
         }
 
         public void cargarDGV(int valor)
@@ -61,25 +62,15 @@ namespace Sistema_ACA.Forms.Admin.ListaPedidos
         private void cbCat_SelectedIndexChanged(object sender, EventArgs e)
         {
             int valor = 0;
-            if (cbCat.SelectedIndex == 0)
+            if(cbCat.SelectedIndex > 0)
             {
-                valor = cbCat.SelectedIndex + 1;
-                cargarDGV(valor);
-            }
-            else if (cbCat.SelectedIndex == 1)
-            {
-                valor = cbCat.SelectedIndex + 1;
+                valor = Convert.ToInt32(cbCat.SelectedValue);
                 cargarDGV(valor);
 
             }
-            else if (cbCat.SelectedIndex == 2)
+            else
             {
-                valor = cbCat.SelectedIndex + 1;
-                cargarDGV(valor);
-            }
-            else if (cbCat.SelectedIndex == 3)
-            {
-                valor = cbCat.SelectedIndex + 1;
+                valor = 1;
                 cargarDGV(valor);
             }
         }

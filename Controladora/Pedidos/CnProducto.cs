@@ -14,7 +14,7 @@ namespace Controladora
     {
         MoProducto producto = new MoProducto();
 
-        public List<CacheProductos> MostrarCategorias()
+        public DataTable MostrarCategorias()
         {
             return producto.MostrarCategorias();
         }

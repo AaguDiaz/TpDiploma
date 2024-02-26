@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chPedidos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chListas = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chProductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -52,131 +52,132 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.lblProvBaja = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.lblProvAct = new System.Windows.Forms.Label();
             this.lblNumProv = new System.Windows.Forms.Label();
-            this.lblNumProd = new System.Windows.Forms.Label();
-            this.lblNumListas = new System.Windows.Forms.Label();
-            this.lblNumPed = new System.Windows.Forms.Label();
-            this.lblNumSocios = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lblListVen = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.lblNumListas = new System.Windows.Forms.Label();
+            this.lblLisAct = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblSocBaj = new System.Windows.Forms.Label();
+            this.lblSocActivo = new System.Windows.Forms.Label();
+            this.lblNumSocios = new System.Windows.Forms.Label();
+            this.lblSocAct = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lblPedRech = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblPedPend = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblPedAcep = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblNumPed = new System.Windows.Forms.Label();
+            this.lblNumProd = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnAño = new System.Windows.Forms.Button();
             this.btnMes = new System.Windows.Forms.Button();
             this.btnSemana = new System.Windows.Forms.Button();
             this.btnHoy = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lblPedAcep = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.lblPedPend = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lblPedRech = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.lblSocBaj = new System.Windows.Forms.Label();
-            this.lblSocActivo = new System.Windows.Forms.Label();
-            this.lblSocAct = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.lblListVen = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.lblLisAct = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.lblProvBaja = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.lblProvAct = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.bttnPDF = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chPedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chListas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chProductos)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // chPedidos
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chPedidos.ChartAreas.Add(chartArea1);
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend1.IsTextAutoFit = false;
-            legend1.Name = "Legend1";
-            this.chPedidos.Legends.Add(legend1);
+            chartArea4.Name = "ChartArea1";
+            this.chPedidos.ChartAreas.Add(chartArea4);
+            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend4.IsTextAutoFit = false;
+            legend4.Name = "Legend1";
+            this.chPedidos.Legends.Add(legend4);
             this.chPedidos.Location = new System.Drawing.Point(6, 6);
             this.chPedidos.Name = "chPedidos";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chPedidos.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chPedidos.Series.Add(series4);
             this.chPedidos.Size = new System.Drawing.Size(1070, 292);
             this.chPedidos.TabIndex = 0;
             this.chPedidos.Text = "1330; 700";
-            title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.Name = "Title1";
-            title1.Text = "Pedidos";
-            this.chPedidos.Titles.Add(title1);
+            title4.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title4.Name = "Title1";
+            title4.Text = "Pedidos";
+            this.chPedidos.Titles.Add(title4);
             // 
             // chListas
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chListas.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chListas.Legends.Add(legend2);
+            chartArea5.Name = "ChartArea1";
+            this.chListas.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chListas.Legends.Add(legend5);
             this.chListas.Location = new System.Drawing.Point(545, 303);
             this.chListas.Name = "chListas";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.IsValueShownAsLabel = true;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            series2.YValuesPerPoint = 4;
-            this.chListas.Series.Add(series2);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series5.IsValueShownAsLabel = true;
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            series5.YValuesPerPoint = 4;
+            this.chListas.Series.Add(series5);
             this.chListas.Size = new System.Drawing.Size(531, 334);
             this.chListas.TabIndex = 1;
             this.chListas.Text = "chart2";
-            title2.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title2.Name = "Title1";
-            title2.Text = "Listas de pedido mas usadas";
-            this.chListas.Titles.Add(title2);
+            title5.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title5.Name = "Title1";
+            title5.Text = "Listas de pedido mas usadas";
+            this.chListas.Titles.Add(title5);
             // 
             // chProductos
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chProductos.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chProductos.Legends.Add(legend3);
+            chartArea6.Name = "ChartArea1";
+            this.chProductos.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chProductos.Legends.Add(legend6);
             this.chProductos.Location = new System.Drawing.Point(3, 303);
             this.chProductos.Name = "chProductos";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series3.IsValueShownAsLabel = true;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            series3.YValuesPerPoint = 4;
-            this.chProductos.Series.Add(series3);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series6.IsValueShownAsLabel = true;
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            series6.YValuesPerPoint = 4;
+            this.chProductos.Series.Add(series6);
             this.chProductos.Size = new System.Drawing.Size(531, 334);
             this.chProductos.TabIndex = 2;
             this.chProductos.Text = "chart3";
-            title3.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title3.Name = "Title1";
-            title3.Text = "Productos mas pedidos";
-            this.chProductos.Titles.Add(title3);
+            title6.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title6.Name = "Title1";
+            title6.Text = "Productos mas pedidos";
+            this.chProductos.Titles.Add(title6);
             // 
             // btnOk
             // 
@@ -196,25 +197,25 @@
             // 
             this.dtpHasta.CustomFormat = "dd MMMM, yyyy";
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpHasta.Location = new System.Drawing.Point(440, 14);
+            this.dtpHasta.Location = new System.Drawing.Point(547, 14);
             this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.Size = new System.Drawing.Size(207, 20);
+            this.dtpHasta.Size = new System.Drawing.Size(142, 20);
             this.dtpHasta.TabIndex = 4;
             // 
             // dtpDesde
             // 
             this.dtpDesde.CustomFormat = "dd MMMM, yyyy";
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDesde.Location = new System.Drawing.Point(134, 14);
+            this.dtpDesde.Location = new System.Drawing.Point(332, 14);
             this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(207, 20);
+            this.dtpDesde.Size = new System.Drawing.Size(149, 20);
             this.dtpDesde.TabIndex = 5;
             // 
             // label
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(376, 14);
+            this.label.Location = new System.Drawing.Point(487, 15);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(49, 17);
             this.label.TabIndex = 6;
@@ -224,7 +225,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(61, 14);
+            this.label1.Location = new System.Drawing.Point(260, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 17);
             this.label1.TabIndex = 7;
@@ -282,6 +283,69 @@
             this.panel1.Size = new System.Drawing.Size(228, 620);
             this.panel1.TabIndex = 3;
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(5, 426);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(85, 20);
+            this.label28.TabIndex = 35;
+            this.label28.Text = "Productos:";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label21);
+            this.panel5.Controls.Add(this.lblProvBaja);
+            this.panel5.Controls.Add(this.label26);
+            this.panel5.Controls.Add(this.lblProvAct);
+            this.panel5.Controls.Add(this.lblNumProv);
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.label30);
+            this.panel5.Location = new System.Drawing.Point(3, 506);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(222, 111);
+            this.panel5.TabIndex = 37;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(3, 81);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(104, 17);
+            this.label21.TabIndex = 33;
+            this.label21.Text = "Dados de baja:";
+            // 
+            // lblProvBaja
+            // 
+            this.lblProvBaja.AutoSize = true;
+            this.lblProvBaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProvBaja.Location = new System.Drawing.Point(175, 81);
+            this.lblProvBaja.Name = "lblProvBaja";
+            this.lblProvBaja.Size = new System.Drawing.Size(40, 17);
+            this.lblProvBaja.TabIndex = 34;
+            this.lblProvBaja.Text = "1000";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(3, 56);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(57, 17);
+            this.label26.TabIndex = 29;
+            this.label26.Text = "Activos:";
+            // 
+            // lblProvAct
+            // 
+            this.lblProvAct.AutoSize = true;
+            this.lblProvAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProvAct.Location = new System.Drawing.Point(175, 56);
+            this.lblProvAct.Name = "lblProvAct";
+            this.lblProvAct.Size = new System.Drawing.Size(40, 17);
+            this.lblProvAct.TabIndex = 30;
+            this.lblProvAct.Text = "1000";
+            // 
             // lblNumProv
             // 
             this.lblNumProv.AutoSize = true;
@@ -291,46 +355,6 @@
             this.lblNumProv.Size = new System.Drawing.Size(40, 17);
             this.lblNumProv.TabIndex = 27;
             this.lblNumProv.Text = "1000";
-            // 
-            // lblNumProd
-            // 
-            this.lblNumProd.AutoSize = true;
-            this.lblNumProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumProd.Location = new System.Drawing.Point(178, 457);
-            this.lblNumProd.Name = "lblNumProd";
-            this.lblNumProd.Size = new System.Drawing.Size(40, 17);
-            this.lblNumProd.TabIndex = 26;
-            this.lblNumProd.Text = "1000";
-            // 
-            // lblNumListas
-            // 
-            this.lblNumListas.AutoSize = true;
-            this.lblNumListas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumListas.Location = new System.Drawing.Point(175, 31);
-            this.lblNumListas.Name = "lblNumListas";
-            this.lblNumListas.Size = new System.Drawing.Size(40, 17);
-            this.lblNumListas.TabIndex = 25;
-            this.lblNumListas.Text = "1000";
-            // 
-            // lblNumPed
-            // 
-            this.lblNumPed.AutoSize = true;
-            this.lblNumPed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumPed.Location = new System.Drawing.Point(175, 27);
-            this.lblNumPed.Name = "lblNumPed";
-            this.lblNumPed.Size = new System.Drawing.Size(40, 17);
-            this.lblNumPed.TabIndex = 24;
-            this.lblNumPed.Text = "1000";
-            // 
-            // lblNumSocios
-            // 
-            this.lblNumSocios.AutoSize = true;
-            this.lblNumSocios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumSocios.Location = new System.Drawing.Point(175, 30);
-            this.lblNumSocios.Name = "lblNumSocios";
-            this.lblNumSocios.Size = new System.Drawing.Size(40, 17);
-            this.lblNumSocios.TabIndex = 23;
-            this.lblNumSocios.Text = "1000";
             // 
             // label7
             // 
@@ -342,15 +366,87 @@
             this.label7.TabIndex = 19;
             this.label7.Text = "Numero de proveedores:";
             // 
-            // label6
+            // label30
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 457);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(149, 17);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Numero de productos:";
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(2, 3);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(102, 20);
+            this.label30.TabIndex = 28;
+            this.label30.Text = "Proveedores:";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label17);
+            this.panel4.Controls.Add(this.lblListVen);
+            this.panel4.Controls.Add(this.label24);
+            this.panel4.Controls.Add(this.lblNumListas);
+            this.panel4.Controls.Add(this.lblLisAct);
+            this.panel4.Controls.Add(this.label27);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Location = new System.Drawing.Point(3, 297);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(222, 111);
+            this.panel4.TabIndex = 36;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(3, 81);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(70, 17);
+            this.label17.TabIndex = 33;
+            this.label17.Text = "Vencidas:";
+            // 
+            // lblListVen
+            // 
+            this.lblListVen.AutoSize = true;
+            this.lblListVen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblListVen.Location = new System.Drawing.Point(175, 81);
+            this.lblListVen.Name = "lblListVen";
+            this.lblListVen.Size = new System.Drawing.Size(40, 17);
+            this.lblListVen.TabIndex = 34;
+            this.lblListVen.Text = "1000";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(3, 56);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(57, 17);
+            this.label24.TabIndex = 29;
+            this.label24.Text = "Activas:";
+            // 
+            // lblNumListas
+            // 
+            this.lblNumListas.AutoSize = true;
+            this.lblNumListas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumListas.Location = new System.Drawing.Point(175, 31);
+            this.lblNumListas.Name = "lblNumListas";
+            this.lblNumListas.Size = new System.Drawing.Size(40, 17);
+            this.lblNumListas.TabIndex = 25;
+            this.lblNumListas.Text = "1000";
+            // 
+            // lblLisAct
+            // 
+            this.lblLisAct.AutoSize = true;
+            this.lblLisAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLisAct.Location = new System.Drawing.Point(175, 56);
+            this.lblLisAct.Name = "lblLisAct";
+            this.lblLisAct.Size = new System.Drawing.Size(40, 17);
+            this.lblLisAct.TabIndex = 30;
+            this.lblLisAct.Text = "1000";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(2, 3);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(133, 20);
+            this.label27.TabIndex = 28;
+            this.label27.Text = "Listas de pedidos";
             // 
             // label5
             // 
@@ -362,6 +458,79 @@
             this.label5.TabIndex = 17;
             this.label5.Text = "Numero de Listas:";
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label15);
+            this.panel3.Controls.Add(this.lblSocBaj);
+            this.panel3.Controls.Add(this.lblSocActivo);
+            this.panel3.Controls.Add(this.lblNumSocios);
+            this.panel3.Controls.Add(this.lblSocAct);
+            this.panel3.Controls.Add(this.label22);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Location = new System.Drawing.Point(3, 159);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(222, 111);
+            this.panel3.TabIndex = 35;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(2, 80);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(104, 17);
+            this.label15.TabIndex = 33;
+            this.label15.Text = "Dados de baja:";
+            // 
+            // lblSocBaj
+            // 
+            this.lblSocBaj.AutoSize = true;
+            this.lblSocBaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSocBaj.Location = new System.Drawing.Point(175, 80);
+            this.lblSocBaj.Name = "lblSocBaj";
+            this.lblSocBaj.Size = new System.Drawing.Size(40, 17);
+            this.lblSocBaj.TabIndex = 34;
+            this.lblSocBaj.Text = "1000";
+            // 
+            // lblSocActivo
+            // 
+            this.lblSocActivo.AutoSize = true;
+            this.lblSocActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSocActivo.Location = new System.Drawing.Point(3, 55);
+            this.lblSocActivo.Name = "lblSocActivo";
+            this.lblSocActivo.Size = new System.Drawing.Size(57, 17);
+            this.lblSocActivo.TabIndex = 29;
+            this.lblSocActivo.Text = "Activos:";
+            // 
+            // lblNumSocios
+            // 
+            this.lblNumSocios.AutoSize = true;
+            this.lblNumSocios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumSocios.Location = new System.Drawing.Point(175, 30);
+            this.lblNumSocios.Name = "lblNumSocios";
+            this.lblNumSocios.Size = new System.Drawing.Size(40, 17);
+            this.lblNumSocios.TabIndex = 23;
+            this.lblNumSocios.Text = "1000";
+            // 
+            // lblSocAct
+            // 
+            this.lblSocAct.AutoSize = true;
+            this.lblSocAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSocAct.Location = new System.Drawing.Point(175, 55);
+            this.lblSocAct.Name = "lblSocAct";
+            this.lblSocAct.Size = new System.Drawing.Size(40, 17);
+            this.lblSocAct.TabIndex = 30;
+            this.lblSocAct.Text = "1000";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(2, 3);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(57, 20);
+            this.label22.TabIndex = 28;
+            this.label22.Text = "Socios";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -372,6 +541,82 @@
             this.label4.TabIndex = 16;
             this.label4.Text = "Numero de Socios:";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.lblPedRech);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.lblPedPend);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.lblPedAcep);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.lblNumPed);
+            this.panel2.Location = new System.Drawing.Point(3, 24);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(222, 111);
+            this.panel2.TabIndex = 29;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(3, 88);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(91, 17);
+            this.label13.TabIndex = 33;
+            this.label13.Text = "Rechazados:";
+            // 
+            // lblPedRech
+            // 
+            this.lblPedRech.AutoSize = true;
+            this.lblPedRech.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPedRech.Location = new System.Drawing.Point(175, 88);
+            this.lblPedRech.Name = "lblPedRech";
+            this.lblPedRech.Size = new System.Drawing.Size(40, 17);
+            this.lblPedRech.TabIndex = 34;
+            this.lblPedRech.Text = "1000";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 47);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(83, 17);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "Pendientes:";
+            // 
+            // lblPedPend
+            // 
+            this.lblPedPend.AutoSize = true;
+            this.lblPedPend.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPedPend.Location = new System.Drawing.Point(175, 47);
+            this.lblPedPend.Name = "lblPedPend";
+            this.lblPedPend.Size = new System.Drawing.Size(40, 17);
+            this.lblPedPend.TabIndex = 32;
+            this.lblPedPend.Text = "1000";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(3, 67);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(79, 17);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Aceptados:";
+            // 
+            // lblPedAcep
+            // 
+            this.lblPedAcep.AutoSize = true;
+            this.lblPedAcep.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPedAcep.Location = new System.Drawing.Point(175, 67);
+            this.lblPedAcep.Name = "lblPedAcep";
+            this.lblPedAcep.Size = new System.Drawing.Size(40, 17);
+            this.lblPedAcep.TabIndex = 30;
+            this.lblPedAcep.Text = "1000";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -381,6 +626,45 @@
             this.label3.Size = new System.Drawing.Size(136, 17);
             this.label3.TabIndex = 15;
             this.label3.Text = "Numero de pedidos:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(2, 3);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 20);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Pedidos";
+            // 
+            // lblNumPed
+            // 
+            this.lblNumPed.AutoSize = true;
+            this.lblNumPed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumPed.Location = new System.Drawing.Point(175, 27);
+            this.lblNumPed.Name = "lblNumPed";
+            this.lblNumPed.Size = new System.Drawing.Size(40, 17);
+            this.lblNumPed.TabIndex = 24;
+            this.lblNumPed.Text = "1000";
+            // 
+            // lblNumProd
+            // 
+            this.lblNumProd.AutoSize = true;
+            this.lblNumProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumProd.Location = new System.Drawing.Point(178, 457);
+            this.lblNumProd.Name = "lblNumProd";
+            this.lblNumProd.Size = new System.Drawing.Size(40, 17);
+            this.lblNumProd.TabIndex = 26;
+            this.lblNumProd.Text = "1000";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 457);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(149, 17);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Numero de productos:";
             // 
             // label2
             // 
@@ -446,288 +730,16 @@
             this.btnHoy.UseVisualStyleBackColor = true;
             this.btnHoy.Click += new System.EventHandler(this.btnHoy_Click);
             // 
-            // label8
+            // bttnPDF
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(2, 3);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 20);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "Pedidos";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.lblPedRech);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.lblPedPend);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.lblPedAcep);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.lblNumPed);
-            this.panel2.Location = new System.Drawing.Point(3, 24);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(222, 111);
-            this.panel2.TabIndex = 29;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 67);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 17);
-            this.label9.TabIndex = 29;
-            this.label9.Text = "Aceptados:";
-            // 
-            // lblPedAcep
-            // 
-            this.lblPedAcep.AutoSize = true;
-            this.lblPedAcep.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPedAcep.Location = new System.Drawing.Point(175, 67);
-            this.lblPedAcep.Name = "lblPedAcep";
-            this.lblPedAcep.Size = new System.Drawing.Size(40, 17);
-            this.lblPedAcep.TabIndex = 30;
-            this.lblPedAcep.Text = "1000";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 47);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(83, 17);
-            this.label11.TabIndex = 31;
-            this.label11.Text = "Pendientes:";
-            // 
-            // lblPedPend
-            // 
-            this.lblPedPend.AutoSize = true;
-            this.lblPedPend.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPedPend.Location = new System.Drawing.Point(175, 47);
-            this.lblPedPend.Name = "lblPedPend";
-            this.lblPedPend.Size = new System.Drawing.Size(40, 17);
-            this.lblPedPend.TabIndex = 32;
-            this.lblPedPend.Text = "1000";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(3, 88);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(91, 17);
-            this.label13.TabIndex = 33;
-            this.label13.Text = "Rechazados:";
-            // 
-            // lblPedRech
-            // 
-            this.lblPedRech.AutoSize = true;
-            this.lblPedRech.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPedRech.Location = new System.Drawing.Point(175, 88);
-            this.lblPedRech.Name = "lblPedRech";
-            this.lblPedRech.Size = new System.Drawing.Size(40, 17);
-            this.lblPedRech.TabIndex = 34;
-            this.lblPedRech.Text = "1000";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.label15);
-            this.panel3.Controls.Add(this.lblSocBaj);
-            this.panel3.Controls.Add(this.lblSocActivo);
-            this.panel3.Controls.Add(this.lblNumSocios);
-            this.panel3.Controls.Add(this.lblSocAct);
-            this.panel3.Controls.Add(this.label22);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(3, 159);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(222, 111);
-            this.panel3.TabIndex = 35;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(2, 80);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(104, 17);
-            this.label15.TabIndex = 33;
-            this.label15.Text = "Dados de baja:";
-            // 
-            // lblSocBaj
-            // 
-            this.lblSocBaj.AutoSize = true;
-            this.lblSocBaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSocBaj.Location = new System.Drawing.Point(175, 80);
-            this.lblSocBaj.Name = "lblSocBaj";
-            this.lblSocBaj.Size = new System.Drawing.Size(40, 17);
-            this.lblSocBaj.TabIndex = 34;
-            this.lblSocBaj.Text = "1000";
-            // 
-            // lblSocActivo
-            // 
-            this.lblSocActivo.AutoSize = true;
-            this.lblSocActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSocActivo.Location = new System.Drawing.Point(3, 55);
-            this.lblSocActivo.Name = "lblSocActivo";
-            this.lblSocActivo.Size = new System.Drawing.Size(57, 17);
-            this.lblSocActivo.TabIndex = 29;
-            this.lblSocActivo.Text = "Activos:";
-            // 
-            // lblSocAct
-            // 
-            this.lblSocAct.AutoSize = true;
-            this.lblSocAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSocAct.Location = new System.Drawing.Point(175, 55);
-            this.lblSocAct.Name = "lblSocAct";
-            this.lblSocAct.Size = new System.Drawing.Size(40, 17);
-            this.lblSocAct.TabIndex = 30;
-            this.lblSocAct.Text = "1000";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(2, 3);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(57, 20);
-            this.label22.TabIndex = 28;
-            this.label22.Text = "Socios";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label17);
-            this.panel4.Controls.Add(this.lblListVen);
-            this.panel4.Controls.Add(this.label24);
-            this.panel4.Controls.Add(this.lblNumListas);
-            this.panel4.Controls.Add(this.lblLisAct);
-            this.panel4.Controls.Add(this.label27);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(3, 297);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(222, 111);
-            this.panel4.TabIndex = 36;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(3, 81);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(70, 17);
-            this.label17.TabIndex = 33;
-            this.label17.Text = "Vencidas:";
-            // 
-            // lblListVen
-            // 
-            this.lblListVen.AutoSize = true;
-            this.lblListVen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblListVen.Location = new System.Drawing.Point(175, 81);
-            this.lblListVen.Name = "lblListVen";
-            this.lblListVen.Size = new System.Drawing.Size(40, 17);
-            this.lblListVen.TabIndex = 34;
-            this.lblListVen.Text = "1000";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(3, 56);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(57, 17);
-            this.label24.TabIndex = 29;
-            this.label24.Text = "Activas:";
-            // 
-            // lblLisAct
-            // 
-            this.lblLisAct.AutoSize = true;
-            this.lblLisAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLisAct.Location = new System.Drawing.Point(175, 56);
-            this.lblLisAct.Name = "lblLisAct";
-            this.lblLisAct.Size = new System.Drawing.Size(40, 17);
-            this.lblLisAct.TabIndex = 30;
-            this.lblLisAct.Text = "1000";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(2, 3);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(133, 20);
-            this.label27.TabIndex = 28;
-            this.label27.Text = "Listas de pedidos";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.label21);
-            this.panel5.Controls.Add(this.lblProvBaja);
-            this.panel5.Controls.Add(this.label26);
-            this.panel5.Controls.Add(this.lblProvAct);
-            this.panel5.Controls.Add(this.lblNumProv);
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.label30);
-            this.panel5.Location = new System.Drawing.Point(3, 506);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(222, 111);
-            this.panel5.TabIndex = 37;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(3, 81);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(104, 17);
-            this.label21.TabIndex = 33;
-            this.label21.Text = "Dados de baja:";
-            // 
-            // lblProvBaja
-            // 
-            this.lblProvBaja.AutoSize = true;
-            this.lblProvBaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProvBaja.Location = new System.Drawing.Point(175, 81);
-            this.lblProvBaja.Name = "lblProvBaja";
-            this.lblProvBaja.Size = new System.Drawing.Size(40, 17);
-            this.lblProvBaja.TabIndex = 34;
-            this.lblProvBaja.Text = "1000";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(3, 56);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(57, 17);
-            this.label26.TabIndex = 29;
-            this.label26.Text = "Activos:";
-            // 
-            // lblProvAct
-            // 
-            this.lblProvAct.AutoSize = true;
-            this.lblProvAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProvAct.Location = new System.Drawing.Point(175, 56);
-            this.lblProvAct.Name = "lblProvAct";
-            this.lblProvAct.Size = new System.Drawing.Size(40, 17);
-            this.lblProvAct.TabIndex = 30;
-            this.lblProvAct.Text = "1000";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(2, 3);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(102, 20);
-            this.label30.TabIndex = 28;
-            this.label30.Text = "Proveedores:";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(5, 426);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(85, 20);
-            this.label28.TabIndex = 35;
-            this.label28.Text = "Productos:";
+            this.bttnPDF.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bttnPDF.Location = new System.Drawing.Point(12, 7);
+            this.bttnPDF.Name = "bttnPDF";
+            this.bttnPDF.Size = new System.Drawing.Size(111, 27);
+            this.bttnPDF.TabIndex = 14;
+            this.bttnPDF.Text = "Descargar PDF";
+            this.bttnPDF.UseVisualStyleBackColor = true;
+            this.bttnPDF.Click += new System.EventHandler(this.bttnPDF_Click);
             // 
             // Reportes
             // 
@@ -735,6 +747,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1330, 700);
+            this.Controls.Add(this.bttnPDF);
             this.Controls.Add(this.btnHoy);
             this.Controls.Add(this.btnSemana);
             this.Controls.Add(this.btnMes);
@@ -757,14 +770,14 @@
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -827,5 +840,6 @@
         private System.Windows.Forms.Label lblLisAct;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Button bttnPDF;
     }
 }

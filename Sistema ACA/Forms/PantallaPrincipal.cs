@@ -41,6 +41,7 @@ namespace Sistema_ACA
             int contador = 0;
             foreach(ToolStripMenuItem item in menuStrip1.Items)
             {
+                int contadorAdmin = 0;
                 if(item.HasDropDownItems)
                 {
                     foreach(ToolStripMenuItem item2 in item.DropDownItems)
@@ -60,10 +61,12 @@ namespace Sistema_ACA
                             }
                             if(contador == item2.DropDownItems.Count)
                             {
+                                contadorAdmin++;
                                 item2.Visible = false;
                             }
                             else
                             {
+
                                 item2.Visible = true;
                             }
                         }
@@ -74,10 +77,19 @@ namespace Sistema_ACA
                                 item2.Visible = true;
                             }else
                             {
+                                contadorAdmin++;
                                 item2.Visible = false;
                             }
                         }
                     }
+                            if(contadorAdmin == item.DropDownItems.Count)
+                            {
+                                item.Visible = false;
+                            }
+                            else
+                            {
+                                item.Visible = true;
+                            }
                 }
                 else
                 {

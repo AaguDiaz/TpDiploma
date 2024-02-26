@@ -102,14 +102,13 @@ namespace Controladora
         {
             string userName = UserLoginCache.nombre;
             string userAperllido = UserLoginCache.apellido;
-            string userMail = UserLoginCache.mail;
             var mailService = new COMUN.Mail.SystemSupportMail();
             foreach (string mail in moUsu.MostrarAdmins())
             {
                 mailService.sendMail(
                     subjet: "SYSTEM: Nueva solicitud de pedido",
                     body: "El usuario: " + userName + "  " + userAperllido + " registró un nuevo pedido el dia: " + DateTime.Now + "\n" + "El pedido espera confirmacion.",
-                    recipientMail: new List<string> { userMail }
+                    recipientMail: new List<string> { mail }
                     );
             }
         }

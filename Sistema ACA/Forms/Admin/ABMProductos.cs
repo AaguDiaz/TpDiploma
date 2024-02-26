@@ -30,11 +30,14 @@ namespace Sistema_ACA.Forms.Admin
             dgvProd.ClearSelection();
             MetodosComunes.CargarModulosFormularios(this.Name, flowLayoutPanel1);
         }
+
         public void cargarCategorias()
         {
             cbCat.DataSource = cnProducto.MostrarCategorias();
-            cbCat.DisplayMember = "nombre_cat";
+            cbCat.DisplayMember = "nombre";
+            cbCat.ValueMember = "id_categoria";
         }
+
         public void confiVentana()
         {
             FormBorderStyle = FormBorderStyle.FixedSingle;

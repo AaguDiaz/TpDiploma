@@ -19,14 +19,10 @@ namespace Sistema_ACA
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void InicioSesion_Load(object sender, EventArgs e)
         {
-
+            this.ActiveControl = null;
         }
 
         private void Logout(object sender, FormClosedEventArgs e)
@@ -128,6 +124,11 @@ namespace Sistema_ACA
                 txtContra.ForeColor = Color.DimGray;
                 txtContra.UseSystemPasswordChar = false;
             }
+        }
+
+        private void InicioSesion_Activated(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
         }
     }
     }
