@@ -139,7 +139,7 @@ namespace Sistema_ACA.Forms.Admin
             save.FileName = string.Format("Reporte ",DateTime.Now.ToString("ddMMyyyy") );
 
             string paginahtml_texto = Properties.Resources.Plantilla.ToString();
-            paginahtml_texto = paginahtml_texto.Replace("@CLIENTE", UserLoginCache.nombre);
+            paginahtml_texto = paginahtml_texto.Replace("@CLIENTE", UserLoginCache.nombre + UserLoginCache.apellido);
             paginahtml_texto = paginahtml_texto.Replace("@DOCUMENTO", UserLoginCache.dni.ToString());
             paginahtml_texto = paginahtml_texto.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yyyy"));
 

@@ -88,43 +88,44 @@ namespace Sistema_ACA.Forms.Admin
 
         }
 
-        private void clbPermisos_ItemCheck(object sender, ItemCheckEventArgs e)
+        public void clbPermisos_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            string permisoSeleccionado = clbPermisos.Items[e.Index].ToString();
-            if (e.NewValue == CheckState.Checked) //(1) El CheckBox se marcó?
-            {
-                Permisos permiso = Permisos.PermisosPorFormulario.Find(p => p.nombre_permiso == permisoSeleccionado);
-                if (permiso != null)// (2) Verdadero. Existe el permiso seleccionado en la lista de permisos del furmulario?
+                string permisoSeleccionado = clbPermisos.Items[e.Index].ToString();
+
+                if (e.NewValue == CheckState.Checked) //(1) El CheckBox se marcó?
                 {
-                    TreeNode existingNode = tvGrupo.Nodes.Cast<TreeNode>().FirstOrDefault(n => n.Text == permiso.nombre_permiso); 
-                    if (existingNode == null)// (3) Verdadero. Existe el nodo?
+                    Permisos permiso = Permisos.PermisosPorFormulario.Find(p => p.nombre_permiso == permisoSeleccionado);
+                    if (permiso != null)// (2) Verdadero. Existe el permiso seleccionado en la lista de permisos del furmulario?
                     {
-                        //(4) Verdadero. Crear un nodo para el permiso
-                        TreeNode permisoNode = new TreeNode(permiso.nombre_permiso);
-                        TreeNode formularioNode = new TreeNode(permiso.formulario.nombre_formulario);
-                        permisoNode.Nodes.Add(formularioNode);
-                        foreach (Modulos modulo in permiso.modulos)
+                        TreeNode existingNode = tvGrupo.Nodes.Cast<TreeNode>().FirstOrDefault(n => n.Text == permiso.nombre_permiso);
+                        if (existingNode == null)// (3) Verdadero. Existe el nodo?
                         {
-                            TreeNode moduloNode = new TreeNode(modulo.nombre_modulo);
-                            formularioNode.Nodes.Add(moduloNode);
+                            //(4) Verdadero. Crear un nodo para el permiso
+                            TreeNode permisoNode = new TreeNode(permiso.nombre_permiso);
+                            TreeNode formularioNode = new TreeNode(permiso.formulario.nombre_formulario);
+                            permisoNode.Nodes.Add(formularioNode);
+                            foreach (Modulos modulo in permiso.modulos)
+                            {
+                                TreeNode moduloNode = new TreeNode(modulo.nombre_modulo);
+                                formularioNode.Nodes.Add(moduloNode);
+                            }
+                            tvGrupo.Nodes.Add(permisoNode);
+                            tvGrupo.ExpandAll();
                         }
-                        tvGrupo.Nodes.Add(permisoNode);
-                        tvGrupo.ExpandAll();
                     }
                 }
-            }
-            else if (e.NewValue == CheckState.Unchecked)// (5) Negavito. El CheckBox se desmarcó?
-            {
-                foreach (TreeNode node in tvGrupo.Nodes)
+                else if (e.NewValue == CheckState.Unchecked)// (5) Negavito. El CheckBox se desmarcó?
                 {
-                    if (node.Text == permisoSeleccionado)//(6) Verdadero. Existe el nodo?
+                    foreach (TreeNode node in tvGrupo.Nodes)
                     {
-                        tvGrupo.Nodes.Remove(node);
-                        break;
+                        if (node.Text == permisoSeleccionado)//(6) Verdadero. Existe el nodo?
+                        {
+                            tvGrupo.Nodes.Remove(node);
+                            break;
+                        }
                     }
                 }
-            }
-            tvGrupo.Refresh();//(7) Fin
+                tvGrupo.Refresh();//(7) Fin
         }
 
         private Composite Grupo()

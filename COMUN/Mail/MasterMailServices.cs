@@ -26,7 +26,7 @@ namespace COMUN.Mail
             smtpClient.EnableSsl = ssl;
         }
 
-        public void sendMail(string subjet, string body, List<string> recipientMail)
+        public void sendMail(string subjet, string body, List<string> recipientMail, List<string> attachmentPaths)
         {
             var mailMessage = new MailMessage();
             try 
@@ -38,7 +38,11 @@ namespace COMUN.Mail
                 }
                 mailMessage.Subject = subjet;
                 mailMessage.Body= body;
-                mailMessage.Priority = MailPriority.Normal;
+                mailMessage.Priority = MailPriority.Normal; 
+                foreach (string attachmentPath in attachmentPaths)
+                {
+                    mailMessage.Attachments.Add(new Attachment(attachmentPath));
+                }
                 smtpClient.Send(mailMessage);
             }
             catch(Exception ex){}

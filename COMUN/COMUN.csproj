@@ -165,6 +165,7 @@
     <Compile Include="Cache\CacheProductos.cs" />
     <Compile Include="Cache\CacheProveedor.cs" />
     <Compile Include="Cache\CacheReportes.cs" />
+    <Compile Include="Cache\GrupoFamiliar.cs" />
     <Compile Include="Interfaces\IPrestacion.cs" />
     <Compile Include="Cache\MailCache.cs" />
     <Compile Include="Mail\MasterMailServices.cs" />

@@ -77,5 +77,59 @@ namespace Modelo
             }
         }
 
+        public DataTable MostrarSoliciudesUsuario(int CurrentPage, DateTime desde, DateTime hasta)
+        {
+            DataTable tabla = new DataTable();
+            using (SqlConnection connection = new SqlConnection(MoConexionSQL.Instance.Conexion))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT s.id_solicitud AS ID, s.total AS Precio_total, e.Estado AS Estado, s.fecha AS Fecha_del_pedido " +
+                        " FROM solicitudes s " +
+                        " LEFT JOIN empleados em ON s.id_empleado = em.id_empleado " +
+                        " LEFT JOIN estado e ON s.id_estado = e.id_estado" +
+                        " LEFT JOIN usuarios u ON em.id_usuario = u.id_usuario " +
+                        " WHERE u.id_usuario = @idusuario AND s.fecha BETWEEN @FechaDesde AND @FechaHasta " +
+                        "   ORDER BY id_solicitud OFFSET ((" + CurrentPage + " - 1) * 15) ROWS FETCH NEXT 15 ROWS ONLY";
+                    command.Parameters.AddWithValue("@idusuario", UserLoginCache.id_usuario);
+                    command.Parameters.AddWithValue("@FechaDesde", desde);
+                    command.Parameters.AddWithValue("@FechaHasta", hasta);
+                    command.Parameters.AddWithValue("@id", UserLoginCache.id_usuario);
+                    SqlDataReader reader = command.ExecuteReader();
+                    tabla.Load(reader);
+                    connection.Close();
+                }
+            }
+            return tabla;
+        }
+        public DataTable MostarSoliFiltro(int CurrentPage, int estado, DateTime desde, DateTime hasta)
+        {
+            using (SqlConnection connection = new SqlConnection(MoConexionSQL.Instance.Conexion))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    DataTable tabla = new DataTable();
+                    command.Connection = connection;
+                    connection.Open();
+                    command.CommandText = "SELECT s.id_solicitud AS ID, s.total AS Precio_total, e.Estado AS Estado, s.fecha AS Fecha_del_pedido" +
+                        "   FROM solicitudes s " +
+                        "   LEFT JOIN estado e ON s.id_estado = e.id_estado " +
+                        "   LEFT JOIN empleados em ON s.id_empleado = em.id_empleado " +
+                        "   LEFT JOIN usuarios u ON em.id_usuario = u.id_usuario " +
+                        "   WHERE u.id_usuario =@idusuario AND s.id_estado = @estado AND s.fecha BETWEEN @FechaDesde AND @FechaHasta " +
+                        "   ORDER BY id_solicitud OFFSET ((" + CurrentPage + " - 1) * 15) ROWS FETCH NEXT 15 ROWS ONLY";
+                    command.Parameters.AddWithValue("@idusuario", UserLoginCache.id_usuario);
+                    command.Parameters.AddWithValue("@estado", estado);
+                    command.Parameters.AddWithValue("@FechaDesde", desde);
+                    command.Parameters.AddWithValue("@FechaHasta", hasta);
+                    tabla.Load(command.ExecuteReader());
+                    command.Parameters.Clear();
+                    connection.Close();
+                    return tabla;
+                }
+            }
+        }
     }
 }

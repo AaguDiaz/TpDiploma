@@ -37,21 +37,26 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbEstado = new System.Windows.Forms.TabControl();
             this.tpInfo = new System.Windows.Forms.TabPage();
-            this.txtTel = new System.Windows.Forms.TextBox();
-            this.txtCvu = new System.Windows.Forms.TextBox();
-            this.txtDni = new System.Windows.Forms.TextBox();
-            this.txtDire = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new FontAwesome.Sharp.IconButton();
-            this.btnConfirmar = new FontAwesome.Sharp.IconButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlInfo = new System.Windows.Forms.Panel();
+            this.dgvGrupoFamiliar = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtMail = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
+            this.txtTel = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnSolicitar = new FontAwesome.Sharp.IconButton();
+            this.btnConfirmar = new FontAwesome.Sharp.IconButton();
+            this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnCambiarContra = new FontAwesome.Sharp.IconButton();
             this.btnEditarInfo = new FontAwesome.Sharp.IconButton();
+            this.txtCvu = new System.Windows.Forms.TextBox();
+            this.txtDni = new System.Windows.Forms.TextBox();
             this.txtContraInfo = new System.Windows.Forms.TextBox();
+            this.txtDire = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -95,22 +100,52 @@
             this.tbDeuda = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtMail = new System.Windows.Forms.TextBox();
+            this.btnBaja = new FontAwesome.Sharp.IconButton();
+            this.dgvSoli = new System.Windows.Forms.DataGridView();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.dtpHastaSoli = new System.Windows.Forms.DateTimePicker();
+            this.dtpDesdeSol = new System.Windows.Forms.DateTimePicker();
+            this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
+            this.cbFiltrosSoli = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel8 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel9 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnDetallesSoli = new FontAwesome.Sharp.IconToolStripButton();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel10 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.lblSoli = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+            this.lblpag = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tbEstado.SuspendLayout();
             this.tpInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrupoFamiliar)).BeginInit();
             this.panel5.SuspendLayout();
             this.tpPed.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
+            this.tbPrestacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSoli)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
+            this.bindingNavigator2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
@@ -175,7 +210,6 @@
             // 
             // tpInfo
             // 
-            this.tpInfo.Controls.Add(this.pictureBox2);
             this.tpInfo.Controls.Add(this.pnlInfo);
             this.tpInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpInfo.Location = new System.Drawing.Point(4, 39);
@@ -186,104 +220,10 @@
             this.tpInfo.Text = "Informacion personal";
             this.tpInfo.UseVisualStyleBackColor = true;
             // 
-            // txtTel
-            // 
-            this.txtTel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTel.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTel.Location = new System.Drawing.Point(420, 123);
-            this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(222, 16);
-            this.txtTel.TabIndex = 4;
-            this.txtTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
-            // 
-            // txtCvu
-            // 
-            this.txtCvu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCvu.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCvu.Location = new System.Drawing.Point(420, 201);
-            this.txtCvu.Name = "txtCvu";
-            this.txtCvu.Size = new System.Drawing.Size(222, 16);
-            this.txtCvu.TabIndex = 5;
-            this.txtCvu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
-            // 
-            // txtDni
-            // 
-            this.txtDni.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDni.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDni.Location = new System.Drawing.Point(95, 199);
-            this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(222, 16);
-            this.txtDni.TabIndex = 5;
-            this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
-            // 
-            // txtDire
-            // 
-            this.txtDire.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDire.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDire.Location = new System.Drawing.Point(95, 122);
-            this.txtDire.Name = "txtDire";
-            this.txtDire.Size = new System.Drawing.Size(222, 16);
-            this.txtDire.TabIndex = 3;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNombre.Location = new System.Drawing.Point(95, 32);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(222, 16);
-            this.txtNombre.TabIndex = 1;
-            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Cancel;
-            this.btnCancelar.IconColor = System.Drawing.Color.Black;
-            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelar.IconSize = 50;
-            this.btnCancelar.Location = new System.Drawing.Point(262, 0);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(106, 89);
-            this.btnCancelar.TabIndex = 7;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Visible = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmar.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-            this.btnConfirmar.IconColor = System.Drawing.Color.Black;
-            this.btnConfirmar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnConfirmar.IconSize = 50;
-            this.btnConfirmar.Location = new System.Drawing.Point(386, 0);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(106, 89);
-            this.btnConfirmar.TabIndex = 8;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnConfirmar.UseVisualStyleBackColor = false;
-            this.btnConfirmar.Visible = false;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(672, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(646, 445);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
             // pnlInfo
             // 
+            this.pnlInfo.Controls.Add(this.dgvGrupoFamiliar);
+            this.pnlInfo.Controls.Add(this.label8);
             this.pnlInfo.Controls.Add(this.txtMail);
             this.pnlInfo.Controls.Add(this.txtApellido);
             this.pnlInfo.Controls.Add(this.label30);
@@ -311,8 +251,47 @@
             this.pnlInfo.Controls.Add(this.lbl1);
             this.pnlInfo.Location = new System.Drawing.Point(3, 3);
             this.pnlInfo.Name = "pnlInfo";
-            this.pnlInfo.Size = new System.Drawing.Size(663, 451);
+            this.pnlInfo.Size = new System.Drawing.Size(1318, 451);
             this.pnlInfo.TabIndex = 0;
+            // 
+            // dgvGrupoFamiliar
+            // 
+            this.dgvGrupoFamiliar.AllowUserToAddRows = false;
+            this.dgvGrupoFamiliar.AllowUserToDeleteRows = false;
+            this.dgvGrupoFamiliar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGrupoFamiliar.Location = new System.Drawing.Point(670, 34);
+            this.dgvGrupoFamiliar.Name = "dgvGrupoFamiliar";
+            this.dgvGrupoFamiliar.ReadOnly = true;
+            this.dgvGrupoFamiliar.Size = new System.Drawing.Size(641, 302);
+            this.dgvGrupoFamiliar.TabIndex = 45;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(673, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(101, 17);
+            this.label8.TabIndex = 44;
+            this.label8.Text = "Grupo familiar:";
+            // 
+            // txtMail
+            // 
+            this.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMail.Location = new System.Drawing.Point(95, 280);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(222, 16);
+            this.txtMail.TabIndex = 43;
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtApellido.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtApellido.Location = new System.Drawing.Point(420, 33);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(222, 16);
+            this.txtApellido.TabIndex = 2;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label30
             // 
@@ -323,17 +302,83 @@
             this.label30.TabIndex = 7;
             this.label30.Text = "Contraseña:";
             // 
+            // txtTel
+            // 
+            this.txtTel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTel.Location = new System.Drawing.Point(420, 123);
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(222, 16);
+            this.txtTel.TabIndex = 4;
+            this.txtTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel5.Controls.Add(this.btnBaja);
+            this.panel5.Controls.Add(this.btnSolicitar);
             this.panel5.Controls.Add(this.btnConfirmar);
             this.panel5.Controls.Add(this.btnCancelar);
             this.panel5.Controls.Add(this.btnCambiarContra);
             this.panel5.Controls.Add(this.btnEditarInfo);
             this.panel5.Location = new System.Drawing.Point(8, 342);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(641, 89);
+            this.panel5.Size = new System.Drawing.Size(1303, 89);
             this.panel5.TabIndex = 25;
+            // 
+            // btnSolicitar
+            // 
+            this.btnSolicitar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSolicitar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSolicitar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnSolicitar.IconColor = System.Drawing.Color.Black;
+            this.btnSolicitar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSolicitar.IconSize = 35;
+            this.btnSolicitar.Location = new System.Drawing.Point(679, 0);
+            this.btnSolicitar.Name = "btnSolicitar";
+            this.btnSolicitar.Size = new System.Drawing.Size(106, 89);
+            this.btnSolicitar.TabIndex = 9;
+            this.btnSolicitar.Text = "Solicitar nuevo grupo familiar";
+            this.btnSolicitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSolicitar.UseVisualStyleBackColor = false;
+            this.btnSolicitar.Click += new System.EventHandler(this.btnSolicitar_Click);
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+            this.btnConfirmar.IconColor = System.Drawing.Color.Black;
+            this.btnConfirmar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnConfirmar.IconSize = 50;
+            this.btnConfirmar.Location = new System.Drawing.Point(259, 0);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(106, 89);
+            this.btnConfirmar.TabIndex = 8;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Visible = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Cancel;
+            this.btnCancelar.IconColor = System.Drawing.Color.Black;
+            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelar.IconSize = 50;
+            this.btnCancelar.Location = new System.Drawing.Point(381, 0);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(106, 89);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Visible = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnCambiarContra
             // 
@@ -370,6 +415,26 @@
             this.btnEditarInfo.UseVisualStyleBackColor = false;
             this.btnEditarInfo.Click += new System.EventHandler(this.btnEditarInfo_Click);
             // 
+            // txtCvu
+            // 
+            this.txtCvu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCvu.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCvu.Location = new System.Drawing.Point(420, 201);
+            this.txtCvu.Name = "txtCvu";
+            this.txtCvu.Size = new System.Drawing.Size(222, 16);
+            this.txtCvu.TabIndex = 5;
+            this.txtCvu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
+            // 
+            // txtDni
+            // 
+            this.txtDni.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDni.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDni.Location = new System.Drawing.Point(95, 199);
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(222, 16);
+            this.txtDni.TabIndex = 5;
+            this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
+            // 
             // txtContraInfo
             // 
             this.txtContraInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -382,6 +447,25 @@
             this.txtContraInfo.Text = "pito";
             this.txtContraInfo.UseSystemPasswordChar = true;
             // 
+            // txtDire
+            // 
+            this.txtDire.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDire.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDire.Location = new System.Drawing.Point(95, 122);
+            this.txtDire.Name = "txtDire";
+            this.txtDire.Size = new System.Drawing.Size(222, 16);
+            this.txtDire.TabIndex = 3;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNombre.Location = new System.Drawing.Point(95, 32);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(222, 16);
+            this.txtNombre.TabIndex = 1;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -390,6 +474,15 @@
             this.label16.Size = new System.Drawing.Size(232, 17);
             this.label16.TabIndex = 15;
             this.label16.Text = "____________________________";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(88, 282);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(232, 17);
+            this.label15.TabIndex = 14;
+            this.label15.Text = "____________________________";
             // 
             // label14
             // 
@@ -747,6 +840,8 @@
             // 
             // tbPrestacion
             // 
+            this.tbPrestacion.Controls.Add(this.panel6);
+            this.tbPrestacion.Controls.Add(this.dgvSoli);
             this.tbPrestacion.Location = new System.Drawing.Point(4, 39);
             this.tbPrestacion.Name = "tbPrestacion";
             this.tbPrestacion.Size = new System.Drawing.Size(1324, 457);
@@ -771,33 +866,243 @@
             this.panel2.Size = new System.Drawing.Size(1331, 31);
             this.panel2.TabIndex = 6;
             // 
-            // txtApellido
+            // btnBaja
             // 
-            this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtApellido.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtApellido.Location = new System.Drawing.Point(420, 33);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(222, 16);
-            this.txtApellido.TabIndex = 2;
-            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            this.btnBaja.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBaja.IconChar = FontAwesome.Sharp.IconChar.CircleMinus;
+            this.btnBaja.IconColor = System.Drawing.Color.Black;
+            this.btnBaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBaja.IconSize = 35;
+            this.btnBaja.Location = new System.Drawing.Point(800, 0);
+            this.btnBaja.Name = "btnBaja";
+            this.btnBaja.Size = new System.Drawing.Size(106, 89);
+            this.btnBaja.TabIndex = 10;
+            this.btnBaja.Text = "Solicitar dar de baja";
+            this.btnBaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnBaja.UseVisualStyleBackColor = false;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
-            // label15
+            // dgvSoli
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(88, 282);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(232, 17);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "____________________________";
+            this.dgvSoli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSoli.Location = new System.Drawing.Point(8, 75);
+            this.dgvSoli.Name = "dgvSoli";
+            this.dgvSoli.Size = new System.Drawing.Size(1306, 378);
+            this.dgvSoli.TabIndex = 0;
             // 
-            // txtMail
+            // panel6
             // 
-            this.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMail.Location = new System.Drawing.Point(95, 280);
-            this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(222, 16);
-            this.txtMail.TabIndex = 43;
+            this.panel6.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel6.Controls.Add(this.dtpHastaSoli);
+            this.panel6.Controls.Add(this.dtpDesdeSol);
+            this.panel6.Controls.Add(this.bindingNavigator2);
+            this.panel6.Location = new System.Drawing.Point(8, 5);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1306, 64);
+            this.panel6.TabIndex = 1;
+            // 
+            // dtpHastaSoli
+            // 
+            this.dtpHastaSoli.Location = new System.Drawing.Point(602, 22);
+            this.dtpHastaSoli.Name = "dtpHastaSoli";
+            this.dtpHastaSoli.Size = new System.Drawing.Size(200, 20);
+            this.dtpHastaSoli.TabIndex = 102;
+            this.dtpHastaSoli.ValueChanged += new System.EventHandler(this.dtpHastaSoli_ValueChanged);
+            // 
+            // dtpDesdeSol
+            // 
+            this.dtpDesdeSol.Location = new System.Drawing.Point(355, 22);
+            this.dtpDesdeSol.Name = "dtpDesdeSol";
+            this.dtpDesdeSol.Size = new System.Drawing.Size(197, 20);
+            this.dtpDesdeSol.TabIndex = 101;
+            this.dtpDesdeSol.ValueChanged += new System.EventHandler(this.dtpDesdeSol_ValueChanged);
+            // 
+            // bindingNavigator2
+            // 
+            this.bindingNavigator2.AddNewItem = null;
+            this.bindingNavigator2.AutoSize = false;
+            this.bindingNavigator2.CountItem = this.toolStripLabel6;
+            this.bindingNavigator2.DeleteItem = null;
+            this.bindingNavigator2.Dock = System.Windows.Forms.DockStyle.None;
+            this.bindingNavigator2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel7,
+            this.cbFiltrosSoli,
+            this.toolStripSeparator6,
+            this.toolStripLabel8,
+            this.toolStripSeparator7,
+            this.toolStripLabel9,
+            this.toolStripSeparator8,
+            this.btnDetallesSoli,
+            this.toolStripSeparator9,
+            this.toolStripLabel10,
+            this.toolStripSeparator10,
+            this.toolStripButton1,
+            this.toolStripSeparator11,
+            this.lblSoli,
+            this.toolStripTextBox1,
+            this.toolStripLabel6,
+            this.toolStripSeparator12,
+            this.lblpag,
+            this.toolStripSeparator13,
+            this.toolStripButton2});
+            this.bindingNavigator2.Location = new System.Drawing.Point(2, 2);
+            this.bindingNavigator2.MoveFirstItem = null;
+            this.bindingNavigator2.MoveLastItem = null;
+            this.bindingNavigator2.MoveNextItem = this.toolStripButton2;
+            this.bindingNavigator2.MovePreviousItem = this.toolStripButton1;
+            this.bindingNavigator2.Name = "bindingNavigator2";
+            this.bindingNavigator2.PositionItem = this.toolStripTextBox1;
+            this.bindingNavigator2.Size = new System.Drawing.Size(1307, 60);
+            this.bindingNavigator2.TabIndex = 100;
+            this.bindingNavigator2.Text = "bindingNavigator2";
+            // 
+            // toolStripLabel6
+            // 
+            this.toolStripLabel6.Name = "toolStripLabel6";
+            this.toolStripLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripLabel6.Size = new System.Drawing.Size(37, 57);
+            this.toolStripLabel6.Text = "de {0}";
+            this.toolStripLabel6.ToolTipText = "Número total de elementos";
+            // 
+            // toolStripLabel7
+            // 
+            this.toolStripLabel7.Name = "toolStripLabel7";
+            this.toolStripLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripLabel7.Size = new System.Drawing.Size(42, 57);
+            this.toolStripLabel7.Text = "Filtros:";
+            // 
+            // cbFiltrosSoli
+            // 
+            this.cbFiltrosSoli.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFiltrosSoli.DropDownWidth = 300;
+            this.cbFiltrosSoli.IntegralHeight = false;
+            this.cbFiltrosSoli.Items.AddRange(new object[] {
+            "Seleccionar",
+            "Todas",
+            "Pendientes",
+            "Aceptadas",
+            "Rechazadas"});
+            this.cbFiltrosSoli.Name = "cbFiltrosSoli";
+            this.cbFiltrosSoli.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cbFiltrosSoli.Size = new System.Drawing.Size(250, 60);
+            this.cbFiltrosSoli.SelectedIndexChanged += new System.EventHandler(this.cbFiltrosSoli_SelectedIndexChanged);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 60);
+            // 
+            // toolStripLabel8
+            // 
+            this.toolStripLabel8.Name = "toolStripLabel8";
+            this.toolStripLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripLabel8.Size = new System.Drawing.Size(243, 57);
+            this.toolStripLabel8.Text = "Desde:                                                                   ";
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 60);
+            // 
+            // toolStripLabel9
+            // 
+            this.toolStripLabel9.Name = "toolStripLabel9";
+            this.toolStripLabel9.Size = new System.Drawing.Size(247, 57);
+            this.toolStripLabel9.Text = "Hasta:                                                                     ";
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 60);
+            // 
+            // btnDetallesSoli
+            // 
+            this.btnDetallesSoli.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.btnDetallesSoli.IconColor = System.Drawing.Color.Black;
+            this.btnDetallesSoli.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDetallesSoli.IconSize = 50;
+            this.btnDetallesSoli.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDetallesSoli.Name = "btnDetallesSoli";
+            this.btnDetallesSoli.Size = new System.Drawing.Size(88, 57);
+            this.btnDetallesSoli.Text = "   Ver detalles   ";
+            this.btnDetallesSoli.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDetallesSoli.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 60);
+            // 
+            // toolStripLabel10
+            // 
+            this.toolStripLabel10.Name = "toolStripLabel10";
+            this.toolStripLabel10.Size = new System.Drawing.Size(91, 57);
+            this.toolStripLabel10.Text = "                            ";
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 60);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripButton1.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 57);
+            this.toolStripButton1.Text = "Mover anterior";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.toolStripButton1.EnabledChanged += new System.EventHandler(this.toolStripButton1_EnabledChanged);
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 60);
+            // 
+            // lblSoli
+            // 
+            this.lblSoli.Name = "lblSoli";
+            this.lblSoli.Size = new System.Drawing.Size(72, 57);
+            this.lblSoli.Text = "Solicitudess:";
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.AccessibleName = "Posición";
+            this.toolStripTextBox1.AutoSize = false;
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
+            this.toolStripTextBox1.Text = "0";
+            this.toolStripTextBox1.ToolTipText = "Posición actual";
+            // 
+            // toolStripSeparator12
+            // 
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 60);
+            // 
+            // lblpag
+            // 
+            this.lblpag.Name = "lblpag";
+            this.lblpag.Size = new System.Drawing.Size(60, 57);
+            this.lblpag.Text = "Paginas: 1";
+            // 
+            // toolStripSeparator13
+            // 
+            this.toolStripSeparator13.Name = "toolStripSeparator13";
+            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 60);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 57);
+            this.toolStripButton2.Text = "Mover siguiente";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // EstadoCuenta
             // 
@@ -822,9 +1127,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tbEstado.ResumeLayout(false);
             this.tpInfo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrupoFamiliar)).EndInit();
             this.panel5.ResumeLayout(false);
             this.tpPed.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
@@ -832,7 +1137,14 @@
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
+            this.tbPrestacion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSoli)).EndInit();
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
+            this.bindingNavigator2.ResumeLayout(false);
+            this.bindingNavigator2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -867,7 +1179,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel5;
         private FontAwesome.Sharp.IconButton btnCambiarContra;
         private FontAwesome.Sharp.IconButton btnEditarInfo;
@@ -907,5 +1218,35 @@
         private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DataGridView dgvGrupoFamiliar;
+        private System.Windows.Forms.Label label8;
+        private FontAwesome.Sharp.IconButton btnSolicitar;
+        private FontAwesome.Sharp.IconButton btnBaja;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.DataGridView dgvSoli;
+        private System.Windows.Forms.DateTimePicker dtpHastaSoli;
+        private System.Windows.Forms.DateTimePicker dtpDesdeSol;
+        private System.Windows.Forms.BindingNavigator bindingNavigator2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel6;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel7;
+        private System.Windows.Forms.ToolStripComboBox cbFiltrosSoli;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel8;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel9;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private FontAwesome.Sharp.IconToolStripButton btnDetallesSoli;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel10;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private System.Windows.Forms.ToolStripLabel lblSoli;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
+        private System.Windows.Forms.ToolStripLabel lblpag;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.BindingSource bindingSource2;
     }
 }

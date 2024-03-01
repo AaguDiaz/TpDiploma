@@ -67,15 +67,19 @@ C:\Users\Agustin\Desktop\Sistema ACA\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Soc
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\Sistema ACA.exe.config
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\Sistema ACA.exe
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\Sistema ACA.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\COMUN.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\Controladora.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\itextsharp.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\itextsharp.xmlworker.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\System.Data.SqlClient.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\Modelo.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\COMUN.pdb
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\COMUN.dll.config
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\Controladora.pdb
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\Controladora.dll.config
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\itextsharp.xml
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\System.Data.SqlClient.xml
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\Modelo.pdb
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\Modelo.dll.config
@@ -106,7 +110,4 @@ C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema ACA
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema ACA.csproj.CopyComplete
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema ACA.exe
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema ACA.pdb
-C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\BouncyCastle.Crypto.dll
-C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\itextsharp.dll
-C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\itextsharp.xmlworker.dll
-C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Debug\itextsharp.xml
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.infoGrupoFamiliar.resources

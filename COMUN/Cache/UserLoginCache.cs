@@ -1,4 +1,5 @@
-﻿using COMUN.Seguridad;
+﻿using COMUN.Cache;
+using COMUN.Seguridad;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace COMUN
 
         public static List<Grupo> grupos { get; set; }
         public static List<Permisos> permisos_individuales { get; set; }
+        public static List<GrupoFamiliar> grupoFamiliar { get; set; }
 
         public static string estado { get; set; }
     }

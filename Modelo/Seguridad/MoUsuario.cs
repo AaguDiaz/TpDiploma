@@ -11,6 +11,7 @@ using COMUN.Seguridad;
 using COMUN.Seguridad.Composite;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Net.Http.Headers;
+using Modelo.Seguridad;
 
 namespace Modelo
 {
@@ -18,6 +19,7 @@ namespace Modelo
     {
         MoGrupos moGrupos = new MoGrupos();
         MoPermisos moPermisos = new MoPermisos();
+        MoGrupoFamiliar moGrupoFamiliar = new MoGrupoFamiliar();
         private SqlDataReader reader;
         int skip = 0;
 
@@ -40,7 +42,7 @@ namespace Modelo
                 "            LEFT JOIN permisos p ON up.id_permiso = p.id_permiso" +
                 "            WHERE u.mail = @mail AND u.contra = @contra";
                     command.Parameters.AddWithValue("@mail", mail);
-                    command.Parameters.AddWithValue("@contra", MetodosComunes.EncriptarPassBD(contrasena));
+                    command.Parameters.AddWithValue("@contra", MetodosComunes.Encrypt.GetSHA256(contrasena));
                     connection.Open();
 
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -64,6 +66,7 @@ namespace Modelo
                                 UserLoginCache.estado = row[11].ToString();
                                 moGrupos.ObtenerGruposDelUsuario();
                                 moPermisos.ObtenerPermisosIndividuales();
+                                moGrupoFamiliar.ObtenerGrupoFamiliar(Convert.ToInt32(row[0]));
                             }
                             command.Parameters.Clear();
                             connection.Close();
@@ -203,7 +206,8 @@ namespace Modelo
                         mailService.sendMail(
                             subjet: "SYSTEM: Solicitud de recuperación de contraseña",
                             body: "Hola, " + userName + "  " + userAperllido + " esta es tu solicitud de recuperacion de contraseña" + "\n" + "tu codigo de recuperacion es: " + cod,
-                            recipientMail: new List<string> { userMail }
+                            recipientMail: new List<string> { userMail },
+                            attachmentPaths: new List<string>()
                             );
                         connection.Close();
                         return "Hola, " + userName + "  " + userAperllido + " tu solicitud de recuperacion de contraseña ha sido enviada a" + userMail;
@@ -215,7 +219,7 @@ namespace Modelo
         }
         public bool cambiarContra(string mail, string contra)
         {
-            string contraEncriptada = MetodosComunes.EncriptarPassBD(contra); 
+            string contraEncriptada = MetodosComunes.Encrypt.GetSHA256(contra); 
             using (SqlConnection connection = new SqlConnection(MoConexionSQL.Instance.Conexion))
             {
                 using (SqlCommand command = new SqlCommand())
@@ -514,7 +518,7 @@ namespace Modelo
                     command.Connection = connection;
                     command.CommandText = "INSERT INTO usuarios (mail, contra, estado) OUTPUT INSERTED.id_usuario VALUES (@mail, @contra, @estado)";
                     command.Parameters.AddWithValue("@mail", mail);
-                    command.Parameters.AddWithValue("@contra", MetodosComunes.EncriptarPassBD(contra));
+                    command.Parameters.AddWithValue("@contra", MetodosComunes.Encrypt.GetSHA256(contra));
                     command.Parameters.AddWithValue("@estado", "Activo");
                     connection.Open();
                     int id_usuario = (int)command.ExecuteScalar();

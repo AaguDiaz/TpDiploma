@@ -84,7 +84,8 @@ namespace Controladora
                 mailService.sendMail(
                                        subjet: "ACA: Estado de su pedido",
                                        body: "Hola " + nombreyapellido + " su pedido con el ID: " + id_pedido + " fue: " + estado + " el dia: " + DateTime.Now,
-                                       recipientMail: new List<string> { mail } );
+                                       recipientMail: new List<string> { mail },
+                                       attachmentPaths: new List<string>());
             }
             else if (estado == "Rechazado")
             {
@@ -92,7 +93,8 @@ namespace Controladora
                                        subjet: "ACA: Estado de su pedido",
                                        body: "Hola: " + nombreyapellido + " su pedido con el ID: "+ id_pedido +  "fue: " + estado + " el dia: " + DateTime.Now + "\n" +
                                        "Si quiere saber el motivo consulte con: " + UserLoginCache.nombre + " " + UserLoginCache.apellido + " o con cualquier otro administrador, desde ya muchas gracias!.",
-                                       recipientMail: new List<string> { mail } );
+                                       recipientMail: new List<string> { mail }, 
+                                       attachmentPaths: new List<string>());
             }
         }
 
@@ -108,7 +110,8 @@ namespace Controladora
                 mailService.sendMail(
                     subjet: "SYSTEM: Nueva solicitud de pedido",
                     body: "El usuario: " + userName + "  " + userAperllido + " registró un nuevo pedido el dia: " + DateTime.Now + "\n" + "El pedido espera confirmacion.",
-                    recipientMail: new List<string> { mail }
+                    recipientMail: new List<string> { mail },
+                    attachmentPaths: new List<string>()
                     );
             }
         }

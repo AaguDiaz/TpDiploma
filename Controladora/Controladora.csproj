@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CnCaches.cs" />
+    <Compile Include="CnGrupoFamiliar.cs" />
     <Compile Include="CnReportes.cs" />
     <Compile Include="Prestaciones\CnDeudas.cs" />
     <Compile Include="Pedidos\CnListaProd.cs" />

@@ -17,6 +17,8 @@ namespace Sistema_ACA.Forms.Socio
     {
         CnUsuario cnUsuario = new CnUsuario();
         CnPedido cnPedido = new CnPedido();
+        CnGrupoFamiliar cnGrupoFamiliar = new CnGrupoFamiliar();
+        
         int conteo = 1;
         int CurrentPage = 1;
         DateTime fechaActual = DateTime.Now;
@@ -30,12 +32,16 @@ namespace Sistema_ACA.Forms.Socio
         private void EstadoCuenta_Load(object sender, EventArgs e)
         {
             CargarDatosUsuario();
+            CargarGrupoFamiliar();
             cbFiltrosPed.SelectedIndex = 0;
-            
+            cbFiltrosSoli.SelectedIndex = 0;
             DateTime fechaHaceUnAño = fechaActual.AddYears(-1);
             dtpDesde.Value = fechaHaceUnAño;
+            dtpDesdeSol.Value = fechaHaceUnAño;
         }
 
+
+        #region infousuarios
         private void CargarDatosUsuario()
         {
             txtNombre.Text = COMUN.UserLoginCache.nombre;
@@ -52,43 +58,42 @@ namespace Sistema_ACA.Forms.Socio
             txtDire.ReadOnly = true;
             txtTel.Text = COMUN.UserLoginCache.telefono.ToString();
             txtTel.ReadOnly = true;
-            txtContraInfo.Text = COMUN.MetodosComunes.DesEncriptarPassBD(COMUN.UserLoginCache.contra);
+            txtContraInfo.Text = COMUN.UserLoginCache.contra;
             txtContraInfo.ReadOnly = true;
            
         }
 
-        private void ActualizarDGVPed()
+        private void CargarGrupoFamiliar()
         {
-            if(cbFiltrosPed.SelectedIndex != 0 )
+            DataTable dt = new DataTable();
+            int edad = 0;
+            dt.Columns.Add("Nombre", typeof(string));
+            dt.Columns.Add("DNI", typeof(int));
+            dt.Columns.Add("Edad", typeof(int));
+            dt.Columns.Add("Parentesco", typeof(string));
+            if(UserLoginCache.grupoFamiliar != null)
             {
-                fechaActual = DateTime.Now;
-                if(dtpHasta.Value <= fechaActual)
+                foreach (var item in UserLoginCache.grupoFamiliar)
                 {
-                    bindingSource1.DataSource = cnPedido.MostrarPedidos(CurrentPage, cbFiltrosPed.Text, dtpDesde.Value, dtpHasta.Value);
-                    bindingNavigator1.BindingSource = bindingSource1;
-                    dgvPedido.DataSource = bindingSource1;
-                    ConfiDgvPed();
+                    DataRow row = dt.NewRow();
+                    row["Nombre"] = item.nombreCompleto;
+                    row["DNI"] = item.dni;
+                    edad = fechaActual.Year - item.fecha_nacimiento.Year;
+                    row["Edad"] = edad;
+                    row["Parentesco"] = item.parentesco;
+                    dt.Rows.Add(row);
                 }
-                else
-                {
-                    MessageBox.Show("La fecha hasta no puede ser mayor a la fecha actual", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
             }
-            else
+            if(dt.Rows.Count > 0)
             {
-                MessageBox.Show("Debe seleccionar un filtro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dgvGrupoFamiliar.DataSource = dt;
+                dgvGrupoFamiliar.Columns[0].Width = 200;
+                dgvGrupoFamiliar.Columns[1].Width = 150;
+                dgvGrupoFamiliar.Columns[2].Width = 50;
+                dgvGrupoFamiliar.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+               
             }
-            
         }
-        private void ConfiDgvPed()
-        {
-            dgvPedido.Columns[0].Width = 100;
-            dgvPedido.Columns[1].Width = 200;
-            dgvPedido.Columns[2].Width = 300;
-            dgvPedido.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-        }
-
 
         //Botones
         private void btnEditarInfo_Click(object sender, EventArgs e)
@@ -138,7 +143,98 @@ namespace Sistema_ACA.Forms.Socio
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void btnSolicitar_Click(object sender, EventArgs e)
+        {
+            infoGrupoFamiliar infoGrupoFamiliar = new infoGrupoFamiliar();
+            infoGrupoFamiliar.ShowDialog();
+        }
+        private void btnBaja_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        //validaciones
+        private void txtDni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MetodosComunes.KeyPressSoloNumeros(e);
+        }
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MetodosComunes.KeyPressSoloLetras(e);
+        }
+
+        #endregion
+
+
+        #region pedidos
+
+        private void ActualizarDGVPed()
+        {
+            if(cbFiltrosPed.SelectedIndex != 0 )
+            {
+                fechaActual = DateTime.Now;
+                if(dtpHasta.Value <= fechaActual)
+                {
+                    bindingSource1.DataSource = cnPedido.MostrarPedidos(CurrentPage, cbFiltrosPed.Text, dtpDesde.Value, dtpHasta.Value);
+                    bindingNavigator1.BindingSource = bindingSource1;
+                    dgvPedido.DataSource = bindingSource1;
+                    ConfiDgvPed();
+                }
+                else
+                {
+                    MessageBox.Show("La fecha hasta no puede ser mayor a la fecha actual", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un filtro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+        private void ConfiDgvPed()
+        {
+            dgvPedido.Columns[0].Width = 100;
+            dgvPedido.Columns[1].Width = 200;
+            dgvPedido.Columns[2].Width = 300;
+            dgvPedido.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void cbFiltrosPed_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbFiltrosPed.SelectedIndex == 0)
+            {
+            }
+            else
+            {
+                ActualizarDGVPed();
+            }
+            
+        }
+
+        private void dtpDesde_ValueChanged(object sender, EventArgs e)
+        {
+            if (cbFiltrosPed.SelectedIndex == 0)
+            {
+            }
+            else
+            {
+                ActualizarDGVPed();
+            }
+        }
+
+        private void dtpHasta_ValueChanged(object sender, EventArgs e)
+        {
+            if (cbFiltrosPed.SelectedIndex == 0)
+            {
+            }
+            else
+            {
+                ActualizarDGVPed();
+            }
+        }
+
+        //Botones
         private void btnDetalles_Click(object sender, EventArgs e)
         {
             if(dgvPedido.SelectedRows.Count > 0)
@@ -172,7 +268,6 @@ namespace Sistema_ACA.Forms.Socio
                 ActualizarDGVPed();
             }
         }
-
         private void bnMovePreviousItemPed_Click(object sender, EventArgs e)
         {
             if (CurrentPage > 1)
@@ -194,49 +289,105 @@ namespace Sistema_ACA.Forms.Socio
 
 
 
+        #endregion
 
-        //validaciones
-        private void txtDni_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            MetodosComunes.KeyPressSoloNumeros(e);
-        }
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            MetodosComunes.KeyPressSoloLetras(e);
-        }
+        #region solicitudes
+        SolicitudController cnSoli = new SolicitudController();
+        int CurrentPageSoli = 1;
+        int conteoSoli = 1;
 
-
-        private void cbFiltrosPed_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbFiltrosSoli_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbFiltrosPed.SelectedIndex == 0)
             {
             }
             else
             {
-                ActualizarDGVPed();
+                ActualizarDGVSol();
             }
-            
+        }
+        private void ActualizarDGVSol()
+        {
+            if(cbFiltrosSoli.SelectedIndex != 0)
+            {
+                fechaActual = DateTime.Now;
+                if (dtpHastaSoli.Value <= fechaActual)
+                {
+                    bindingSource2.DataSource = cnSoli.MostrarSoliciudesUsuario(CurrentPageSoli, cbFiltrosSoli.Text, dtpDesdeSol.Value, dtpHastaSoli.Value);
+                    bindingNavigator2.BindingSource = bindingSource2;
+                    dgvSoli.DataSource = bindingSource2;
+                    ConfiDgvSoli();
+                }
+                else
+                {
+                    MessageBox.Show("La fecha hasta no puede ser mayor a la fecha actual", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un filtro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void dtpDesde_ValueChanged(object sender, EventArgs e)
+        private void ConfiDgvSoli()
         {
-            if (cbFiltrosPed.SelectedIndex == 0)
+            dgvPedido.Columns[0].Width = 100;
+            dgvPedido.Columns[1].Width = 200;
+            dgvPedido.Columns[2].Width = 300;
+            dgvPedido.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+        #endregion
+
+        private void dtpDesdeSol_ValueChanged(object sender, EventArgs e)
+        {
+            if (cbFiltrosSoli.SelectedIndex == 0)
             {
             }
             else
             {
-                ActualizarDGVPed();
+                ActualizarDGVSol();
             }
         }
 
-        private void dtpHasta_ValueChanged(object sender, EventArgs e)
+        private void dtpHastaSoli_ValueChanged(object sender, EventArgs e)
         {
-            if (cbFiltrosPed.SelectedIndex == 0)
+            if (cbFiltrosSoli.SelectedIndex == 0)
             {
             }
             else
             {
-                ActualizarDGVPed();
+                ActualizarDGVSol();
+            }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if(CurrentPageSoli > 1)
+            {
+                conteoSoli--;
+                lblpag.Text = "Paginas: " + conteoSoli.ToString();
+                CurrentPageSoli--;
+                ActualizarDGVSol();
+            }
+        }
+
+        private void toolStripButton1_EnabledChanged(object sender, EventArgs e)
+        {
+            if (CurrentPageSoli >= 1)
+            {
+                toolStripButton1.Enabled = true;
+            }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            if (dgvSoli.Rows.Count == 15)
+            {
+                conteoSoli++;
+                lblpag.Text = "Paginas: " + conteoSoli.ToString();
+                CurrentPageSoli++;
+                ActualizarDGVSol();
             }
         }
     }

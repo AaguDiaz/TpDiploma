@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net.Mail;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
@@ -106,9 +107,10 @@ namespace Controladora
                 mailService.sendMail(
                     subjet: "SYSTEM: Registro de usuario",
                     body: "Hola, " + nombre + "  " + apellido + "\n" + "Tu cuenta ya ha sido registrada, para ingresar la aplicacion debera ingresar su mail y su contraseña generada automaticamente la siguiente es su nombre más 1234 en tu caso seria:  " +
-                    nombre + "1234" + "\n" + "Te recomendamos que apenas incie sesion vaya a Estado de cuenta y modifique su contraseña para no tener problemas en un futuro."+"\n"+"Desde ya muchas gracias.",
-                    recipientMail: new List<string> { mail }
-                    );
+                    nombre + "1234" + "\n" + "Te recomendamos que apenas incie sesion vaya a Estado de cuenta y modifique su contraseña para no tener problemas en un futuro." + "\n" + "Desde ya muchas gracias.",
+                    recipientMail: new List<string> { mail },
+                    attachmentPaths: new List<string>()
+                    ) ;
 
                 return true;
             }

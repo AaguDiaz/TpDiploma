@@ -264,6 +264,7 @@ C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\COMUN.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\COMUN.pdb
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\Adobe.DocumentServices.PDFTools.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\itextsharp.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\jose-jwt.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\Microsoft.AspNetCore.WebUtilities.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\Microsoft.Extensions.Primitives.dll
@@ -273,6 +274,7 @@ C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\Polly.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\RestSharp.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\System.Buffers.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\System.Drawing.Common.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\System.Memory.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
@@ -287,6 +289,7 @@ C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\UglyToad.PdfPig.T
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\UglyToad.PdfPig.Tokens.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\UriTemplate.Core.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\Adobe.DocumentServices.PDFTools.xml
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\itextsharp.xml
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\Microsoft.AspNetCore.WebUtilities.xml
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\Microsoft.Extensions.Primitives.xml
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\Microsoft.Net.Http.Headers.xml
@@ -295,6 +298,8 @@ C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\Newtonsoft.Json.x
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\Polly.xml
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\RestSharp.xml
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\System.Buffers.xml
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\System.Drawing.Common.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\System.Drawing.Common.xml
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\System.Memory.xml
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
@@ -319,8 +324,3 @@ C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\obj\Debug\COMUN.csproj.Core
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\obj\Debug\COMUN.csproj.CopyComplete
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\obj\Debug\COMUN.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\obj\Debug\COMUN.pdb
-C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\itextsharp.dll
-C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\System.Drawing.Common.dll
-C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\itextsharp.xml
-C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\System.Drawing.Common.pdb
-C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\System.Drawing.Common.xml
