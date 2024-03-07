@@ -58,6 +58,7 @@
             this.tbPedidos = new System.Windows.Forms.TabPage();
             this.tbPrestaciones = new System.Windows.Forms.TabPage();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvPres = new System.Windows.Forms.DataGridView();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
@@ -66,7 +67,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tbPedidos.SuspendLayout();
+            this.tbPrestaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPres)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -363,6 +366,7 @@
             // 
             // tbPrestaciones
             // 
+            this.tbPrestaciones.Controls.Add(this.dgvPres);
             this.tbPrestaciones.Location = new System.Drawing.Point(4, 22);
             this.tbPrestaciones.Name = "tbPrestaciones";
             this.tbPrestaciones.Padding = new System.Windows.Forms.Padding(3);
@@ -370,6 +374,14 @@
             this.tbPrestaciones.TabIndex = 1;
             this.tbPrestaciones.Text = "Prestaciones";
             this.tbPrestaciones.UseVisualStyleBackColor = true;
+            // 
+            // dgvPres
+            // 
+            this.dgvPres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPres.Location = new System.Drawing.Point(3, 5);
+            this.dgvPres.Name = "dgvPres";
+            this.dgvPres.Size = new System.Drawing.Size(1317, 400);
+            this.dgvPres.TabIndex = 0;
             // 
             // ABMPedidosYPrestaciones
             // 
@@ -404,7 +416,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tbPedidos.ResumeLayout(false);
+            this.tbPrestaciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPres)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,5 +454,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label3;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.DataGridView dgvPres;
     }
 }

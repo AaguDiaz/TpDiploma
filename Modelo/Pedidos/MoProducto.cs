@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using COMUN.Cache;
+using COMUN;
 
 namespace Modelo
 {
@@ -149,11 +150,29 @@ namespace Modelo
                     command.CommandText = "SELECT id_categoria FROM categorias WHERE nombre = @categoria";
                     command.Parameters.AddWithValue("@categoria", categoria);
                     int id = Convert.ToInt32(command.ExecuteScalar());
-                    command.CommandText = "INSERT INTO productos (nombre_producto, descripcion, categoria) VALUES (@nombre, @descripcion, @idcategoria)";
+                    command.CommandText = "INSERT INTO productos (nombre_producto, descripcion, categoria) OUTPUT INSERTED.id_producto VALUES (@nombre, @descripcion, @idcategoria)";
                     command.Parameters.AddWithValue("@nombre", nombre);
                     command.Parameters.AddWithValue("@descripcion", descripcion);
                     command.Parameters.AddWithValue("@idcategoria", id);
-                    command.ExecuteNonQuery();
+                    int idp = Convert.ToInt32(command.ExecuteScalar());
+                    if (idp != 0)
+                    {
+                        command.Parameters.Clear();
+                        command.CommandText = "SELECT id_empleado FROM empleados WHERE id_usuario = @Usuario";
+                        command.Parameters.AddWithValue("@Usuario", UserLoginCache.id_usuario);
+                        int idemp = Convert.ToInt32(command.ExecuteScalar());
+
+                        command.CommandText = "INSERT INTO productos_auditoria (id_producto, nombre_producto, descripcion, categoria, id_empleado, registro, fecha) VALUES (@idp, @nombre, @desc, @cat, @idemp, @regis, @fecha)";
+                        command.Parameters.AddWithValue("@idp", idp);
+                        command.Parameters.AddWithValue("@nombre", nombre);
+                        command.Parameters.AddWithValue("@desc", descripcion);
+                        command.Parameters.AddWithValue("@cat", id);
+                        command.Parameters.AddWithValue("@idemp", idemp);
+                        command.Parameters.AddWithValue("@regis", "Registro Producto");
+                        command.Parameters.AddWithValue("@fecha", DateTime.Now);
+
+                        command.ExecuteNonQuery();
+                    }
                     command.Parameters.Clear();
                     connection.Close();
                 }
@@ -178,6 +197,23 @@ namespace Modelo
                     command.Parameters.AddWithValue("@id", id);
                     command.ExecuteNonQuery();
                     command.Parameters.Clear();
+
+                    command.CommandText = "SELECT id_empleado FROM empleados WHERE id_usuario = @Usuario";
+                    command.Parameters.AddWithValue("@Usuario", UserLoginCache.id_usuario);
+                    int idemp = Convert.ToInt32(command.ExecuteScalar());
+
+                    command.CommandText = "INSERT INTO productos_auditoria (id_producto, nombre_producto, descripcion, categoria, id_empleado, registro, fecha) VALUES (@idp, @nombre, @desc, @cat, @idemp, @regis, @fecha)";
+                    command.Parameters.AddWithValue("@idp", id);
+                    command.Parameters.AddWithValue("@nombre", nombre);
+                    command.Parameters.AddWithValue("@desc", descripcion);
+                    command.Parameters.AddWithValue("@cat", idcat);
+                    command.Parameters.AddWithValue("@idemp", idemp);
+                    command.Parameters.AddWithValue("@regis", "Modificacion Producto");
+                    command.Parameters.AddWithValue("@fecha", DateTime.Now);
+                    command.ExecuteNonQuery();
+
+
+                    command.Parameters.Clear();
                     connection.Close();
                 }
             }
@@ -191,11 +227,40 @@ namespace Modelo
                 {
                     command.Connection = connection;
                     connection.Open();
+                    command.CommandText = "SELECT id_empleado FROM empleados WHERE id_usuario = @Usuario";
+                    command.Parameters.AddWithValue("@Usuario", UserLoginCache.id_usuario);
+                    int idemp = Convert.ToInt32(command.ExecuteScalar());
                     command.CommandText = "SELECT id_lista FROM lista_pedidos_productos WHERE id_productos = @idp";
                     command.Parameters.AddWithValue("@idp", id);
                     int result = Convert.ToInt32(command.ExecuteScalar());
                     if (result == 0)
                     {
+                        command.CommandText = "SELECT nombre_producto, descripcion, categoria FROM productos WHERE id_producto = @id";
+                        command.Parameters.AddWithValue("@id", id);
+                        SqlDataReader reader = command.ExecuteReader();
+                        if(reader.HasRows)
+                        {
+                            DataTable tabla = new DataTable();
+                            tabla.Load(reader);
+                            reader.Close();
+                            string nombre = tabla.Rows[0][0].ToString();
+                            string descripcion = tabla.Rows[0][1].ToString();
+                            int idcat = Convert.ToInt32(tabla.Rows[0][2].ToString());
+                            command.Parameters.Clear();
+
+                            command.CommandText = "INSERT INTO productos_auditoria (id_producto, nombre_producto, descripcion, categoria, id_empleado, registro, fecha) VALUES (@idp, @nombre, @desc, @cat, @idemp, @regis, @fecha)";
+                            command.Parameters.AddWithValue("@idp", id);
+                            command.Parameters.AddWithValue("@nombre", nombre);
+                            command.Parameters.AddWithValue("@desc", descripcion);
+                            command.Parameters.AddWithValue("@cat", idcat);
+                            command.Parameters.AddWithValue("@idemp", idemp);
+                            command.Parameters.AddWithValue("@regis", "eliminacion Producto");
+                            command.Parameters.AddWithValue("@fecha", DateTime.Now);
+                            command.ExecuteNonQuery();
+                            
+                        }
+                        command.Parameters.Clear();
+                        reader.Close();
                         command.CommandText = "DELETE FROM productos WHERE id_producto = @id";
                         command.Parameters.AddWithValue("@id", id);
                         command.ExecuteNonQuery();

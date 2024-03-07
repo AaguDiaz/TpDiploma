@@ -23,6 +23,6 @@ C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Modelo\bin\Debug\COMUN.pdb
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Modelo\bin\Debug\COMUN.dll.config
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Modelo\obj\Debug\Modelo.csproj.AssemblyReference.cache
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
-C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Modelo\obj\Debug\Modelo.csproj.CopyComplete
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Modelo\obj\Debug\Modelo.csproj.Up2Date
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Modelo\obj\Debug\Modelo.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Modelo\obj\Debug\Modelo.pdb

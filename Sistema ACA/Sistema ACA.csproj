@@ -90,6 +90,12 @@
     <Compile Include="Forms\Admin\ABMUsuarios.Designer.cs">
       <DependentUpon>ABMUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Admin\Auditoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Auditoria.Designer.cs">
+      <DependentUpon>Auditoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Admin\Grupos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,18 @@
     <Compile Include="Forms\Pedidos\AgregarProductos.Designer.cs">
       <DependentUpon>AgregarProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Prestacion\AgregarPrestacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prestacion\AgregarPrestacion.Designer.cs">
+      <DependentUpon>AgregarPrestacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Prestacion\BuscadorPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prestacion\BuscadorPDF.Designer.cs">
+      <DependentUpon>BuscadorPDF.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Seguridad\CambiarContra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,10 +192,10 @@
     <Compile Include="Forms\PantallaPrincipal.Designer.cs">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Prestaciones\Prestaciones.cs">
+    <Compile Include="Forms\Prestacion\Prestaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Prestaciones\Prestaciones.Designer.cs">
+    <Compile Include="Forms\Prestacion\Prestaciones.Designer.cs">
       <DependentUpon>Prestaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Pedidos\SolicitarPedido.cs">
@@ -211,6 +229,9 @@
     <EmbeddedResource Include="Forms\Admin\ABMUsuarios.resx">
       <DependentUpon>ABMUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Auditoria.resx">
+      <DependentUpon>Auditoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\CargaDatosUsuarios.resx">
       <DependentUpon>CargaDatosUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +259,12 @@
     <EmbeddedResource Include="Forms\Pedidos\AgregarProductos.resx">
       <DependentUpon>AgregarProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prestacion\AgregarPrestacion.resx">
+      <DependentUpon>AgregarPrestacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prestacion\BuscadorPDF.resx">
+      <DependentUpon>BuscadorPDF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Seguridad\CambiarContra.resx">
       <DependentUpon>CambiarContra.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,7 +280,7 @@
     <EmbeddedResource Include="Forms\PantallaPrincipal.resx">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Prestaciones\Prestaciones.resx">
+    <EmbeddedResource Include="Forms\Prestacion\Prestaciones.resx">
       <DependentUpon>Prestaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Pedidos\SolicitarPedido.resx">

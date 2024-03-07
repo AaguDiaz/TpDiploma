@@ -28,18 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chPedidos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chListas = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chProductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -96,6 +108,31 @@
             this.btnSemana = new System.Windows.Forms.Button();
             this.btnHoy = new System.Windows.Forms.Button();
             this.bttnPDF = new System.Windows.Forms.Button();
+            this.chPrestaciones = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chDeudores = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.lblPrestaciones = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label36 = new System.Windows.Forms.Label();
+            this.lblDeu = new System.Windows.Forms.Label();
+            this.lblDeuTot = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label43 = new System.Windows.Forms.Label();
+            this.lblSoliRech = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.lblSoliPen = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.lblSoliAcep = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.lblSoli = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.chSolicitudes = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chPedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chListas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chProductos)).BeginInit();
@@ -106,78 +143,86 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chPrestaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chDeudores)).BeginInit();
+            this.panel6.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chSolicitudes)).BeginInit();
             this.SuspendLayout();
             // 
             // chPedidos
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chPedidos.ChartAreas.Add(chartArea4);
-            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend4.IsTextAutoFit = false;
-            legend4.Name = "Legend1";
-            this.chPedidos.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.chPedidos.ChartAreas.Add(chartArea1);
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Legend1";
+            this.chPedidos.Legends.Add(legend1);
             this.chPedidos.Location = new System.Drawing.Point(6, 6);
             this.chPedidos.Name = "chPedidos";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chPedidos.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chPedidos.Series.Add(series1);
             this.chPedidos.Size = new System.Drawing.Size(1070, 292);
             this.chPedidos.TabIndex = 0;
             this.chPedidos.Text = "1330; 700";
-            title4.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title4.Name = "Title1";
-            title4.Text = "Pedidos";
-            this.chPedidos.Titles.Add(title4);
+            title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Pedidos";
+            this.chPedidos.Titles.Add(title1);
             // 
             // chListas
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chListas.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chListas.Legends.Add(legend5);
+            chartArea2.Name = "ChartArea1";
+            this.chListas.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chListas.Legends.Add(legend2);
             this.chListas.Location = new System.Drawing.Point(545, 303);
             this.chListas.Name = "chListas";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series5.IsValueShownAsLabel = true;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            series5.YValuesPerPoint = 4;
-            this.chListas.Series.Add(series5);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.IsValueShownAsLabel = true;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            series2.YValuesPerPoint = 4;
+            this.chListas.Series.Add(series2);
             this.chListas.Size = new System.Drawing.Size(531, 334);
             this.chListas.TabIndex = 1;
             this.chListas.Text = "chart2";
-            title5.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title5.Name = "Title1";
-            title5.Text = "Listas de pedido mas usadas";
-            this.chListas.Titles.Add(title5);
+            title2.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.Name = "Title1";
+            title2.Text = "Listas de pedido mas usadas";
+            this.chListas.Titles.Add(title2);
             // 
             // chProductos
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chProductos.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chProductos.Legends.Add(legend6);
+            chartArea3.Name = "ChartArea1";
+            this.chProductos.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chProductos.Legends.Add(legend3);
             this.chProductos.Location = new System.Drawing.Point(3, 303);
             this.chProductos.Name = "chProductos";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series6.IsValueShownAsLabel = true;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            series6.YValuesPerPoint = 4;
-            this.chProductos.Series.Add(series6);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series3.IsValueShownAsLabel = true;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            series3.YValuesPerPoint = 4;
+            this.chProductos.Series.Add(series3);
             this.chProductos.Size = new System.Drawing.Size(531, 334);
             this.chProductos.TabIndex = 2;
             this.chProductos.Text = "chart3";
-            title6.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title6.Name = "Title1";
-            title6.Text = "Productos mas pedidos";
-            this.chProductos.Titles.Add(title6);
+            title3.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title3.Name = "Title1";
+            title3.Text = "Productos mas pedidos";
+            this.chProductos.Titles.Add(title3);
             // 
             // btnOk
             // 
@@ -678,6 +723,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.chSolicitudes);
+            this.tabPage2.Controls.Add(this.panel6);
+            this.tabPage2.Controls.Add(this.chDeudores);
+            this.tabPage2.Controls.Add(this.chPrestaciones);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -741,6 +790,306 @@
             this.bttnPDF.UseVisualStyleBackColor = true;
             this.bttnPDF.Click += new System.EventHandler(this.bttnPDF_Click);
             // 
+            // chPrestaciones
+            // 
+            chartArea6.Name = "ChartArea1";
+            this.chPrestaciones.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chPrestaciones.Legends.Add(legend6);
+            this.chPrestaciones.Location = new System.Drawing.Point(3, 307);
+            this.chPrestaciones.Name = "chPrestaciones";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series6.IsValueShownAsLabel = true;
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            series6.YValuesPerPoint = 4;
+            this.chPrestaciones.Series.Add(series6);
+            this.chPrestaciones.Size = new System.Drawing.Size(531, 334);
+            this.chPrestaciones.TabIndex = 16;
+            this.chPrestaciones.Text = "chart3";
+            title6.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title6.Name = "Title1";
+            title6.Text = "Prestaciones mas solicitadas";
+            this.chPrestaciones.Titles.Add(title6);
+            // 
+            // chDeudores
+            // 
+            chartArea5.Name = "ChartArea1";
+            this.chDeudores.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chDeudores.Legends.Add(legend5);
+            this.chDeudores.Location = new System.Drawing.Point(551, 300);
+            this.chDeudores.Name = "chDeudores";
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series5.IsValueShownAsLabel = true;
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            series5.YValuesPerPoint = 4;
+            this.chDeudores.Series.Add(series5);
+            this.chDeudores.Size = new System.Drawing.Size(531, 334);
+            this.chDeudores.TabIndex = 15;
+            this.chDeudores.Text = "chart2";
+            title5.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title5.Name = "Title1";
+            title5.Text = "Deudores maximos:";
+            this.chDeudores.Titles.Add(title5);
+            this.chDeudores.Click += new System.EventHandler(this.chart3_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.panel8);
+            this.panel6.Controls.Add(this.panel9);
+            this.panel6.Controls.Add(this.panel10);
+            this.panel6.Controls.Add(this.label54);
+            this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel6.Location = new System.Drawing.Point(1088, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(228, 620);
+            this.panel6.TabIndex = 15;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.lblPrestaciones);
+            this.panel8.Controls.Add(this.label34);
+            this.panel8.Controls.Add(this.label35);
+            this.panel8.Location = new System.Drawing.Point(3, 263);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(222, 111);
+            this.panel8.TabIndex = 36;
+            // 
+            // lblPrestaciones
+            // 
+            this.lblPrestaciones.AutoSize = true;
+            this.lblPrestaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrestaciones.Location = new System.Drawing.Point(175, 34);
+            this.lblPrestaciones.Name = "lblPrestaciones";
+            this.lblPrestaciones.Size = new System.Drawing.Size(40, 17);
+            this.lblPrestaciones.TabIndex = 25;
+            this.lblPrestaciones.Text = "1000";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(2, 3);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(105, 20);
+            this.label34.TabIndex = 28;
+            this.label34.Text = "Prestaciones:";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(3, 31);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(171, 17);
+            this.label35.TabIndex = 17;
+            this.label35.Text = "N° usos de prestaciones :";
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.label36);
+            this.panel9.Controls.Add(this.lblDeu);
+            this.panel9.Controls.Add(this.lblDeuTot);
+            this.panel9.Controls.Add(this.label41);
+            this.panel9.Controls.Add(this.label42);
+            this.panel9.Location = new System.Drawing.Point(3, 433);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(222, 111);
+            this.panel9.TabIndex = 35;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(2, 80);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(85, 17);
+            this.label36.TabIndex = 33;
+            this.label36.Text = "Deuda total:";
+            // 
+            // lblDeu
+            // 
+            this.lblDeu.AutoSize = true;
+            this.lblDeu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeu.Location = new System.Drawing.Point(175, 40);
+            this.lblDeu.Name = "lblDeu";
+            this.lblDeu.Size = new System.Drawing.Size(40, 17);
+            this.lblDeu.TabIndex = 23;
+            this.lblDeu.Text = "1000";
+            // 
+            // lblDeuTot
+            // 
+            this.lblDeuTot.AutoSize = true;
+            this.lblDeuTot.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeuTot.Location = new System.Drawing.Point(175, 80);
+            this.lblDeuTot.Name = "lblDeuTot";
+            this.lblDeuTot.Size = new System.Drawing.Size(40, 17);
+            this.lblDeuTot.TabIndex = 30;
+            this.lblDeuTot.Text = "1000";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(2, 3);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(69, 20);
+            this.label41.TabIndex = 28;
+            this.label41.Text = "Deudas:";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(1, 39);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(170, 17);
+            this.label42.TabIndex = 16;
+            this.label42.Text = "N° de socios con deudas:";
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.label43);
+            this.panel10.Controls.Add(this.lblSoliRech);
+            this.panel10.Controls.Add(this.label45);
+            this.panel10.Controls.Add(this.lblSoliPen);
+            this.panel10.Controls.Add(this.label47);
+            this.panel10.Controls.Add(this.lblSoliAcep);
+            this.panel10.Controls.Add(this.label49);
+            this.panel10.Controls.Add(this.label50);
+            this.panel10.Controls.Add(this.lblSoli);
+            this.panel10.Location = new System.Drawing.Point(3, 81);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(222, 111);
+            this.panel10.TabIndex = 29;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(3, 88);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(91, 17);
+            this.label43.TabIndex = 33;
+            this.label43.Text = "Rechazados:";
+            // 
+            // lblSoliRech
+            // 
+            this.lblSoliRech.AutoSize = true;
+            this.lblSoliRech.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoliRech.Location = new System.Drawing.Point(175, 88);
+            this.lblSoliRech.Name = "lblSoliRech";
+            this.lblSoliRech.Size = new System.Drawing.Size(40, 17);
+            this.lblSoliRech.TabIndex = 34;
+            this.lblSoliRech.Text = "1000";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Location = new System.Drawing.Point(3, 47);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(83, 17);
+            this.label45.TabIndex = 31;
+            this.label45.Text = "Pendientes:";
+            // 
+            // lblSoliPen
+            // 
+            this.lblSoliPen.AutoSize = true;
+            this.lblSoliPen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoliPen.Location = new System.Drawing.Point(175, 47);
+            this.lblSoliPen.Name = "lblSoliPen";
+            this.lblSoliPen.Size = new System.Drawing.Size(40, 17);
+            this.lblSoliPen.TabIndex = 32;
+            this.lblSoliPen.Text = "1000";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(3, 67);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(79, 17);
+            this.label47.TabIndex = 29;
+            this.label47.Text = "Aceptados:";
+            // 
+            // lblSoliAcep
+            // 
+            this.lblSoliAcep.AutoSize = true;
+            this.lblSoliAcep.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoliAcep.Location = new System.Drawing.Point(175, 67);
+            this.lblSoliAcep.Name = "lblSoliAcep";
+            this.lblSoliAcep.Size = new System.Drawing.Size(40, 17);
+            this.lblSoliAcep.TabIndex = 30;
+            this.lblSoliAcep.Text = "1000";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.Location = new System.Drawing.Point(2, 27);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(152, 17);
+            this.label49.TabIndex = 15;
+            this.label49.Text = "Numero de solicitudes:";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(2, 3);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(90, 20);
+            this.label50.TabIndex = 28;
+            this.label50.Text = "Solicitudes:";
+            // 
+            // lblSoli
+            // 
+            this.lblSoli.AutoSize = true;
+            this.lblSoli.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoli.Location = new System.Drawing.Point(175, 27);
+            this.lblSoli.Name = "lblSoli";
+            this.lblSoli.Size = new System.Drawing.Size(40, 17);
+            this.lblSoli.TabIndex = 24;
+            this.lblSoli.Text = "1000";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label54.Location = new System.Drawing.Point(76, 1);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(65, 20);
+            this.label54.TabIndex = 14;
+            this.label54.Text = "Totales:";
+            // 
+            // chSolicitudes
+            // 
+            chartArea4.Name = "ChartArea1";
+            this.chSolicitudes.ChartAreas.Add(chartArea4);
+            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend4.IsTextAutoFit = false;
+            legend4.Name = "Legend1";
+            this.chSolicitudes.Legends.Add(legend4);
+            this.chSolicitudes.Location = new System.Drawing.Point(6, 6);
+            this.chSolicitudes.Name = "chSolicitudes";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chSolicitudes.Series.Add(series4);
+            this.chSolicitudes.Size = new System.Drawing.Size(1070, 292);
+            this.chSolicitudes.TabIndex = 15;
+            this.chSolicitudes.Text = "1330; 700";
+            title4.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title4.Name = "Title1";
+            title4.Text = "Solicitudes";
+            this.chSolicitudes.Titles.Add(title4);
+            // 
             // Reportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -778,6 +1127,18 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chPrestaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chDeudores)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chSolicitudes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -841,5 +1202,30 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Button bttnPDF;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label lblPrestaciones;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label lblDeu;
+        private System.Windows.Forms.Label lblDeuTot;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label lblSoliRech;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label lblSoliPen;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label lblSoliAcep;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label lblSoli;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chDeudores;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chPrestaciones;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chSolicitudes;
     }
 }

@@ -45,6 +45,7 @@
             this.label30 = new System.Windows.Forms.Label();
             this.txtTel = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnBaja = new FontAwesome.Sharp.IconButton();
             this.btnSolicitar = new FontAwesome.Sharp.IconButton();
             this.btnConfirmar = new FontAwesome.Sharp.IconButton();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
@@ -97,13 +98,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
             this.tbPrestacion = new System.Windows.Forms.TabPage();
-            this.tbDeuda = new System.Windows.Forms.TabPage();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.btnBaja = new FontAwesome.Sharp.IconButton();
-            this.dgvSoli = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dtpHastaSoli = new System.Windows.Forms.DateTimePicker();
             this.dtpDesdeSol = new System.Windows.Forms.DateTimePicker();
             this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
@@ -127,6 +122,16 @@
             this.lblpag = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.dgvSoli = new System.Windows.Forms.DataGridView();
+            this.tbDeuda = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvDeudas = new System.Windows.Forms.DataGridView();
+            this.lblLimiteDeuda = new System.Windows.Forms.Label();
+            this.lblDeuda = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tbEstado.SuspendLayout();
@@ -140,12 +145,14 @@
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             this.tbPrestacion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSoli)).BeginInit();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
             this.bindingNavigator2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSoli)).BeginInit();
+            this.tbDeuda.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDeudas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -325,6 +332,23 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1303, 89);
             this.panel5.TabIndex = 25;
+            // 
+            // btnBaja
+            // 
+            this.btnBaja.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBaja.IconChar = FontAwesome.Sharp.IconChar.CircleMinus;
+            this.btnBaja.IconColor = System.Drawing.Color.Black;
+            this.btnBaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBaja.IconSize = 35;
+            this.btnBaja.Location = new System.Drawing.Point(800, 0);
+            this.btnBaja.Name = "btnBaja";
+            this.btnBaja.Size = new System.Drawing.Size(106, 89);
+            this.btnBaja.TabIndex = 10;
+            this.btnBaja.Text = "Solicitar dar de baja";
+            this.btnBaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnBaja.UseVisualStyleBackColor = false;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // btnSolicitar
             // 
@@ -849,48 +873,6 @@
             this.tbPrestacion.Text = "Mis prestaciones";
             this.tbPrestacion.UseVisualStyleBackColor = true;
             // 
-            // tbDeuda
-            // 
-            this.tbDeuda.Location = new System.Drawing.Point(4, 39);
-            this.tbDeuda.Name = "tbDeuda";
-            this.tbDeuda.Size = new System.Drawing.Size(1324, 457);
-            this.tbDeuda.TabIndex = 3;
-            this.tbDeuda.Text = "Duedas";
-            this.tbDeuda.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(45)))), ((int)(((byte)(135)))));
-            this.panel2.Location = new System.Drawing.Point(0, 669);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1331, 31);
-            this.panel2.TabIndex = 6;
-            // 
-            // btnBaja
-            // 
-            this.btnBaja.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBaja.IconChar = FontAwesome.Sharp.IconChar.CircleMinus;
-            this.btnBaja.IconColor = System.Drawing.Color.Black;
-            this.btnBaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBaja.IconSize = 35;
-            this.btnBaja.Location = new System.Drawing.Point(800, 0);
-            this.btnBaja.Name = "btnBaja";
-            this.btnBaja.Size = new System.Drawing.Size(106, 89);
-            this.btnBaja.TabIndex = 10;
-            this.btnBaja.Text = "Solicitar dar de baja";
-            this.btnBaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnBaja.UseVisualStyleBackColor = false;
-            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
-            // 
-            // dgvSoli
-            // 
-            this.dgvSoli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSoli.Location = new System.Drawing.Point(8, 75);
-            this.dgvSoli.Name = "dgvSoli";
-            this.dgvSoli.Size = new System.Drawing.Size(1306, 378);
-            this.dgvSoli.TabIndex = 0;
-            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -1028,6 +1010,7 @@
             this.btnDetallesSoli.Text = "   Ver detalles   ";
             this.btnDetallesSoli.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDetallesSoli.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDetallesSoli.Click += new System.EventHandler(this.btnDetallesSoli_Click);
             // 
             // toolStripSeparator9
             // 
@@ -1104,6 +1087,91 @@
             this.toolStripButton2.Text = "Mover siguiente";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
+            // dgvSoli
+            // 
+            this.dgvSoli.AllowUserToAddRows = false;
+            this.dgvSoli.AllowUserToDeleteRows = false;
+            this.dgvSoli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSoli.Location = new System.Drawing.Point(8, 75);
+            this.dgvSoli.Name = "dgvSoli";
+            this.dgvSoli.ReadOnly = true;
+            this.dgvSoli.Size = new System.Drawing.Size(1306, 378);
+            this.dgvSoli.TabIndex = 0;
+            // 
+            // tbDeuda
+            // 
+            this.tbDeuda.Controls.Add(this.label20);
+            this.tbDeuda.Controls.Add(this.label19);
+            this.tbDeuda.Controls.Add(this.lblDeuda);
+            this.tbDeuda.Controls.Add(this.lblLimiteDeuda);
+            this.tbDeuda.Controls.Add(this.dgvDeudas);
+            this.tbDeuda.Location = new System.Drawing.Point(4, 39);
+            this.tbDeuda.Name = "tbDeuda";
+            this.tbDeuda.Size = new System.Drawing.Size(1324, 457);
+            this.tbDeuda.TabIndex = 3;
+            this.tbDeuda.Text = "Duedas";
+            this.tbDeuda.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(45)))), ((int)(((byte)(135)))));
+            this.panel2.Location = new System.Drawing.Point(0, 669);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1331, 31);
+            this.panel2.TabIndex = 6;
+            // 
+            // dgvDeudas
+            // 
+            this.dgvDeudas.AllowUserToAddRows = false;
+            this.dgvDeudas.AllowUserToDeleteRows = false;
+            this.dgvDeudas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDeudas.Location = new System.Drawing.Point(8, 112);
+            this.dgvDeudas.Name = "dgvDeudas";
+            this.dgvDeudas.ReadOnly = true;
+            this.dgvDeudas.Size = new System.Drawing.Size(1306, 337);
+            this.dgvDeudas.TabIndex = 0;
+            // 
+            // lblLimiteDeuda
+            // 
+            this.lblLimiteDeuda.AutoSize = true;
+            this.lblLimiteDeuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLimiteDeuda.Location = new System.Drawing.Point(330, 12);
+            this.lblLimiteDeuda.Name = "lblLimiteDeuda";
+            this.lblLimiteDeuda.Size = new System.Drawing.Size(467, 25);
+            this.lblLimiteDeuda.TabIndex = 1;
+            this.lblLimiteDeuda.Text = "El limite actual de deuda por empleado es de: $";
+            // 
+            // lblDeuda
+            // 
+            this.lblDeuda.AutoSize = true;
+            this.lblDeuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeuda.Location = new System.Drawing.Point(4, 53);
+            this.lblDeuda.Name = "lblDeuda";
+            this.lblDeuda.Size = new System.Drawing.Size(251, 20);
+            this.lblDeuda.TabIndex = 2;
+            this.lblDeuda.Text = "El total de la deuda a tu nombre: $";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(5, 93);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(124, 16);
+            this.label19.TabIndex = 3;
+            this.label19.Text = "Detalle de tu deuda";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Red;
+            this.label20.Location = new System.Drawing.Point(859, 57);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(455, 16);
+            this.label20.TabIndex = 4;
+            this.label20.Text = "*para cancelar o pagar tus deudas por favor ir hasta la sede administrativa*";
+            // 
             // EstadoCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1138,13 +1206,16 @@
             this.bindingNavigator1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
             this.tbPrestacion.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSoli)).EndInit();
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
             this.bindingNavigator2.ResumeLayout(false);
             this.bindingNavigator2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSoli)).EndInit();
+            this.tbDeuda.ResumeLayout(false);
+            this.tbDeuda.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDeudas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1248,5 +1319,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.BindingSource bindingSource2;
+        private System.Windows.Forms.DataGridView dgvDeudas;
+        private System.Windows.Forms.Label lblLimiteDeuda;
+        private System.Windows.Forms.Label lblDeuda;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
     }
 }

@@ -48,12 +48,13 @@
     <Compile Include="Pedidos\CnListaProd.cs" />
     <Compile Include="Pedidos\CnPedido.cs" />
     <Compile Include="Pedidos\CnPedidoLista.cs" />
+    <Compile Include="Prestaciones\SolicitudController.cs" />
+    <Compile Include="Seguridad\CnAuditoria.cs" />
     <Compile Include="Seguridad\CnGrupos.cs" />
     <Compile Include="Prestaciones\CnPrestacion.cs" />
     <Compile Include="Pedidos\CnProducto.cs" />
     <Compile Include="Pedidos\CnListaPedido.cs" />
     <Compile Include="Pedidos\CnProveedor.cs" />
-    <Compile Include="Prestaciones\SolicitudController.cs" />
     <Compile Include="Seguridad\CnUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguridad\CnPermisos.cs" />

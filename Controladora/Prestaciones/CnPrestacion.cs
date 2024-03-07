@@ -10,9 +10,9 @@ namespace Controladora
     public class CnPrestacion
     {
         MoPrestacion moPrestacion = new MoPrestacion();
-        public void Cargarlimites()
+        public void CargarPrestaciones()
         {
-            moPrestacion.Cargarlimites();
+            moPrestacion.CargarPrestaciones();
         }
     }
 }

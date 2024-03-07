@@ -26,6 +26,7 @@ namespace Sistema_ACA.Forms
         CnGrupos cnGrupo = new CnGrupos();
         CnPermisos cnPermiso = new CnPermisos();
         CnCaches caches = new CnCaches();
+        CnGrupoFamiliar cnGrupoFamiliar = new CnGrupoFamiliar();
         DataGridViewCell celdaActual;
         DataTable dt = new DataTable();
         int indiceColumna;
@@ -45,11 +46,15 @@ namespace Sistema_ACA.Forms
             if (Modo == "Editar")
             {
                 CargarTXT();
+                CargarDgvFamiliares();
+                cbParentesco.SelectedIndex = 0;
+                panel1.Visible = true;
             }
             else if (Modo == "Agregar")
             {
                 id_usuario = 0;
                 RestablecerTXT();
+                panel1.Visible = false;
             }
             CargarDgvPer();
             MetodosComunes.CargarModulosFormularios("CargaDatosUsuarios", flowLayoutPanel1);
@@ -62,6 +67,32 @@ namespace Sistema_ACA.Forms
             CargarDgvGrup();
         }
 
+        public void CargarDgvFamiliares()
+        {
+            dgvGrupoFamiliar.Columns.Clear();
+            dgvGrupoFamiliar.Columns.Add("ID", "ID");
+            dgvGrupoFamiliar.Columns.Add("Nombre", "Nombre");
+            dgvGrupoFamiliar.Columns.Add("Apellido", "Apellido");
+            dgvGrupoFamiliar.Columns.Add("DNI", "DNI");
+            dgvGrupoFamiliar.Columns.Add("Fecha de nacimiento", "Fecha de nacimiento");
+            dgvGrupoFamiliar.Columns.Add("Parentesco", "Parentesco");
+            dgvGrupoFamiliar.Columns[0].Width = 50;
+            dgvGrupoFamiliar.Columns[1].Width = 75;
+            dgvGrupoFamiliar.Columns[2].Width = 75;
+            dgvGrupoFamiliar.Columns[3].Width = 100;
+            dgvGrupoFamiliar.Columns[4].Width = 120;
+            dgvGrupoFamiliar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvGrupoFamiliar.ClearSelection();
+            dt.Clear();
+            dt = cnGrupoFamiliar.MostrarFamiliares(id_usuario);
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    dgvGrupoFamiliar.Rows.Add(row["ID_GRUPO"], row["Nombre"], row["Apellido"], row["DNI"] ,row["Fecha_nacimiento"], row["parentesco"]);
+                }
+            }
+        }
         public void CargarDgvGrup()
         {
 
@@ -106,7 +137,6 @@ namespace Sistema_ACA.Forms
 
             dgvGrupos.ClearSelection();
         }
-
         private void CargarDgvPer()
         {
             dgvPermisos.DataSource = null;
@@ -152,7 +182,6 @@ namespace Sistema_ACA.Forms
             }
             dgvPermisos.ClearSelection();
         }
-
         private void CargarTXT()
         {
             usuario.CagarUsuario(id_usuario);
@@ -172,7 +201,6 @@ namespace Sistema_ACA.Forms
             txtDireccion.Text = caches.CacheDireccion();
             txtDireccion.ForeColor = Color.Black;
         }
-
         private void RestablecerTXT()
         {
             txtNombre.Text = "Nombre:";
@@ -409,8 +437,6 @@ namespace Sistema_ACA.Forms
             FormGrupos.CargaDatosUsuarios = this;
             FormGrupos.ShowDialog();
         }
-
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
 
@@ -504,7 +530,6 @@ namespace Sistema_ACA.Forms
             
 
         }
-
         private void dgvPermisos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // limpiar el treeview
@@ -567,6 +592,7 @@ namespace Sistema_ACA.Forms
 
 
         // validaciones
+        #region validaciones
         private void txtNombre_Enter(object sender, EventArgs e)
         {
             if (txtNombre.Text == "Nombre:")
@@ -717,6 +743,44 @@ namespace Sistema_ACA.Forms
         {
             MetodosComunes.KeyPressSoloNumeros(e);
         }
+        #endregion
 
+        private void cbParentesco_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgrgarFamiliar_Click(object sender, EventArgs e)
+        {
+            if(txtNombreg.Text==""||txtApellidog.Text==""||txtDNIg.Text==""||cbParentesco.Text=="Seleccionar")
+            {
+                MessageBox.Show("Complete todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(dtpFechaNacimiento.Value>DateTime.Now)
+            {
+                MessageBox.Show("La fecha de nacimiento no puede ser mayor a la fecha actual", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                cnGrupoFamiliar.agregarFamiliar(id_usuario, txtNombreg.Text, txtApellidog.Text, Convert.ToInt32(txtDNIg.Text), dtpFechaNacimiento.Value, cbParentesco.Text);
+                MessageBox.Show("Se agrego el familiar correctamente", "Familiar agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarDgvFamiliares();
+            }
+        }
+
+        private void btnEliminarFamiliar_Click(object sender, EventArgs e)
+        {
+            if(dgvGrupoFamiliar.CurrentRow!=null)
+            {
+                int dni = Convert.ToInt32(dgvGrupoFamiliar.CurrentRow.Cells[3].Value);
+                cnGrupoFamiliar.EliminarFamiliar(id_usuario, dni);
+                CargarDgvFamiliares();
+                MessageBox.Show("Se elimino el familiar correctamente", "Familiar eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un familiar para dar de baja", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

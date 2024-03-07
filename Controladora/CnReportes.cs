@@ -32,5 +32,26 @@ namespace Controladora
                 return false;
             }
         }
+        public bool LoadDataPres(DateTime startDate, DateTime endDate)
+        {
+            endDate = new DateTime(endDate.Year, endDate.Month, endDate.Day,
+                endDate.Hour, endDate.Minute, 59);
+            if (startDate != reportes.startDate || endDate != reportes.endDate)
+            {
+                reportes.startDate = startDate;
+                reportes.endDate = endDate;
+                reportes.numberDays = (endDate - startDate).Days;
+
+                reportes.CargarTotalesPres();
+                reportes.CargarPrestaciones();
+                reportes.CargarDeudores();
+                reportes.CargarSolicitudes();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

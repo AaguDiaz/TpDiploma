@@ -52,6 +52,7 @@
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pnlUp = new System.Windows.Forms.Panel();
             this.pnlDown = new System.Windows.Forms.Panel();
+            this.btnPDF = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -259,11 +260,24 @@
             this.pnlDown.Size = new System.Drawing.Size(722, 23);
             this.pnlDown.TabIndex = 38;
             // 
+            // btnPDF
+            // 
+            this.btnPDF.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPDF.Location = new System.Drawing.Point(9, 393);
+            this.btnPDF.Name = "btnPDF";
+            this.btnPDF.Size = new System.Drawing.Size(146, 32);
+            this.btnPDF.TabIndex = 39;
+            this.btnPDF.Text = "Ver comprobante";
+            this.btnPDF.UseVisualStyleBackColor = true;
+            this.btnPDF.Visible = false;
+            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
+            // 
             // DetallesLista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 467);
+            this.Controls.Add(this.btnPDF);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.pnlDown);
             this.Controls.Add(this.pnlUp);
@@ -316,5 +330,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Panel pnlUp;
         private System.Windows.Forms.Panel pnlDown;
+        private System.Windows.Forms.Button btnPDF;
     }
 }

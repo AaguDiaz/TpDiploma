@@ -44,5 +44,27 @@ namespace COMUN.Cache
         public static List<KeyValuePair<string, int>> TopProductos { get; set; }
         public static List<KeyValuePair<string, int>> TopListas { get; set; }
 
+
+        //auditoria
+        public static List<KeyValuePair<string, int>> TopInicio { get; set; }
+        public static List<KeyValuePair<string, int>> TopTrazabilidad { get; set; }
+
+
+
+        //prestaciones
+        public static int NumSoli { get; set; }
+        public static int SoliPendientes { get; set; }
+        public static int SoliAceptadas { get; set; }
+        public static int SoliRechazadas { get; set; }
+        public static int NumPrestaciones { get; set; }
+        public static int NumDeudores { get; set; }
+        public static int NumDeudaTot { get; set; }
+
+
+
+        public static List<PedidosByDate> Solicitudes { get; set; }
+        public static List<KeyValuePair<string, int>> Prestaciones { get; set; }
+        public static List<KeyValuePair<string, int>> Deudores { get; set; }
+
     }
 }

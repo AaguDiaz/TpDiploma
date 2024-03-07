@@ -18,7 +18,7 @@ namespace Sistema_ACA.Forms.Socio
         CnUsuario cnUsuario = new CnUsuario();
         CnPedido cnPedido = new CnPedido();
         CnGrupoFamiliar cnGrupoFamiliar = new CnGrupoFamiliar();
-        
+        CnDeudas cnDeudas = new CnDeudas();
         int conteo = 1;
         int CurrentPage = 1;
         DateTime fechaActual = DateTime.Now;
@@ -33,6 +33,7 @@ namespace Sistema_ACA.Forms.Socio
         {
             CargarDatosUsuario();
             CargarGrupoFamiliar();
+            CargarDeudas();
             cbFiltrosPed.SelectedIndex = 0;
             cbFiltrosSoli.SelectedIndex = 0;
             DateTime fechaHaceUnAño = fechaActual.AddYears(-1);
@@ -150,7 +151,28 @@ namespace Sistema_ACA.Forms.Socio
         }
         private void btnBaja_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("¿Está seguro que desea darse de baja?", "Baja", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (dgvGrupoFamiliar.SelectedRows.Count > 0)
+                {
+                    string nombre = dgvGrupoFamiliar.CurrentRow.Cells[0].Value.ToString();
+                    int dni = Convert.ToInt32(dgvGrupoFamiliar.CurrentRow.Cells[1].Value);
+                    string parentesco = dgvGrupoFamiliar.CurrentRow.Cells[3].Value.ToString();
+                    if (cnGrupoFamiliar.BajaFamiliar(nombre,dni,parentesco) == true)
+                    {
+                        MessageBox.Show("La solicitud ha sido enviada", "Solicitud exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarGrupoFamiliar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El envio de la solicitud no pudo ser enviada", "Solicitud fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else 
+                {
+                    MessageBox.Show("Debe seleccionar un integrante del grupo familiar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         //validaciones
@@ -164,7 +186,6 @@ namespace Sistema_ACA.Forms.Socio
         }
 
         #endregion
-
 
         #region pedidos
 
@@ -298,7 +319,7 @@ namespace Sistema_ACA.Forms.Socio
 
         private void cbFiltrosSoli_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbFiltrosPed.SelectedIndex == 0)
+            if (cbFiltrosSoli.SelectedIndex == 0)
             {
             }
             else
@@ -332,12 +353,36 @@ namespace Sistema_ACA.Forms.Socio
 
         private void ConfiDgvSoli()
         {
-            dgvPedido.Columns[0].Width = 100;
-            dgvPedido.Columns[1].Width = 200;
-            dgvPedido.Columns[2].Width = 300;
-            dgvPedido.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            if (dgvSoli.Rows.Count>0)
+            {
+                dgvSoli.Columns[0].Width = 100;
+                dgvSoli.Columns[1].Width = 200;
+                dgvSoli.Columns[2].Width = 300;
+                dgvSoli.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
         }
-        #endregion
+        private void btnDetallesSoli_Click(object sender, EventArgs e)
+        {
+            if (dgvSoli.SelectedRows.Count > 0)
+            {
+                if (dgvSoli.CurrentRow != null)
+                {
+                    COMUN.Cache.CacheSolicitud.id_solicitud = Convert.ToInt32(dgvSoli.CurrentRow.Cells[0].Value);
+                    DetallesLista detalles = new DetallesLista(3);
+                    detalles.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar una solicitud", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una solicitud", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
 
         private void dtpDesdeSol_ValueChanged(object sender, EventArgs e)
         {
@@ -390,5 +435,24 @@ namespace Sistema_ACA.Forms.Socio
                 ActualizarDGVSol();
             }
         }
+        #endregion
+
+        #region deudas
+
+        private void CargarDeudas()
+        {
+            lblDeuda.Text = "El total de la deuda a tu nombre: $" + cnDeudas.MostrarMontoDeuda().ToString();
+            lblLimiteDeuda.Text = "El limite actual de deuda por empleado es de: $" + cnDeudas.MostrarLimiteDeuda().ToString();
+            dgvDeudas.DataSource = cnDeudas.MostrarDeudas();
+            if(dgvDeudas.Rows.Count > 0)
+            {
+                dgvDeudas.Columns[0].Width = 100;
+                dgvDeudas.Columns[1].Width = 600;
+                dgvDeudas.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+        }
+
+        #endregion
+
     }
 }

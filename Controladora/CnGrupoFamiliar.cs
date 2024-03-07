@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using COMUN;
 using Modelo;
+using Modelo.Seguridad;
 
 namespace Controladora
 {
     public class CnGrupoFamiliar
     {
         MoUsuario moUsu = new MoUsuario();
+        MoGrupoFamiliar moGrupoFamiliar = new MoGrupoFamiliar();
         public bool MandarMail(string nombre, int dni, DateTime fecha, string parentezco, string filePath)
         {
             foreach (string mail in moUsu.MostrarAdmins())
@@ -30,7 +33,6 @@ namespace Controladora
             }
             return true;
         }
-
         public bool BajaFamiliar(string nombre, int dni, string parentezco)
         {
             foreach (string mail in moUsu.MostrarAdmins())
@@ -50,5 +52,19 @@ namespace Controladora
             return true;
         }
 
+        public DataTable MostrarFamiliares(int id) 
+        {             
+            return moGrupoFamiliar.MostrarFamiliares(id);
+        }
+
+        public void agregarFamiliar(int id, string nombre, string apellido, int dni, DateTime fecha, string parentezco)
+        {
+            moGrupoFamiliar.AgregarFamiliar(id, nombre, apellido, dni, fecha, parentezco);
+        }
+
+        public void EliminarFamiliar(int id, int dni)
+        {
+            moGrupoFamiliar.EliminarFamiliar(id, dni);
+        }
     }
 }

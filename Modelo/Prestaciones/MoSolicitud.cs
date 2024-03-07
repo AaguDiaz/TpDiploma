@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,8 +19,7 @@ namespace Modelo
             {
                 using (SqlCommand command = new SqlCommand())
                 {
-                    try
-                    {   // Obtengo el id del empleado que está logueado
+                       // Obtengo el id del empleado que está logueado
                         command.Connection = connection;
                         connection.Open();
                         command.CommandText = "SELECT id_empleado FROM empleados WHERE id_usuario = @id";
@@ -27,52 +27,46 @@ namespace Modelo
                         int id_empleado = Convert.ToInt32(command.ExecuteScalar());
 
                         // Inserto la solicitud
-                        command.CommandText = "INSERT INTO solicitudes (id_empleado, total, fecha) VALUES (@IdEmpleado, @Total, @Fecha)";
+                        command.CommandText = "INSERT INTO solicitudes (id_empleado, total, fecha, id_estado) OUTPUT INSERTED.id_solicitud  VALUES (@IdEmpleado, @Total, @Fecha, @estado)";
                         command.Parameters.AddWithValue("@IdEmpleado", id_empleado);
                         command.Parameters.AddWithValue("@Total", montototal);
                         command.Parameters.AddWithValue("@Fecha", DateTime.Now);
-                        command.ExecuteNonQuery();
-
-                        // Obtengo el id de la solicitud que acabo de insertar
-                        command.CommandText = "SELECT id_solicitud FROM solicitudes";
+                        command.Parameters.AddWithValue("@estado", 1);
                         int id_solicitud = Convert.ToInt32(command.ExecuteScalar());
-
-                        // Obtengo el id de la deuda del empleado
-                        command.CommandText = "SELECT id_deuda FROM deudas WHERE id_empleado = @idem";
-                        command.Parameters.AddWithValue("@idem", id_empleado);
-                        int id_deuda = Convert.ToInt32(command.ExecuteScalar());
-
-                        // Inserto la solicitud de deuda
-                        command.CommandText = "INSERT INTO solicitud_deudas (id_solicitud,id_deuda, monto) values (@IdSolicitud, @IdDeudas, @Monto)";
-                        command.Parameters.AddWithValue("@IdSolicitud", id_solicitud);
-                        command.Parameters.AddWithValue("@IdDeudas", id_deuda);
-                        command.Parameters.AddWithValue("@Monto", montototal);
-                        command.ExecuteNonQuery();
-                        command.Parameters.Clear();
 
                         // Inserto las prestaciones de la solicitud
                         foreach (var prestacion in prestaciones)
                         {
+                            command.Parameters.Clear();
                             command.CommandText = "SELECT id_prestacion FROM prestaciones WHERE nombre_prestacion = @nombre";
                             command.Parameters.AddWithValue("@nombre", prestacion.Nombre);
                             int id_prestacion = Convert.ToInt32(command.ExecuteScalar());
-                            command.CommandText = "SELECT id_solicitud FROM solicitudes";
-                            int id_soli = Convert.ToInt32(command.ExecuteScalar());
-
-                            command.CommandText = "INSERT INTO solicitudes_prestaciones (id_solicitud, id_prestacion, monto, cuotas) VALUES (@Id, @IdPrestacion, @Monto, @Cuotas)";
-                            command.Parameters.AddWithValue("@Id", id_soli);
+                            
+                            byte[] pdf = null;
+                            if (prestacion.pdf != null)
+                            {
+                                pdf = File.ReadAllBytes(prestacion.pdf);
+                            }
+                            command.CommandText = "INSERT INTO solicitudes_prestaciones (id_solicitud, id_prestacion, monto, cuotas, archivo) VALUES (@Id, @IdPrestacion, @Monto, @Cuotas, @archivo)";
+                            command.Parameters.AddWithValue("@Id", id_solicitud);
                             command.Parameters.AddWithValue("@IdPrestacion", id_prestacion);
                             command.Parameters.AddWithValue("@Monto", prestacion.MontoSolicitado);
-                            command.Parameters.AddWithValue("@Cuotas", prestacion.cuotas);
+                            command.Parameters.AddWithValue("@Cuotas", prestacion.cuotasSolicitado);
+                            SqlParameter archivoParam = new SqlParameter("@archivo", SqlDbType.VarBinary);
+                            if (pdf != null)
+                            {
+                                archivoParam.Value = pdf;
+                            }
+                            else
+                            {
+                                archivoParam.Value = DBNull.Value;
+                            }
+                            command.Parameters.Add(archivoParam);
                             command.ExecuteNonQuery();
                             command.Parameters.Clear();
                         }
                         connection.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        throw ex;
-                    }
+                    
                 }
             }
         }
@@ -128,6 +122,109 @@ namespace Modelo
                     command.Parameters.Clear();
                     connection.Close();
                     return tabla;
+                }
+            }
+        }
+
+        public DataTable MostrarSoliXID(int id, int currentpage)
+        {
+            using (SqlConnection connection = new SqlConnection(MoConexionSQL.Instance.Conexion))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    DataTable tabla = new DataTable();
+                    command.Connection = connection;
+                    connection.Open();
+                    command.CommandText = " SELECT sp.id_solicitud_prestacion as ID, p.nombre_prestacion AS Prestacion, sp.monto AS Monto, sp.cuotas AS Cuotas " +
+                        " FROM solicitudes_prestaciones sp " +
+                        " LEFT JOIN prestaciones p ON sp.id_prestacion = p.id_prestacion " +
+                        " WHERE sp.id_solicitud = @id " +
+                        " ORDER BY ID OFFSET (( " + currentpage + "- 1) * 15) ROWS FETCH NEXT 15 ROWS ONLY";
+                    command.Parameters.AddWithValue("@id", id);
+                    tabla.Load(command.ExecuteReader());
+                    command.Parameters.Clear();
+                    connection.Close();
+                    return tabla;
+                }
+            }
+        }
+        public byte[] BuscarPDF(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(MoConexionSQL.Instance.Conexion))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    connection.Open();
+                    command.CommandText = "SELECT archivo FROM solicitudes_prestaciones WHERE id_solicitud_prestacion = @id";
+                    command.Parameters.AddWithValue("@id", id);
+                    byte[] pdf = (byte[])command.ExecuteScalar();
+                    connection.Close();
+                    return pdf;
+                }
+            }
+        }
+
+        public DataTable MostrarTodasPrestaciones(int CurrentPage)
+        {
+            using (SqlConnection connection = new SqlConnection(MoConexionSQL.Instance.Conexion))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    DataTable tabla = new DataTable();
+                    command.Connection = connection;
+                    connection.Open();
+                    command.CommandText = "SELECT  CONCAT(emp.nombre_empleado, ' ' , emp.apellido_empleado) AS Empleado, u.mail AS Mail , s.id_solicitud AS ID, s.total AS Precio_total, e.Estado AS Estado, s.fecha AS Fecha_prestacion " +
+                        "   FROM solicitudes s " +
+                        "   LEFT JOIN estado e ON s.id_estado = e.id_estado " +
+                        "   LEFT JOIN empleados emp ON s.id_empleado = emp.id_empleado " +
+                        "   LEFT JOIN usuarios u ON emp.id_usuario = u.id_usuario " +
+                        "   ORDER BY id_solicitud OFFSET ((" + CurrentPage + " - 1) * 12) ROWS FETCH NEXT 15 ROWS ONLY";
+                    tabla.Load(command.ExecuteReader());
+                    connection.Close();
+                    return tabla;
+                }
+            }
+        }
+        public DataTable MostrarSolicitudABMFiltro(int CurrentPage, int estado)
+        {
+            using (SqlConnection connection = new SqlConnection(MoConexionSQL.Instance.Conexion))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    DataTable tabla = new DataTable();
+                    command.Connection = connection;
+                    connection.Open();
+                    command.CommandText = "SELECT  CONCAT(emp.nombre_empleado, ' ' , emp.apellido_empleado) AS Empleado, u.mail AS Mail ,s.id_solicitud AS ID, s.total AS Precio_total, e.Estado AS Estado, s.fecha AS Fecha_prestacion " +
+                        "   FROM solicitudes s " +
+                        "   LEFT JOIN estado e ON s.id_estado = e.id_estado " +
+                        "   LEFT JOIN empleados emp ON s.id_empleado = emp.id_empleado " +
+                        "   LEFT JOIN usuarios u ON emp.id_usuario = u.id_usuario " +
+                        "   WHERE s.id_estado = @estado " +
+                        "   ORDER BY id_solicitud OFFSET ((" + CurrentPage + " - 1) * 12) ROWS FETCH NEXT 15 ROWS ONLY";
+                    command.Parameters.AddWithValue("@estado", estado);
+                    tabla.Load(command.ExecuteReader());
+                    command.Parameters.Clear();
+                    connection.Close();
+                    return tabla;
+                }
+            }
+        }
+
+        public void CambiarEstado(int id_solicitud, int estado)
+        {
+            using (SqlConnection connection = new SqlConnection(MoConexionSQL.Instance.Conexion))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    connection.Open();
+                    command.CommandText = "UPDATE solicitudes SET id_estado = @estado WHERE id_solicitud = @id_solicitud";
+                    command.Parameters.AddWithValue("@estado", estado);
+                    command.Parameters.AddWithValue("@id_solicitud", id_solicitud);
+                    command.ExecuteNonQuery();
+                    command.Parameters.Clear();
+                    connection.Close();
                 }
             }
         }

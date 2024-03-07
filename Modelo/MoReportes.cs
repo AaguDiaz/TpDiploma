@@ -258,7 +258,201 @@ namespace Modelo
         }
 
 
+        public void CargarSolicitudes()
+        {
+            using (SqlConnection connection = new SqlConnection(MoConexionSQL.Instance.Conexion))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    CacheReportes.Solicitudes = new List<PedidosByDate>();
+                    command.Connection = connection;
+                    connection.Open();
+                    command.CommandText = @"SELECT fecha AS Fecha, COUNT(id_solicitud) AS Total
+                                    FROM solicitudes
+                                    WHERE fecha BETWEEN @fromDate AND @toDate
+                                    GROUP BY fecha
+                                    ORDER BY fecha ASC";
+                    command.Parameters.Add("@fromDate", System.Data.SqlDbType.DateTime).Value = startDate;
+                    command.Parameters.Add("@toDate", System.Data.SqlDbType.DateTime).Value = endDate;
+                    var reader = command.ExecuteReader();
+                    var resultTable = new List<KeyValuePair<DateTime, int>>();
+                    while (reader.Read())
+                    {
+                        resultTable.Add(
+                                    new KeyValuePair<DateTime, int>((DateTime)reader[0], (int)reader[1])
+                                    );
+                    }
+                    reader.Close();
+                    if (numberDays <= 1)
+                    {
+                        CacheReportes.Solicitudes = (from orderList in resultTable
+                                                      group orderList by orderList.Key.ToString("hh tt")
+                                           into order
+                                                      select new PedidosByDate
+                                                      {
+                                                          Fecha = order.Key,
+                                                          Total = order.Sum(amount => amount.Value)
+                                                      }).ToList();
 
+                    }
+                    else if (numberDays <= 30)
+                    {
+                        CacheReportes.Solicitudes = (from orderList in resultTable
+                                                      group orderList by orderList.Key.ToString("dd MMM")
+                                                       into order
+                                                      select new PedidosByDate
+                                                      {
+                                                          Fecha = order.Key,
+                                                          Total = order.Sum(amount => amount.Value)
+                                                      }).ToList();
+                        command.Parameters.Clear();
+                    }
+                    //Group by Weeks
+                    else if (numberDays <= 92)
+                    {
+                        CacheReportes.Solicitudes = (from orderList in resultTable
+                                                      group orderList by CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(
+                                                          orderList.Key, CalendarWeekRule.FirstDay, DayOfWeek.Monday)
+                                           into order
+                                                      select new PedidosByDate
+                                                      {
+                                                          Fecha = "Week " + order.Key.ToString(),
+                                                          Total = order.Sum(amount => amount.Value)
+                                                      }).ToList();
+                        command.Parameters.Clear();
+                    }
+                    //Group by Months
+                    else if (numberDays <= (365 * 2))
+                    {
+                        bool isYear = numberDays <= 365 ? true : false;
+                        CacheReportes.Solicitudes = (from orderList in resultTable
+                                                      group orderList by orderList.Key.ToString("MMM yyyy")
+                                           into order
+                                                      select new PedidosByDate
+                                                      {
+                                                          Fecha = isYear ? order.Key.Substring(0, order.Key.IndexOf(" ")) : order.Key,
+                                                          Total = order.Sum(amount => amount.Value)
+                                                      }).ToList();
+                        command.Parameters.Clear();
+                    }
+                    //Group by Years
+                    else
+                    {
+                        CacheReportes.Solicitudes = (from orderList in resultTable
+                                                      group orderList by orderList.Key.ToString("yyyy")
+                                           into order
+                                                      select new PedidosByDate
+                                                      {
+                                                          Fecha = order.Key,
+                                                          Total = order.Sum(amount => amount.Value)
+                                                      }).ToList();
+                        command.Parameters.Clear();
+                    }
+                    command.Parameters.Clear();
+                    connection.Close();
+                }
+            }
+        }
+
+        public void CargarPrestaciones()
+        {
+            using (SqlConnection connection = new SqlConnection(MoConexionSQL.Instance.Conexion))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    CacheReportes.Prestaciones = new List<KeyValuePair<string, int>>();
+                    command.Connection = connection;
+                    connection.Open();
+                    command.CommandText = @"SELECT TOP 5 p.nombre_prestacion, COUNT(sp.id_prestacion) as C
+                                            from solicitudes_prestaciones sp
+                                            inner join prestaciones P on P.id_prestacion = sp.id_prestacion
+                                            inner join solicitudes sol on sp.id_solicitud = sol.id_solicitud
+                                            where sol.fecha between @fromDate and @toDate
+                                            group by p.nombre_prestacion
+                                            order by C desc ";
+                    command.Parameters.Add("@fromDate", System.Data.SqlDbType.DateTime).Value = startDate;
+                    command.Parameters.Add("@toDate", System.Data.SqlDbType.DateTime).Value = endDate;
+                    reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        CacheReportes.Prestaciones.Add(
+                                                       new KeyValuePair<string, int>(reader[0].ToString(), (int)reader[1]));
+                    }
+                    reader.Close();
+                    command.Parameters.Clear();
+                    connection.Close();
+                }
+            }
+        }
+
+        public void CargarDeudores()
+        {
+            using (SqlConnection connection = new SqlConnection(MoConexionSQL.Instance.Conexion))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    CacheReportes.Deudores = new List<KeyValuePair<string, int>>();
+                    command.Connection = connection;
+                    connection.Open();
+                    command.CommandText = @"SELECT TOP 5 CONCAT(emp.nombre_empleado, ' ', emp.apellido_empleado) AS Empleado, SUM(sd.monto) AS M
+                                    FROM deudas d
+                                    LEFT JOIN empleados emp ON d.id_empleado = emp.id_empleado
+                                    LEFT JOIN solicitud_deudas sd ON d.id_deuda = sd.id_deuda
+                                    LEFT JOIN solicitudes sol ON sd.id_solicitud = sol.id_solicitud
+                                    GROUP BY CONCAT(emp.nombre_empleado, ' ', emp.apellido_empleado)
+									ORDER BY M DESC ";
+                    command.Parameters.Add("@fromDate", System.Data.SqlDbType.DateTime).Value = startDate;
+                    command.Parameters.Add("@toDate", System.Data.SqlDbType.DateTime).Value = endDate;
+                    reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        CacheReportes.Deudores.Add(
+                                                       new KeyValuePair<string, int>(reader[0].ToString(), (int)reader[1]));
+                    }
+                    reader.Close();
+                    command.Parameters.Clear();
+                    connection.Close();
+                }
+            }
+        }
+
+        public void CargarTotalesPres()
+        {
+            using (SqlConnection connection = new SqlConnection(MoConexionSQL.Instance.Conexion))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    connection.Open();
+
+                    //Cargar total de solicitudes
+                    command.CommandText = "select count(id_solicitud) from solicitudes";
+                    CacheReportes.NumSoli = (int)command.ExecuteScalar();
+                    //Cargar total de solicitudes pendientes
+                    command.CommandText = "select count(id_solicitud) from solicitudes where id_estado = '1'";
+                    CacheReportes.SoliPendientes = (int)command.ExecuteScalar();
+                    //Cargar total de solicitudes aceptadas
+                    command.CommandText = "select count(id_solicitud) from solicitudes where id_estado = '2'";
+                    CacheReportes.SoliAceptadas = (int)command.ExecuteScalar();
+                    //Cargar total de solicitudes rechazadas
+                    command.CommandText = "select count(id_solicitud) from solicitudes where id_estado = '3'";
+                    CacheReportes.SoliRechazadas = (int)command.ExecuteScalar();
+
+                    //Cargar total de prestaciones
+                    command.CommandText = "select count(id_prestacion) from solicitudes_prestaciones";
+                    CacheReportes.NumPrestaciones = (int)command.ExecuteScalar();
+
+                    //Cargar total de deudores
+                    command.CommandText = "select count(id_deuda) from deudas";
+                    CacheReportes.NumDeudores = (int)command.ExecuteScalar();
+                    //Cargar total de deuda total
+                    command.CommandText = "select sum(monto) from solicitud_deudas";
+                    CacheReportes.NumDeudaTot = (int)command.ExecuteScalar();
+
+                    connection.Close();
+                }
+            }
+        }
 
     }
 }

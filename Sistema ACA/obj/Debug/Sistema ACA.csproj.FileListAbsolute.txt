@@ -90,12 +90,15 @@ C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.ABMUsuarios.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.CargaDatosUsuarios.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Admin.Grupos.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.infoGrupoFamiliar.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Admin.ListaPedidos.BuscarProductos.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Admin.ListaPedidos.CargarCat.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Admin.Reportes.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Admin.ListaPedidos.DetallesLista.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Admin.NuevaLista.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Socio.AgregarProductos.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Prestacion.AgregarPrestacion.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Prestacion.BuscadorPDF.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.CambiarContra.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.ABMProveedores.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Socio.EstadoCuenta.resources
@@ -107,7 +110,7 @@ C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Properties.Resources.resources
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema ACA.csproj.GenerateResource.cache
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema ACA.csproj.CoreCompileInputs.cache
-C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema ACA.csproj.CopyComplete
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema .FFE776EA.Up2Date
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema ACA.exe
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema ACA.pdb
-C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.infoGrupoFamiliar.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Admin.Auditoria.resources

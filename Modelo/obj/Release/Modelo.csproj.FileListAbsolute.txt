@@ -1,0 +1,11 @@
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Modelo\bin\Release\Modelo.dll.config
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Modelo\bin\Release\Modelo.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Modelo\bin\Release\Modelo.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Modelo\bin\Release\COMUN.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Modelo\bin\Release\COMUN.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Modelo\bin\Release\COMUN.dll.config
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Modelo\obj\Release\Modelo.csproj.AssemblyReference.cache
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Modelo\obj\Release\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Modelo\obj\Release\Modelo.csproj.Up2Date
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Modelo\obj\Release\Modelo.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Modelo\obj\Release\Modelo.pdb

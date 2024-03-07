@@ -1,0 +1,38 @@
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\es\Microsoft.TestPlatform.AdapterUtilities.resources.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\es\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\Microsoft.TestPlatform.AdapterUtilities.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\UnitTestProject2.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\UnitTestProject2.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\Sistema ACA.exe
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\Controladora.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\COMUN.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\itextsharp.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\itextsharp.xmlworker.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\Modelo.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\Sistema ACA.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\Sistema ACA.exe.config
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\Controladora.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\Controladora.dll.config
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\COMUN.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\COMUN.dll.config
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\itextsharp.xml
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\Modelo.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\bin\Debug\Modelo.dll.config
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\obj\Debug\UnitTestProject2.csproj.AssemblyReference.cache
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\obj\Debug\UnitTestProject2.csproj.CoreCompileInputs.cache
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\obj\Debug\UnitTest.384B57F8.Up2Date
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\obj\Debug\UnitTestProject2.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\UnitTestProject2\obj\Debug\UnitTestProject2.pdb

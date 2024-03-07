@@ -1,0 +1,14 @@
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\bin\Release\Controladora.dll.config
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\bin\Release\Controladora.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\bin\Release\Controladora.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\bin\Release\COMUN.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\bin\Release\Modelo.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\bin\Release\COMUN.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\bin\Release\COMUN.dll.config
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\bin\Release\Modelo.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\bin\Release\Modelo.dll.config
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\obj\Release\Controladora.csproj.AssemblyReference.cache
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\obj\Release\Controladora.csproj.CoreCompileInputs.cache
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\obj\Release\Controla.1EE7A4DA.Up2Date
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\obj\Release\Controladora.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\obj\Release\Controladora.pdb

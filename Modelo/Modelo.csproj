@@ -45,6 +45,7 @@
     <Compile Include="Prestaciones\MoDeuda.cs" />
     <Compile Include="Pedidos\MoListaProd.cs" />
     <Compile Include="Pedidos\MoPedido.cs" />
+    <Compile Include="Seguridad\MoAuditoria.cs" />
     <Compile Include="Seguridad\MoGrupoFamiliar.cs" />
     <Compile Include="Seguridad\MoPermisos.cs" />
     <Compile Include="Seguridad\MoGrupos.cs" />

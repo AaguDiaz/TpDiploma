@@ -13,15 +13,17 @@ using Sistema_ACA.Forms.Admin;
 using Sistema_ACA.Forms.Socio;
 using COMUN;
 using COMUN.Seguridad;
+using Controladora.Seguridad;
 
 namespace Sistema_ACA
 {
     public partial class PantallaPrincipal : Form
     {
-        
+        CnAuditoria cnAuditoria = new CnAuditoria();
         private Form formActivo = null;
         private InicioSesion forminicio;
         private int close = 0;
+        private int cerrando = 0;
 
         public PantallaPrincipal(InicioSesion forminicio)
         {
@@ -131,6 +133,8 @@ namespace Sistema_ACA
                                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 close = 1;
+                string registro = "Cierre de sesión";
+                cnAuditoria.InsertarAuditoria(registro);
                 MetodosComunes.CerrarSesion();
                 this.Close();
                 forminicio.Show();
@@ -143,7 +147,13 @@ namespace Sistema_ACA
         {
             if(close != 1)
             {
-              Application.Exit();
+                cerrando++;
+                if (cerrando == 1)
+                {
+                    string registro = "Cierre de sesión";
+                    cnAuditoria.InsertarAuditoria(registro);
+                }
+                Application.Exit();
             }
                 
         }
@@ -197,6 +207,11 @@ namespace Sistema_ACA
         private void pedidosPrestacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             abrirForm(new ABMPedidosYPrestaciones());
+        }
+
+        private void audiTMSI_Click(object sender, EventArgs e)
+        {
+            abrirForm(new Auditoria());
         }
     }
     }

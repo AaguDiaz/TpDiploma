@@ -321,6 +321,6 @@ C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\UglyToad.PdfPig.T
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\bin\Debug\UglyToad.PdfPig.Tokens.xml
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\obj\Debug\COMUN.csproj.AssemblyReference.cache
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\obj\Debug\COMUN.csproj.CoreCompileInputs.cache
-C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\obj\Debug\COMUN.csproj.CopyComplete
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\obj\Debug\COMUN.csproj.Up2Date
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\obj\Debug\COMUN.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\COMUN\obj\Debug\COMUN.pdb

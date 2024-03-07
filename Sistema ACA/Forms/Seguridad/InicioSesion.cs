@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controladora;
+using Controladora.Seguridad;
 
 namespace Sistema_ACA
 {
     public partial class InicioSesion : Form
     {
 
+        CnAuditoria auditoria = new CnAuditoria();
         public InicioSesion()
         {
             InitializeComponent();
@@ -57,6 +59,8 @@ namespace Sistema_ACA
                             PantallaPrincipal pantallaInicialForm = new PantallaPrincipal(this);
                             pantallaInicialForm.Show();
                             pantallaInicialForm.FormClosed += Logout;
+                            string registro = "Inicio de Sesión";
+                            auditoria.InsertarAuditoria(registro);
                             this.Hide();
 
                         }else

@@ -142,7 +142,7 @@
             this.pedidosPrestacionesToolStripMenuItem,
             this.gruposToolStripMenuItem});
             this.abmTSMT.Name = "abmTSMT";
-            this.abmTSMT.Size = new System.Drawing.Size(161, 22);
+            this.abmTSMT.Size = new System.Drawing.Size(180, 22);
             this.abmTSMT.Tag = "ABMS";
             this.abmTSMT.Text = "ABMS";
             // 
@@ -181,7 +181,7 @@
             // gestUsuTSMI
             // 
             this.gestUsuTSMI.Name = "gestUsuTSMI";
-            this.gestUsuTSMI.Size = new System.Drawing.Size(161, 22);
+            this.gestUsuTSMI.Size = new System.Drawing.Size(180, 22);
             this.gestUsuTSMI.Tag = "ABMUsuarios";
             this.gestUsuTSMI.Text = "Gestion usuarios";
             this.gestUsuTSMI.Click += new System.EventHandler(this.gestionSociosToolStripMenuItem_Click);
@@ -189,9 +189,10 @@
             // audiTMSI
             // 
             this.audiTMSI.Name = "audiTMSI";
-            this.audiTMSI.Size = new System.Drawing.Size(161, 22);
+            this.audiTMSI.Size = new System.Drawing.Size(180, 22);
             this.audiTMSI.Tag = "Auditoria";
             this.audiTMSI.Text = "Auditoria";
+            this.audiTMSI.Click += new System.EventHandler(this.audiTMSI_Click);
             // 
             // logoutToolStripMenuItem
             // 

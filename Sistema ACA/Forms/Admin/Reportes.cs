@@ -31,10 +31,47 @@ namespace Sistema_ACA.Forms.Admin
             dtpHasta.Value = DateTime.Now;
             Personalizado();
             btnSemana.Select();
-            LoadDataPed();
+            if(tabControl1.SelectedIndex == 0)
+            {
+                LoadDataPed();
+            }
+            else
+            {
+                LoadDataPres();
+            }
 
         }
+        private void LoadDataPres()
+        {
+            var resfrescarinfo = new CnReportes().LoadDataPres(dtpDesde.Value, dtpHasta.Value);
+            if (resfrescarinfo == true)
+            {
+                lblSoli.Text = CacheReportes.NumSoli.ToString();
+                lblSoliPen.Text = CacheReportes.SoliPendientes.ToString();
+                lblSoliAcep.Text = CacheReportes.SoliAceptadas.ToString();
+                lblSoliRech.Text = CacheReportes.SoliRechazadas.ToString();
 
+                lblPrestaciones.Text = CacheReportes.NumPrestaciones.ToString();
+                lblDeu.Text = CacheReportes.NumDeudores.ToString();
+                lblDeuTot.Text = CacheReportes.NumDeudaTot.ToString(); 
+
+
+                chSolicitudes.DataSource = CacheReportes.Solicitudes;
+                chSolicitudes.Series[0].XValueMember = "Fecha";
+                chSolicitudes.Series[0].YValueMembers = "Total";
+                chSolicitudes.DataBind();
+
+                chPrestaciones.DataSource = CacheReportes.Prestaciones;
+                chPrestaciones.Series[0].XValueMember = "Key";
+                chPrestaciones.Series[0].YValueMembers = "Value";
+                chPrestaciones.DataBind();
+
+                chDeudores.DataSource = CacheReportes.Deudores;
+                chDeudores.Series[0].XValueMember = "Key";
+                chDeudores.Series[0].YValueMembers = "Value";
+                chDeudores.DataBind();
+            }
+        }
         private void LoadDataPed()
         {
             var resfrescarinfo = new CnReportes().LoadDataPed(dtpDesde.Value, dtpHasta.Value);
@@ -87,14 +124,28 @@ namespace Sistema_ACA.Forms.Admin
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            LoadDataPed();
+            if (tabControl1.SelectedIndex == 0)
+            {
+                LoadDataPed();
+            }
+            else
+            {
+                LoadDataPres();
+            }
         }
 
         private void btnHoy_Click(object sender, EventArgs e)
         {
             dtpDesde.Value = DateTime.Today;
             dtpHasta.Value = DateTime.Now;
-            LoadDataPed();
+            if (tabControl1.SelectedIndex == 0)
+            {
+                LoadDataPed();
+            }
+            else
+            {
+                LoadDataPres();
+            }
             Personalizado();
         }
 
@@ -102,7 +153,14 @@ namespace Sistema_ACA.Forms.Admin
         {
             dtpDesde.Value = DateTime.Today.AddDays(-7);
             dtpHasta.Value = DateTime.Now;
-            LoadDataPed();
+            if (tabControl1.SelectedIndex == 0)
+            {
+                LoadDataPed();
+            }
+            else
+            {
+                LoadDataPres();
+            }
             Personalizado();
 
         }
@@ -111,7 +169,14 @@ namespace Sistema_ACA.Forms.Admin
         {
             dtpDesde.Value = DateTime.Today.AddDays(-30);
             dtpHasta.Value = DateTime.Now;
-            LoadDataPed();
+            if (tabControl1.SelectedIndex == 0)
+            {
+                LoadDataPed();
+            }
+            else
+            {
+                LoadDataPres();
+            }
             Personalizado();
         }
 
@@ -119,7 +184,14 @@ namespace Sistema_ACA.Forms.Admin
         {
             dtpDesde.Value = DateTime.Today.AddDays(-365);
             dtpHasta.Value = DateTime.Now;
-            LoadDataPed();
+            if (tabControl1.SelectedIndex == 0)
+            {
+                LoadDataPed();
+            }
+            else
+            {
+                LoadDataPres();
+            }
             Personalizado();
         }
 
@@ -130,38 +202,36 @@ namespace Sistema_ACA.Forms.Admin
             btnOk.Visible = true;
         }
 
-
-       
-        private void bttnPDF_Click(object sender, EventArgs e)
+        private void PDFRepor()
         {
             SaveFileDialog save = new SaveFileDialog();
             save.Filter = "PDF Files|*.pdf";
-            save.FileName = string.Format("Reporte ",DateTime.Now.ToString("ddMMyyyy") );
+            save.FileName = string.Format("Reporte ", DateTime.Now.ToString("ddMMyyyy"));
 
             string paginahtml_texto = Properties.Resources.Plantilla.ToString();
             paginahtml_texto = paginahtml_texto.Replace("@CLIENTE", UserLoginCache.nombre + UserLoginCache.apellido);
             paginahtml_texto = paginahtml_texto.Replace("@DOCUMENTO", UserLoginCache.dni.ToString());
             paginahtml_texto = paginahtml_texto.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yyyy"));
 
-            
 
-            if (save.ShowDialog()== DialogResult.OK)
+
+            if (save.ShowDialog() == DialogResult.OK)
             {
-                using(FileStream stream = new FileStream(save.FileName, FileMode.Create))
+                using (FileStream stream = new FileStream(save.FileName, FileMode.Create))
                 {
                     Document document = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
                     PdfWriter writer = PdfWriter.GetInstance(document, stream);
-                    
+
                     document.Open();
                     using (StringReader sr = new StringReader(paginahtml_texto))
                     {
                         XMLWorkerHelper.GetInstance().ParseXHtml(writer, document, sr);
                     }
-                    
-                    
+
+
                     MemoryStream imagenChartPedidos = ConvertirChartAImagen(chPedidos);
                     iTextSharp.text.Image chartImage1 = iTextSharp.text.Image.GetInstance(imagenChartPedidos.ToArray());
-                    chartImage1.ScaleToFit(PageSize.A4.Width,PageSize.A4.Height);
+                    chartImage1.ScaleToFit(PageSize.A4.Width, PageSize.A4.Height);
                     document.Add(chartImage1);
 
                     MemoryStream imagenChartProductos = ConvertirChartAImagen(chProductos);
@@ -178,7 +248,7 @@ namespace Sistema_ACA.Forms.Admin
 
                     document.Add(new Paragraph(" "));
                     document.Add(new Paragraph("                Pedidos:"));
-                    document.Add(new Paragraph("                        -Cantidad de pedidos: " + lblNumPed.Text ));
+                    document.Add(new Paragraph("                        -Cantidad de pedidos: " + lblNumPed.Text));
                     document.Add(new Paragraph("                        -Pedidos pendientes: " + lblPedPend.Text));
                     document.Add(new Paragraph("                        -Pedidos aceptados: " + lblPedAcep.Text));
                     document.Add(new Paragraph("                        -Pedidos rechazados: " + lblPedRech.Text));
@@ -207,6 +277,79 @@ namespace Sistema_ACA.Forms.Admin
                     MessageBox.Show("Reporte guardado correctamente.", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+       
+        private void PDFPRES()
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "PDF Files|*.pdf";
+            save.FileName = string.Format("Reporte ", DateTime.Now.ToString("ddMMyyyy"));
+
+            string paginahtml_texto = Properties.Resources.Plantilla.ToString();
+            paginahtml_texto = paginahtml_texto.Replace("@CLIENTE", UserLoginCache.nombre + UserLoginCache.apellido);
+            paginahtml_texto = paginahtml_texto.Replace("@DOCUMENTO", UserLoginCache.dni.ToString());
+            paginahtml_texto = paginahtml_texto.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yyyy"));
+
+            if(save.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream stream = new FileStream(save.FileName, FileMode.Create))
+                {
+                    Document document = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                    PdfWriter writer = PdfWriter.GetInstance(document, stream);
+
+                    document.Open();
+                    using (StringReader sr = new StringReader(paginahtml_texto))
+                    {
+                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, document, sr);
+                    }
+
+                    MemoryStream imagenChartSolicitudes = ConvertirChartAImagen(chSolicitudes);
+                    iTextSharp.text.Image chartImage1 = iTextSharp.text.Image.GetInstance(imagenChartSolicitudes.ToArray());
+                    chartImage1.ScaleToFit(PageSize.A4.Width, PageSize.A4.Height);
+                    document.Add(chartImage1);
+
+                    MemoryStream imagenChartPrestaciones = ConvertirChartAImagen(chPrestaciones);
+                    iTextSharp.text.Image chartImage2 = iTextSharp.text.Image.GetInstance(imagenChartPrestaciones.ToArray());
+                    chartImage2.ScaleToFit(PageSize.A4.Width, PageSize.A4.Height);
+                    document.Add(chartImage2);
+
+                    document.NewPage();
+
+                    MemoryStream imagenChartDeudores = ConvertirChartAImagen(chDeudores);
+                    iTextSharp.text.Image chartImage3 = iTextSharp.text.Image.GetInstance(imagenChartDeudores.ToArray());
+                    chartImage3.ScaleToFit(PageSize.A4.Width, PageSize.A4.Height);
+                    document.Add(chartImage3);
+
+                    document.Add(new Paragraph(" "));
+                    document.Add(new Paragraph("                Solicitudes:"));
+                    document.Add(new Paragraph("                        -Cantidad de solicitudes: " + lblSoli.Text));
+                    document.Add(new Paragraph("                        -Solicitudes pendientes: " + lblSoliPen.Text));
+                    document.Add(new Paragraph("                        -Solicitudes aceptadas: " + lblSoliAcep.Text));
+                    document.Add(new Paragraph("                        -Solicitudes rechazadas: " + lblSoliRech.Text));
+                    document.Add(new Paragraph(" "));
+                    document.Add(new Paragraph("                Prestaciones:"));
+                    document.Add(new Paragraph("                          -Cantidad de prestaciones: " + lblPrestaciones.Text));
+                    document.Add(new Paragraph(" "));
+                    document.Add(new Paragraph("                Deudores:"));
+                    document.Add(new Paragraph("                        -Cantidad de deudores: " + lblDeu.Text));
+                    document.Add(new Paragraph("                        -Deuda total: " + lblDeuTot.Text));
+                    document.Close();
+                    stream.Close();
+                    MessageBox.Show("Reporte guardado correctamente.", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void bttnPDF_Click(object sender, EventArgs e)
+        {
+            if(tabControl1.SelectedIndex == 0)
+            {
+                PDFRepor();
+            }
+            else
+            {
+                PDFPRES();
+            }
 
         }
 
@@ -219,6 +362,11 @@ namespace Sistema_ACA.Forms.Admin
             bmp.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
 
             return stream;
+        }
+
+        private void chart3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

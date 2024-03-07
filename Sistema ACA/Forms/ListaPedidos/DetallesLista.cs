@@ -16,6 +16,7 @@ namespace Sistema_ACA.Forms.Admin.ListaPedidos
     {
         CnListaProd cnListaProd = new CnListaProd();
         CnPedidoLista cnPedidoLista = new CnPedidoLista();
+        SolicitudController cnSolicitud = new SolicitudController();
         int CurrentPage = 1;
         int conteo = 1;
         int entradaa = 0;
@@ -37,6 +38,7 @@ namespace Sistema_ACA.Forms.Admin.ListaPedidos
                 entradaa = entrada;
                 pnlUp.Visible = true;
                 pnlDown.Visible = true;
+                btnPDF.Visible = false;
                 ConfiDgvPed();
             }
             else if(entrada == 2)
@@ -50,7 +52,19 @@ namespace Sistema_ACA.Forms.Admin.ListaPedidos
                 lblFecha.Text = cnListaProd.MostrarFechaDetalleLPP(Convert.ToInt32(CacheLista.Id));
                 pnlUp.Visible = false;
                 pnlDown.Visible = false;
+                btnPDF.Visible = false;
                 confiDGV();
+            }else if(entrada == 3)
+            {
+                lblInfoProv.Text = "";
+                lbl_2.Text = "";
+                lblInfoFech.Text = "";
+                lbl_.Text = "";
+                entradaa = entrada;
+                pnlUp.Visible = true;
+                pnlDown.Visible = true;
+                btnPDF.Visible = true;
+                ConfiDgvSoli();
             }
 
         }
@@ -59,6 +73,17 @@ namespace Sistema_ACA.Forms.Admin.ListaPedidos
         private void DetallesLista_Load(object sender, EventArgs e)
         {
         }
+
+        public void ConfiDgvSoli()
+        {
+            bindingSource1.DataSource = cnSolicitud.MostrarSolicitudXID(Convert.ToInt32(CacheSolicitud.id_solicitud), CurrentPage);
+            bindingNavigator1.BindingSource = bindingSource1;
+            dgvLista.DataSource = bindingSource1;
+            dgvLista.Columns[0].Width = 200;
+            dgvLista.Columns[1].Width = 200;
+            dgvLista.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
 
         public void ConfiDgvPed()
         {
@@ -96,6 +121,9 @@ namespace Sistema_ACA.Forms.Admin.ListaPedidos
                 }else if(entradaa == 1)
                 {
                     ConfiDgvPed();
+                }else if(entradaa == 3)
+                {
+                    ConfiDgvSoli();
                 }
             }
 
@@ -114,6 +142,9 @@ namespace Sistema_ACA.Forms.Admin.ListaPedidos
                 }else if(entradaa == 1)
                 {
                     ConfiDgvPed();
+                }else if(entradaa == 3)
+                {
+                    ConfiDgvSoli();
                 }
             }
         }
@@ -123,6 +154,31 @@ namespace Sistema_ACA.Forms.Admin.ListaPedidos
             if (CurrentPage >= 1)
             {
                 bindingNavigatorMovePreviousItem.Enabled = true;
+            }
+        }
+
+        private void btnPDF_Click(object sender, EventArgs e)
+        {
+            if (entradaa == 3)
+            {
+                if(dgvLista.SelectedRows.Count > 0)
+                {
+                    if (dgvLista.CurrentRow.Cells[1].Value.ToString() == "Subsidio Casamiento"|| dgvLista.CurrentRow.Cells[1].Value.ToString() == "Subsidio Escolaridad"||dgvLista.CurrentRow.Cells[1].Value.ToString() == "Subsidio Nacimiento")
+                    {
+                        byte[] file = cnSolicitud.MostrarArchivo(Convert.ToInt32(dgvLista.CurrentRow.Cells[0].Value.ToString()));
+                        string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Solicitud.pdf";
+                        System.IO.File.WriteAllBytes(path, file);
+                        System.Diagnostics.Process.Start(path);
+                    }else
+                    {
+                        MessageBox.Show("Esta prestacion no tiene un comprobante", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione una prestacion", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+
+                }
             }
         }
     }

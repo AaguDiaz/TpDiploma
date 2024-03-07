@@ -65,6 +65,24 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtNombreg = new System.Windows.Forms.TextBox();
+            this.txtApellidog = new System.Windows.Forms.TextBox();
+            this.txtDNIg = new System.Windows.Forms.TextBox();
+            this.dgvGrupoFamiliar = new System.Windows.Forms.DataGridView();
+            this.cbParentesco = new System.Windows.Forms.ComboBox();
+            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.btnAgrgarFamiliar = new System.Windows.Forms.Button();
+            this.btnEliminarFamiliar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermisos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrupos)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -72,6 +90,9 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrupoFamiliar)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -147,7 +168,7 @@
             this.txtTelefono.ForeColor = System.Drawing.Color.DimGray;
             this.txtTelefono.Location = new System.Drawing.Point(280, 51);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(195, 14);
+            this.txtTelefono.Size = new System.Drawing.Size(194, 14);
             this.txtTelefono.TabIndex = 6;
             this.txtTelefono.Text = "Telefono:";
             this.txtTelefono.Enter += new System.EventHandler(this.txtTelefono_Enter);
@@ -320,6 +341,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(-1, 85);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -519,6 +541,192 @@
             this.label10.TabIndex = 39;
             this.label10.Text = "________________________________";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.panel1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(972, 493);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Grupo Familiar";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(7, 23);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(47, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Nombre:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(7, 70);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 13);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Apellido:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(7, 117);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(29, 13);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "DNI:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(7, 220);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(64, 13);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "Parentesco:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(7, 167);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(94, 13);
+            this.label17.TabIndex = 4;
+            this.label17.Text = "Fecha nacimiento:";
+            // 
+            // txtNombreg
+            // 
+            this.txtNombreg.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombreg.Location = new System.Drawing.Point(119, 20);
+            this.txtNombreg.Name = "txtNombreg";
+            this.txtNombreg.Size = new System.Drawing.Size(223, 13);
+            this.txtNombreg.TabIndex = 5;
+            this.txtNombreg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            // 
+            // txtApellidog
+            // 
+            this.txtApellidog.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtApellidog.Location = new System.Drawing.Point(119, 70);
+            this.txtApellidog.Name = "txtApellidog";
+            this.txtApellidog.Size = new System.Drawing.Size(223, 13);
+            this.txtApellidog.TabIndex = 6;
+            this.txtApellidog.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            // 
+            // txtDNIg
+            // 
+            this.txtDNIg.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDNIg.Location = new System.Drawing.Point(119, 117);
+            this.txtDNIg.Name = "txtDNIg";
+            this.txtDNIg.Size = new System.Drawing.Size(223, 13);
+            this.txtDNIg.TabIndex = 7;
+            this.txtDNIg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
+            // 
+            // dgvGrupoFamiliar
+            // 
+            this.dgvGrupoFamiliar.AllowUserToAddRows = false;
+            this.dgvGrupoFamiliar.AllowUserToDeleteRows = false;
+            this.dgvGrupoFamiliar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGrupoFamiliar.Location = new System.Drawing.Point(389, 10);
+            this.dgvGrupoFamiliar.Name = "dgvGrupoFamiliar";
+            this.dgvGrupoFamiliar.ReadOnly = true;
+            this.dgvGrupoFamiliar.Size = new System.Drawing.Size(529, 441);
+            this.dgvGrupoFamiliar.TabIndex = 8;
+            // 
+            // cbParentesco
+            // 
+            this.cbParentesco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbParentesco.FormattingEnabled = true;
+            this.cbParentesco.Items.AddRange(new object[] {
+            "Seleccionar",
+            "Esposo/a",
+            "Hijo/a"});
+            this.cbParentesco.Location = new System.Drawing.Point(119, 217);
+            this.cbParentesco.Name = "cbParentesco";
+            this.cbParentesco.Size = new System.Drawing.Size(223, 21);
+            this.cbParentesco.TabIndex = 9;
+            this.cbParentesco.SelectedIndexChanged += new System.EventHandler(this.cbParentesco_SelectedIndexChanged);
+            // 
+            // dtpFechaNacimiento
+            // 
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(119, 164);
+            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(223, 20);
+            this.dtpFechaNacimiento.TabIndex = 10;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(116, 22);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(223, 13);
+            this.label18.TabIndex = 40;
+            this.label18.Text = "____________________________________";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(116, 72);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(223, 13);
+            this.label19.TabIndex = 41;
+            this.label19.Text = "____________________________________";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(116, 118);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(223, 13);
+            this.label20.TabIndex = 42;
+            this.label20.Text = "____________________________________";
+            // 
+            // btnAgrgarFamiliar
+            // 
+            this.btnAgrgarFamiliar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAgrgarFamiliar.Location = new System.Drawing.Point(1, 288);
+            this.btnAgrgarFamiliar.Name = "btnAgrgarFamiliar";
+            this.btnAgrgarFamiliar.Size = new System.Drawing.Size(139, 29);
+            this.btnAgrgarFamiliar.TabIndex = 43;
+            this.btnAgrgarFamiliar.Text = "Agregar familiar";
+            this.btnAgrgarFamiliar.UseVisualStyleBackColor = true;
+            this.btnAgrgarFamiliar.Click += new System.EventHandler(this.btnAgrgarFamiliar_Click);
+            // 
+            // btnEliminarFamiliar
+            // 
+            this.btnEliminarFamiliar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminarFamiliar.Location = new System.Drawing.Point(203, 288);
+            this.btnEliminarFamiliar.Name = "btnEliminarFamiliar";
+            this.btnEliminarFamiliar.Size = new System.Drawing.Size(139, 29);
+            this.btnEliminarFamiliar.TabIndex = 44;
+            this.btnEliminarFamiliar.Text = "Eliminar familiar";
+            this.btnEliminarFamiliar.UseVisualStyleBackColor = true;
+            this.btnEliminarFamiliar.Click += new System.EventHandler(this.btnEliminarFamiliar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnEliminarFamiliar);
+            this.panel1.Controls.Add(this.btnAgrgarFamiliar);
+            this.panel1.Controls.Add(this.txtApellidog);
+            this.panel1.Controls.Add(this.dtpFechaNacimiento);
+            this.panel1.Controls.Add(this.cbParentesco);
+            this.panel1.Controls.Add(this.dgvGrupoFamiliar);
+            this.panel1.Controls.Add(this.txtNombreg);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.label19);
+            this.panel1.Controls.Add(this.txtDNIg);
+            this.panel1.Controls.Add(this.label20);
+            this.panel1.Location = new System.Drawing.Point(27, 18);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(934, 463);
+            this.panel1.TabIndex = 45;
+            // 
             // CargaDatosUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -560,6 +768,10 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrupoFamiliar)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -604,5 +816,23 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridView dgvGrupoFamiliar;
+        private System.Windows.Forms.TextBox txtDNIg;
+        private System.Windows.Forms.TextBox txtApellidog;
+        private System.Windows.Forms.TextBox txtNombreg;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
+        private System.Windows.Forms.ComboBox cbParentesco;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button btnEliminarFamiliar;
+        private System.Windows.Forms.Button btnAgrgarFamiliar;
+        private System.Windows.Forms.Panel panel1;
     }
 }

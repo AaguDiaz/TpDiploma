@@ -32,6 +32,6 @@ C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\bin\Debug\Modelo.pdb
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\bin\Debug\Modelo.dll.config
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\obj\Debug\Controladora.csproj.AssemblyReference.cache
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\obj\Debug\Controladora.csproj.CoreCompileInputs.cache
-C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\obj\Debug\Controladora.csproj.CopyComplete
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\obj\Debug\Controla.1EE7A4DA.Up2Date
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\obj\Debug\Controladora.dll
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Controladora\obj\Debug\Controladora.pdb
