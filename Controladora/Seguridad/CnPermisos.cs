@@ -50,6 +50,8 @@ namespace Controladora
                     PermisosSeccion.Add("Grupos");
                     PermisosSeccion.Add("ABMGrupos");
                     PermisosSeccion.Add("ABMPedidosYPrestaciones");
+                    PermisosSeccion.Add("Auditoria");
+                    PermisosSeccion.Add("Backup");
                     break;
                 default:
                     break;

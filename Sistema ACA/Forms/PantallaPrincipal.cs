@@ -33,7 +33,15 @@ namespace Sistema_ACA
         private void PantallaPrincipal_Load(object sender, EventArgs e)
         {
             Cargarpermisos();
-            
+            DateTime fecha = DateTime.Now;
+            List<Permisos> permisosActivos = MetodosComunes.ObtenerPermisosActivos();
+            if (permisosActivos.Exists(x => x.formulario.nombre_formulario == "Backup"))
+            {
+                if(fecha.Day== 12)
+                {
+                    MessageBox.Show("Recuerde realizar un backup del sistema", "Recordatorio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
         
 
@@ -212,6 +220,11 @@ namespace Sistema_ACA
         private void audiTMSI_Click(object sender, EventArgs e)
         {
             abrirForm(new Auditoria());
+        }
+
+        private void backupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirForm(new Backup());
         }
     }
     }

@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{030027CB-D587-4770-95F9-467056613D8F}|Controladora\\Controladora.csproj|c:\\users\\agustin\\desktop\\sistema aca\\tpdiploma\\controladora\\prestaciones\\cndeudas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{030027CB-D587-4770-95F9-467056613D8F}|Controladora\\Controladora.csproj|solutionrelative:controladora\\prestaciones\\cndeudas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0B18C43D-AC20-4E90-8F72-CD59E5C4630C}|Sistema ACA\\Sistema ACA.csproj|c:\\users\\agustin\\desktop\\sistema aca\\tpdiploma\\sistema aca\\forms\\admin\\backup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0B18C43D-AC20-4E90-8F72-CD59E5C4630C}|Sistema ACA\\Sistema ACA.csproj|solutionrelative:sistema aca\\forms\\admin\\backup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D466870-A6D3-40B9-9A31-FF5797468466}|Modelo\\Modelo.csproj|c:\\users\\agustin\\desktop\\sistema aca\\tpdiploma\\modelo\\prestaciones\\modeuda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D466870-A6D3-40B9-9A31-FF5797468466}|Modelo\\Modelo.csproj|solutionrelative:modelo\\prestaciones\\modeuda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3D466870-A6D3-40B9-9A31-FF5797468466}|Modelo\\Modelo.csproj|C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\modelo\\mobackup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D466870-A6D3-40B9-9A31-FF5797468466}|Modelo\\Modelo.csproj|solutionrelative:modelo\\mobackup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B18C43D-AC20-4E90-8F72-CD59E5C4630C}|Sistema ACA\\Sistema ACA.csproj|c:\\users\\agustin\\desktop\\sistema aca\\tpdiploma\\sistema aca\\forms\\admin\\abmpedidosyprestaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B18C43D-AC20-4E90-8F72-CD59E5C4630C}|Sistema ACA\\Sistema ACA.csproj|solutionrelative:sistema aca\\forms\\admin\\abmpedidosyprestaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0B18C43D-AC20-4E90-8F72-CD59E5C4630C}|Sistema ACA\\Sistema ACA.csproj|C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\sistema aca\\forms\\admin\\backup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B18C43D-AC20-4E90-8F72-CD59E5C4630C}|Sistema ACA\\Sistema ACA.csproj|solutionrelative:sistema aca\\forms\\admin\\backup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B18C43D-AC20-4E90-8F72-CD59E5C4630C}|Sistema ACA\\Sistema ACA.csproj|c:\\users\\agustin\\desktop\\sistema aca\\tpdiploma\\sistema aca\\forms\\admin\\abmpedidosyprestaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0B18C43D-AC20-4E90-8F72-CD59E5C4630C}|Sistema ACA\\Sistema ACA.csproj|solutionrelative:sistema aca\\forms\\admin\\abmpedidosyprestaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{0B18C43D-AC20-4E90-8F72-CD59E5C4630C}|Sistema ACA\\Sistema ACA.csproj|C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\sistema aca\\forms\\pantallaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B18C43D-AC20-4E90-8F72-CD59E5C4630C}|Sistema ACA\\Sistema ACA.csproj|solutionrelative:sistema aca\\forms\\pantallaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{030027CB-D587-4770-95F9-467056613D8F}|Controladora\\Controladora.csproj|C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\controladora\\cnbackup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{030027CB-D587-4770-95F9-467056613D8F}|Controladora\\Controladora.csproj|solutionrelative:controladora\\cnbackup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +30,71 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MoDeuda.cs",
-              "DocumentMoniker": "C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\Modelo\\Prestaciones\\MoDeuda.cs",
-              "RelativeDocumentMoniker": "Modelo\\Prestaciones\\MoDeuda.cs",
-              "ToolTip": "C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\Modelo\\Prestaciones\\MoDeuda.cs",
-              "RelativeToolTip": "Modelo\\Prestaciones\\MoDeuda.cs",
-              "ViewState": "AQIAAFUAAAAAAAAAAAAcwG0AAAAVAAAA",
+              "DocumentIndex": 0,
+              "Title": "Backup.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\Sistema ACA\\Forms\\Admin\\Backup.cs",
+              "RelativeDocumentMoniker": "Sistema ACA\\Forms\\Admin\\Backup.cs",
+              "ToolTip": "C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\Sistema ACA\\Forms\\Admin\\Backup.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema ACA\\Forms\\Admin\\Backup.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-07T07:51:20.777Z",
+              "WhenOpened": "2024-03-11T04:53:38.93Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PantallaPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\Sistema ACA\\Forms\\PantallaPrincipal.cs",
+              "RelativeDocumentMoniker": "Sistema ACA\\Forms\\PantallaPrincipal.cs",
+              "ToolTip": "C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\Sistema ACA\\Forms\\PantallaPrincipal.cs",
+              "RelativeToolTip": "Sistema ACA\\Forms\\PantallaPrincipal.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAgwCcAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T20:03:43.689Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CnDeudas.cs",
-              "DocumentMoniker": "C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\Controladora\\Prestaciones\\CnDeudas.cs",
-              "RelativeDocumentMoniker": "Controladora\\Prestaciones\\CnDeudas.cs",
-              "ToolTip": "C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\Controladora\\Prestaciones\\CnDeudas.cs",
-              "RelativeToolTip": "Controladora\\Prestaciones\\CnDeudas.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAArwCkAAAA2AAAA",
+              "DocumentIndex": 4,
+              "Title": "CnBackup.cs",
+              "DocumentMoniker": "C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\Controladora\\CnBackup.cs",
+              "RelativeDocumentMoniker": "Controladora\\CnBackup.cs",
+              "ToolTip": "C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\Controladora\\CnBackup.cs",
+              "RelativeToolTip": "Controladora\\CnBackup.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-07T07:49:57.689Z",
+              "WhenOpened": "2024-03-11T05:21:57.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MoBackup.cs",
+              "DocumentMoniker": "C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\Modelo\\MoBackup.cs",
+              "RelativeDocumentMoniker": "Modelo\\MoBackup.cs",
+              "ToolTip": "C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\Modelo\\MoBackup.cs",
+              "RelativeToolTip": "Modelo\\MoBackup.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAgwDEAAABtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T05:09:54.334Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ABMPedidosYPrestaciones.cs",
-              "DocumentMoniker": "C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\Sistema ACA\\Forms\\Admin\\ABMPedidosYPrestaciones.cs",
-              "RelativeDocumentMoniker": "Sistema ACA\\Forms\\Admin\\ABMPedidosYPrestaciones.cs",
-              "ToolTip": "C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\Sistema ACA\\Forms\\Admin\\ABMPedidosYPrestaciones.cs",
-              "RelativeToolTip": "Sistema ACA\\Forms\\Admin\\ABMPedidosYPrestaciones.cs",
-              "ViewState": "AQIAAKgAAAAAAAAAAADgv7IAAAC/AAAA",
+              "Title": "Backup.cs",
+              "DocumentMoniker": "C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\Sistema ACA\\Forms\\Admin\\Backup.cs",
+              "RelativeDocumentMoniker": "Sistema ACA\\Forms\\Admin\\Backup.cs",
+              "ToolTip": "C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\Sistema ACA\\Forms\\Admin\\Backup.cs",
+              "RelativeToolTip": "Sistema ACA\\Forms\\Admin\\Backup.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAA1wCkAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-07T07:48:57.457Z",
+              "WhenOpened": "2024-03-11T05:06:43.69Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ABMPedidosYPrestaciones.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\Sistema ACA\\Forms\\Admin\\ABMPedidosYPrestaciones.cs",
-              "RelativeDocumentMoniker": "Sistema ACA\\Forms\\Admin\\ABMPedidosYPrestaciones.cs",
-              "ToolTip": "C:\\Users\\Agustin\\Desktop\\Sistema ACA\\TpDiploma\\Sistema ACA\\Forms\\Admin\\ABMPedidosYPrestaciones.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Sistema ACA\\Forms\\Admin\\ABMPedidosYPrestaciones.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-07T07:48:54.731Z",
-              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

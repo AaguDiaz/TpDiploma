@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MoBackup.cs" />
     <Compile Include="MoReportes.cs" />
     <Compile Include="Prestaciones\MoDeuda.cs" />
     <Compile Include="Pedidos\MoListaProd.cs" />

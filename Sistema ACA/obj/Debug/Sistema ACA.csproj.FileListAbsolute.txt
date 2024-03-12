@@ -114,3 +114,4 @@ C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema .FF
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema ACA.exe
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema ACA.pdb
 C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Admin.Auditoria.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Debug\Sistema_ACA.Forms.Admin.Backup.resources

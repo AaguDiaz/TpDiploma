@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CnBackup.cs" />
     <Compile Include="CnCaches.cs" />
     <Compile Include="CnGrupoFamiliar.cs" />
     <Compile Include="CnReportes.cs" />

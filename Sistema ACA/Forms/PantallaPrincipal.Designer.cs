@@ -45,6 +45,7 @@
             this.gruposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestUsuTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.audiTMSI = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -128,7 +129,8 @@
             this.AdminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.abmTSMT,
             this.gestUsuTSMI,
-            this.audiTMSI});
+            this.audiTMSI,
+            this.backupToolStripMenuItem});
             this.AdminToolStripMenuItem.Name = "AdminToolStripMenuItem";
             this.AdminToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
             this.AdminToolStripMenuItem.Tag = "Admin";
@@ -194,6 +196,14 @@
             this.audiTMSI.Text = "Auditoria";
             this.audiTMSI.Click += new System.EventHandler(this.audiTMSI_Click);
             // 
+            // backupToolStripMenuItem
+            // 
+            this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.backupToolStripMenuItem.Tag = "Backup";
+            this.backupToolStripMenuItem.Text = "Backup";
+            this.backupToolStripMenuItem.Click += new System.EventHandler(this.backupToolStripMenuItem_Click);
+            // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -248,6 +258,7 @@
         private System.Windows.Forms.ToolStripMenuItem repotesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidosPrestacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gruposToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
     }
 }
 

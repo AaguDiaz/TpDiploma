@@ -1,0 +1,51 @@
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Release\Sistema ACA.exe.config
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Release\Sistema ACA.exe
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Release\Sistema ACA.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Release\BouncyCastle.Crypto.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Release\COMUN.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Release\Controladora.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Release\FontAwesome.Sharp.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Release\itextsharp.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Release\itextsharp.xmlworker.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Release\System.Data.SqlClient.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Release\Modelo.dll
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Release\COMUN.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Release\COMUN.dll.config
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Release\Controladora.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Release\Controladora.dll.config
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Release\itextsharp.xml
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Release\System.Data.SqlClient.xml
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Release\Modelo.pdb
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\bin\Release\Modelo.dll.config
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema ACA.csproj.AssemblyReference.cache
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.Forms.Admin.ABMGrupos.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.Forms.Admin.ABMPedidosYPrestaciones.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.Forms.Admin.ABMProductos.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.Forms.ABMUsuarios.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.Forms.Admin.Auditoria.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.Forms.Admin.Backup.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.Forms.CargaDatosUsuarios.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.Forms.Admin.Grupos.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.Forms.infoGrupoFamiliar.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.Forms.Admin.ListaPedidos.BuscarProductos.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.Forms.Admin.ListaPedidos.CargarCat.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.Forms.Admin.Reportes.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.Forms.Admin.ListaPedidos.DetallesLista.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.Forms.Admin.NuevaLista.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.Forms.Socio.AgregarProductos.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.Forms.Prestacion.AgregarPrestacion.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.Forms.Prestacion.BuscadorPDF.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.CambiarContra.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.ABMProveedores.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.Forms.Socio.EstadoCuenta.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.InicioSesion.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.PantallaPrincipal.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.Forms.Prestaciones.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.SolicitarPedido.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.AgregarPedidos.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema_ACA.Properties.Resources.resources
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema ACA.csproj.GenerateResource.cache
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema ACA.csproj.CoreCompileInputs.cache
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema .FFE776EA.Up2Date
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema ACA.exe
+C:\Users\Agustin\Desktop\Sistema ACA\TpDiploma\Sistema ACA\obj\Release\Sistema ACA.pdb

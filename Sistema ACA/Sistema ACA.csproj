@@ -96,6 +96,12 @@
     <Compile Include="Forms\Admin\Auditoria.Designer.cs">
       <DependentUpon>Auditoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Admin\Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Backup.Designer.cs">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Admin\Grupos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Auditoria.resx">
       <DependentUpon>Auditoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Backup.resx">
+      <DependentUpon>Backup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\CargaDatosUsuarios.resx">
       <DependentUpon>CargaDatosUsuarios.cs</DependentUpon>
